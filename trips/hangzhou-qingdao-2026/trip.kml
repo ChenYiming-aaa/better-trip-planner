@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+<name>杭州 → 青岛 5 天 · 山海红瓦之秋</name>
+<Folder><name>Day 1 2026-10-26 — 移动日 · 半天八大关</name>
+<Placemark><name>1. 青岛胶东国际机场</name><Point><coordinates>120.088520,36.359730,0</coordinates></Point></Placemark>
+<Placemark><name>2. 酒店·青岛站老城</name><Point><coordinates>120.307750,36.064660,0</coordinates></Point></Placemark>
+<Placemark><name>3. 八大关散步段</name><Point><coordinates>120.345810,36.053400,0</coordinates></Point></Placemark>
+<Placemark><name>4. 栈桥</name><Point><coordinates>120.314260,36.061570,0</coordinates></Point></Placemark>
+<Placemark><name>Day 1 route</name><Style><LineStyle><color>ff0000ff</color><width>3</width></LineStyle></Style><LineString><coordinates>120.088520,36.359730,0 120.307750,36.064660,0 120.345810,36.053400,0 120.314260,36.061570,0</coordinates></LineString></Placemark>
+</Folder>
+<Folder><name>Day 2 2026-10-27 — 老城经典 · 红瓦绿树</name>
+<Placemark><name>1. 酒店·青岛站老城</name><Point><coordinates>120.307750,36.064660,0</coordinates></Point></Placemark>
+<Placemark><name>2. 信号山公园</name><Point><coordinates>120.326500,36.066260,0</coordinates></Point></Placemark>
+<Placemark><name>3. 圣弥厄尔天主教堂</name><Point><coordinates>120.315540,36.067970,0</coordinates></Point></Placemark>
+<Placemark><name>4. 德国总督楼旧址博物馆</name><Point><coordinates>120.327890,36.064750,0</coordinates></Point></Placemark>
+<Placemark><name>5. 大学路散步段</name><Point><coordinates>120.329500,36.063170,0</coordinates></Point></Placemark>
+<Placemark><name>Day 2 route</name><Style><LineStyle><color>ffff0000</color><width>3</width></LineStyle></Style><LineString><coordinates>120.307750,36.064660,0 120.326500,36.066260,0 120.315540,36.067970,0 120.327890,36.064750,0 120.329500,36.063170,0</coordinates></LineString></Placemark>
+</Folder>
+<Folder><name>Day 3 2026-10-28 — 崂山全天 · 太清+仰口</name>
+<Placemark><name>1. 酒店·青岛站老城</name><Point><coordinates>120.307750,36.064660,0</coordinates></Point></Placemark>
+<Placemark><name>2. 人民会堂站</name><Point><coordinates>120.324520,36.059690,0</coordinates></Point></Placemark>
+<Placemark><name>3. 大河东游客中心</name><Point><coordinates>120.582330,36.132630,0</coordinates></Point></Placemark>
+<Placemark><name>4. 崂山太清宫</name><Point><coordinates>120.671600,36.140140,0</coordinates></Point></Placemark>
+<Placemark><name>5. 仰口游览区</name><Point><coordinates>120.650460,36.217690,0</coordinates></Point></Placemark>
+<Placemark><name>Day 3 route</name><Style><LineStyle><color>ff00aa00</color><width>3</width></LineStyle></Style><LineString><coordinates>120.307750,36.064660,0 120.324520,36.059690,0 120.582330,36.132630,0 120.671600,36.140140,0 120.650460,36.217690,0</coordinates></LineString></Placemark>
+</Folder>
+<Folder><name>Day 4 2026-10-29 — 啤酒工业 + 滨海夜色</name>
+<Placemark><name>1. 酒店·青岛站老城</name><Point><coordinates>120.307750,36.064660,0</coordinates></Point></Placemark>
+<Placemark><name>2. 青岛啤酒博物馆</name><Point><coordinates>120.342230,36.078880,0</coordinates></Point></Placemark>
+<Placemark><name>3. 台东步行街</name><Point><coordinates>120.350540,36.082180,0</coordinates></Point></Placemark>
+<Placemark><name>4. 小青岛</name><Point><coordinates>120.318620,36.053100,0</coordinates></Point></Placemark>
+<Placemark><name>5. 奥帆中心</name><Point><coordinates>120.389930,36.054360,0</coordinates></Point></Placemark>
+<Placemark><name>Day 4 route</name><Style><LineStyle><color>ff00aaff</color><width>3</width></LineStyle></Style><LineString><coordinates>120.307750,36.064660,0 120.342230,36.078880,0 120.350540,36.082180,0 120.318620,36.053100,0 120.389930,36.054360,0</coordinates></LineString></Placemark>
+</Folder>
+<Folder><name>Day 5 2026-10-30 — 小鱼山晨景 · 返程</name>
+<Placemark><name>1. 酒店·青岛站老城</name><Point><coordinates>120.307750,36.064660,0</coordinates></Point></Placemark>
+<Placemark><name>2. 小鱼山公园</name><Point><coordinates>120.331490,36.058570,0</coordinates></Point></Placemark>
+<Placemark><name>Day 5 route</name><Style><LineStyle><color>ffaa00aa</color><width>3</width></LineStyle></Style><LineString><coordinates>120.307750,36.064660,0 120.331490,36.058570,0</coordinates></LineString></Placemark>
+</Folder>
+</Document></kml>

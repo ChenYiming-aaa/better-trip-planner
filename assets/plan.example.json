@@ -1,0 +1,259 @@
+{
+ "_readme": "Runnable schema example — copy it to plan.geo.json, replace everything, keep the shape. The .geo stem matters: geocode then edits the file in place, so check/links/kml/render all read one file. The same file feeds scripts/route_tools.py (days[].stops) and scripts/render_plan.py (everything else). INVARIANT: days[].stops mirrors that day's anchors + modelled strolls in visit order — the maps and the walking total are computed from it. Two stops deliberately ship without lat/lon so `check` reports them and exits 2 until you run `geocode`; that is the intended first step, not a defect. All prices, hours and links are PLACEHOLDERS: never ship them unverified. tz: 境内统一北京时间 (Asia/Shanghai) — days[].tz 可覆盖但一般不设; 设了 tz 的 sun --write 才会写入. lang: top-level \"zh\"|\"en\" — always write it; absent silently defaults to zh, wrong for every en plan. Every renderer and route_tools sun read it (--lang overrides); prefs has no lang field.",
+ "_readme_prefs": "prefs = what Phase 0 (Intake) learned or assumed, written down once so Phases 2-6 and any later replan read one place instead of re-asking. Enums: theme ∈ illustrated|clay|noir|glass|journal|zine|splash (default illustrated) · pictures ∈ native|key|stock (the picture-capability check: own generator | env key (dashscope/siliconflow) | built-in stock kit) · travel_style ∈ public|self-drive|group-tour|mixed · scenery ⊂ nature|city|beach|forest|lake|mountain · pace = anchors per day (2/3/4) · lodging and budget are free text · notes = every inferred value, so the assumptions block at checkpoint (a) can be written from this one object. Every renderer IGNORES prefs (it is not in theme_common.PLAN_SHAPE) — the block is for the planning agent, not for the page.",
+ "trip": "示例行程 — 2 天",
+ "lang": "zh",
+ "tz": "Asia/Shanghai",
+ "prefs": {
+  "theme": "illustrated",
+  "pictures": "stock",
+  "travel_style": "public",
+  "lodging": "hotel · mid-range, refundable",
+  "scenery": [
+   "city",
+   "nature"
+  ],
+  "pace": 3,
+  "budget": "mid",
+  "notes": "assumed origin 上海 (zh request, no origin given)"
+ },
+ "meta": {
+  "dates": "2026-10-05 → 2026-10-07",
+  "party": "1 成人",
+  "route": "杭州 → 乌镇",
+  "budget_total": "PLACEHOLDER",
+  "generated": "2026-08-01",
+  "placeholder_note": ""
+ },
+ "decisions": [
+  "One line per decision you made on the traveller's behalf — each one vetoable"
+ ],
+ "checklist": [
+  {
+   "item": "健康咨询（高反/慢病用药按 health 卡；计划不下处方）",
+   "deadline": "departure minus 2-4 weeks (NOW if inside 2 weeks) · PLACEHOLDER date",
+   "note": "PLACEHOLDER — agenda: the health page's rows + activity tags"
+  },
+  {
+   "item": "分时预约门票 X（实名制，身份证入园）",
+   "deadline": "opens 10th of prior month",
+   "price": "PLACEHOLDER",
+   "link": "https://example.org/tickets",
+   "note": "sells out same day"
+  },
+  {
+   "item": "出发前两周 re-check: hours + fees of every anchor, 预约与门票政策, 12306 起售日",
+   "deadline": "出发前两周（PLACEHOLDER date 前）",
+   "note": "PLACEHOLDER — the anchors and legs[] numbers this two-week row covers"
+  },
+  {
+   "item": "出发前一周 re-check: forecast for every base, re-apply weather rule 10",
+   "deadline": "出发前一周（PLACEHOLDER date 前）",
+   "note": "PLACEHOLDER — the bases whose forecast this weekly row re-runs"
+  },
+  {
+   "item": "出发前 3 天 re-check: 停运/检修/景区临时闭园公告, forecast, tickets in wallet",
+   "deadline": "出发前 3 天（PLACEHOLDER date 前）",
+   "note": "PLACEHOLDER — one line per moving day: 12306/景区公告 + URL"
+  },
+  {
+   "item": "出发前 1 天: 离线地图包已下, 预约二维码截图进相册, copies（身份证/保单）, cash per brief.money, 绑卡正常",
+   "deadline": "出发前 1 天（PLACEHOLDER date 前）",
+   "note": "PLACEHOLDER — 离线地图城市 · cash figure from brief.money · 绑卡确认"
+  }
+ ],
+ "legs": [
+  {
+   "type": "high-speed rail",
+   "date": "2026-10-06",
+   "carrier": "PLACEHOLDER",
+   "from": "杭州东",
+   "to": "桐乡",
+   "dep": "09:15",
+   "arr": "09:47",
+   "price": "PLACEHOLDER — 见 flight_scan 深链核对",
+   "bags": "高铁无重量限制，超规需托运",
+   "link": "PLACEHOLDER — flight_scan train deep link",
+   "backup": "second-best option"
+  }
+ ],
+ "days": [
+  {
+   "date": "2026-10-05",
+   "tz": "Asia/Shanghai",
+   "city": "杭州",
+   "label": "西湖西线",
+   "sun": "天亮 05:28 · ☀ 05:53 / 🌇 17:38 · CST · 本地天文计算",
+   "walking_km": {
+    "total": 5.4,
+    "how": "on foot 1.7 ×1.3 + 散步 1.5 + 馆内 ~1.7"
+   },
+   "ribbon": "灵隐寺 →步行10′→ 法镜寺 →步行8′→ 午餐 →公交28′→ 雷峰塔 →步行→ 湖滨",
+   "day_map": "PLACEHOLDER — amap/baidu 逐跳深链（无 day chain）",
+   "rain_alt": "浙江省博物馆之江馆 — closure-checked for THIS date",
+   "late_cut": "running >1 h late → cut the stroll, then 法镜寺",
+   "timeline": [
+    {
+     "t": "08:00-09:15",
+     "what": "灵隐寺",
+     "kind": "anchor",
+     "price": "PLACEHOLDER",
+     "note": "opens 06:30, first hour is empty",
+     "tag": "opener"
+    },
+    {
+     "t": "09:15-09:45",
+     "what": "步行 灵隐寺→法镜寺 0.7 km · 10分(+缓冲)",
+     "kind": "hop",
+     "verify": "est",
+     "link": "PLACEHOLDER — per-hop url from route_tools links"
+    },
+    {
+     "t": "09:45-10:45",
+     "what": "法镜寺",
+     "kind": "anchor",
+     "price": "PLACEHOLDER",
+     "note": "last entry 17:00"
+    },
+    {
+     "t": "10:45-11:00",
+     "what": "步行 法镜寺→午餐区 0.5 km · 8分",
+     "kind": "hop",
+     "verify": "est",
+     "link": "PLACEHOLDER"
+    },
+    {
+     "t": "11:00-12:15",
+     "what": "午餐 · 龙井村茶楼一带, not a named restaurant",
+     "kind": "meal",
+     "tag": "swap→青芝坞"
+    },
+    {
+     "t": "12:15-13:00",
+     "what": "公交 87 路(往黄龙洞) 8站/28分 ¥2 · 龙井茶室→浙大附中 · 下车步行6分",
+     "kind": "hop",
+     "verify": "est",
+     "link": "PLACEHOLDER"
+    },
+    {
+     "t": "13:00-14:30",
+     "what": "雷峰塔",
+     "kind": "anchor",
+     "price": "PLACEHOLDER"
+    },
+    {
+     "t": "14:30-14:40",
+     "what": "步行 雷峰塔→湖滨散步起点 0.6 km · 10分",
+     "kind": "hop",
+     "verify": "est",
+     "link": "PLACEHOLDER"
+    },
+    {
+     "t": "14:40-15:40",
+     "what": "湖滨散步 ~1.5 km — modelled as a stop so it counts",
+     "kind": "free",
+     "tag": "skippable"
+    }
+   ],
+   "stops": [
+    {
+     "name": "灵隐寺",
+     "query": "灵隐寺, 杭州市",
+     "lat": 30.2408,
+     "lon": 120.0972
+    },
+    {
+     "name": "法镜寺",
+     "query": "法镜寺, 杭州市"
+    },
+    {
+     "name": "午餐区",
+     "query": "龙井村, 杭州市"
+    },
+    {
+     "name": "雷峰塔",
+     "lat": 30.2318,
+     "lon": 120.1489,
+     "mode": "transit"
+    },
+    {
+     "name": "湖滨散步中点",
+     "lat": 30.251,
+     "lon": 120.155
+    }
+   ]
+  },
+  {
+   "date": "2026-10-06",
+   "city": "杭州 → 乌镇",
+   "label": "移动日",
+   "travel_day": true,
+   "late_cut": "bags not stored → drop the single anchor",
+   "timeline": [
+    {
+     "t": "08:00-09:00",
+     "what": "checkout · bags to 高铁站寄存 (fallback: hotel storage + loop back)",
+     "kind": "free",
+     "note": "寄存柜高峰期上午即满",
+     "tag": "pinned"
+    },
+    {
+     "t": "09:15-11:31",
+     "what": "高铁 G-次 (往…方向) · 杭州东→桐乡 · 出口N + 桐乡→乌镇接驳K282",
+     "kind": "hop",
+     "verify": "verified",
+     "note": "verified timetable keeps its exact minutes",
+     "link": "PLACEHOLDER"
+    },
+    {
+     "t": "15:00",
+     "what": "check-in — a move day carries ≤2 anchors only if bags are handled before the first; otherwise 1",
+     "kind": "free",
+     "tag": "pinned"
+    }
+   ],
+   "stops": []
+  }
+ ],
+ "hotels": [
+  {
+   "base": "乌镇 2 nights",
+   "area": "西栅景区内/镇区",
+   "why": "on the line you actually use · safe after dark · flat pavement for luggage",
+   "options": [
+    {
+     "name": "Property 1",
+     "band": "PLACEHOLDER/night",
+     "link": "PLACEHOLDER — 携程/美团 dated search link with checkin/checkout"
+    }
+   ]
+  }
+ ],
+ "budget": [
+  {
+   "cat": "flights",
+   "per_person": "PLACEHOLDER",
+   "total": "PLACEHOLDER",
+   "note": "as of 2026-08-01"
+  },
+  {
+   "cat": "buffer (10-15%)",
+   "per_person": "PLACEHOLDER",
+   "total": "PLACEHOLDER",
+   "note": "价格波动 + 旺季浮动（人民币计价，无汇率行）"
+  }
+ ],
+ "brief": {
+  "emergency": "six lines: 110 / 120 / 119 / 122 · 12301 + 目的地 12345 · 每个 base 一家三甲医院急诊（名称·地址·电话·夜诊） · 保险公司救援热线 + 保单号占位 · 身份证异地补办流程（就近派出所 + 12306 临时乘车证明） · 24h 药房 per base — 每个号码标注查证日期",
+  "safety": "line 0 预警级别 · 中央气象台/应急管理部 · as-of, then six lines: named scams · 火车站/步行街扒窃热点 · taxi rule（滴滴/高德打车, 官方候车点） · after-dark avoid list per base · what to do when it happens（报警回执=理赔凭证） · legal red lines（无人机禁飞区/自然保护区）",
+  "health": "five lines from chinacdc.cn / 属地卫健委: 高反（海拔 ≥2500 m 才触发） · 蚊媒季节 · water and food · 动物接触与狂犬 · notice level + as-of",
+  "holidays": "国务院放假安排 + timor.tech 调休 API + 民俗节庆（庙会/灯会人流）",
+  "weather": "temps · rain odds · daylight · mode (forecast / normals) + as-of",
+  "money": "five lines: 移动支付双卡确认 · 备用现金额度 · 景区预约支付与二维码截图 · 优惠证件规则 · 发票/报销",
+  "connectivity": "离线地图包 · 山区无信号段点名 · 数字安全行（公用 Wi-Fi 不支付）",
+  "insurance": "cover floor · exclusions matched by activity name · assistance hotline"
+ },
+ "unverified": [
+  "everything that survived two searches unverified goes here, visibly"
+ ]
+}

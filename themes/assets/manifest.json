@@ -1,0 +1,1595 @@
+{
+ "_readme": "Generated-image index — check here before generating a new image and reuse what already exists. gen.py registers every successful generation automatically; run build_manifest.py to refresh after manual cleanup. transparent=true means a .cut.webp real-alpha cutout exists. Test-trip assets (测试行程资产) are hand-merged in by the main agent from trips/test-*/manifest.<trip>.json (without running build_manifest.py — it would scramble the job↔png relationships in the trip directories); those entries' files.png refers to the png master under trips/, which stays out of the repo. [境内版:境外测试行程与 portal 视频种子帧资产已于境内-only 改造中移除]",
+ "style_anchor": "Flat hand-drawn travel illustration, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, clean rounded shapes, minimal cozy storybook style — 贴纸类加: thick organic silhouette, no text, no border, single isolated subject centered on a solid pure white background, no shadow",
+ "assets": [
+  {
+   "name": "bus",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel illustration of a small vintage tour bus with a roof luggage rack carrying two suitcases, three-quarter front view, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, clean rounded shapes, minimal cozy storybook style, thick organic silhouette, no text, no border, single isolated subject centered on a solid pure white background, no shadow",
+   "params": {
+    "background": "auto",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": null,
+   "generated_at": "2026-08-05/06",
+   "source_job": "batch7.json",
+   "files": {
+    "png": 1407695,
+    "cut.png": 1273944,
+    "cut.webp": 147772,
+    "md.webp": 25014,
+    "sm.webp": 7428,
+    "lg.webp": 44098
+   },
+   "transparent": true
+  },
+  {
+   "name": "china-clay-sheet-figs",
+   "kind": "asset",
+   "prompt": "A product sheet photograph of SIX separate handmade polymer clay miniatures arranged in a clean 3-column by 2-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each miniature is clearly isolated and never touches another. Row 1 left: a chunky rounded clay high-speed bullet train nose car, glossy white with a red stripe along its side, on a tiny grey clay rail. Row 1 middle: three chunky clay ancient soldier figures standing in a row in a shallow earth-brown clay pit, terracotta orange armour with rounded topknots, one small clay horse head behind them. Row 1 right: a chunky seven-tier clay pagoda tower with wide curved eaves, warm sand and grey clay, a tiny green shrub at its base. Row 2 left: a chunky clay stone watchtower on a rolling green clay ridge with a crenellated grey clay wall snaking away on both sides. Row 2 middle: a chunky clay imperial palace hall with deep vermilion red walls, a broad golden-yellow curved tiled roof and a tiny white marble stair, on a small grey clay terrace. Row 2 right: a round bamboo clay steamer basket with its lid tilted open showing four plump pale clay dumplings and a tiny wisp of white clay steam. All six in identical cute claymorphism 3D style, soft studio lighting, subtle fingerprints and clay texture, pastel palette of mint, peach, butter yellow, lilac and turquoise, no shadows on the white background, no text, no letters, no labels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.04283,
+   "generated_at": "2026-08-15",
+   "files": {
+    "png": 1760738
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026(纽约出发,英文) 测试行程(Opus 测试员生成)",
+   "children": [
+    "china-clay-food.cut.webp",
+    "china-clay-pagoda.cut.webp",
+    "china-clay-palace.cut.webp",
+    "china-clay-title.cut.webp",
+    "china-clay-train.cut.webp",
+    "china-clay-wall.cut.webp",
+    "china-clay-warriors.cut.webp",
+    "china-splash-hero.cut.webp",
+    "china-splash-m-dumpling.cut.webp",
+    "china-splash-m-lantern.cut.webp",
+    "china-splash-m-panda.cut.webp",
+    "china-splash-m-tea.cut.webp",
+    "china-splash-m-warrior.cut.webp",
+    "china-splash-pagoda.cut.webp",
+    "china-splash-palace.cut.webp",
+    "china-splash-strip-beijing.cut.webp",
+    "china-splash-strip-xian.cut.webp",
+    "china-splash-tiantan.cut.webp",
+    "china-splash-title.cut.webp",
+    "china-splash-train.cut.webp",
+    "china-splash-veh-train.cut.webp",
+    "china-splash-wall.cut.webp",
+    "china-splash-warriors.cut.webp"
+   ]
+  },
+  {
+   "name": "china-clay-title",
+   "kind": "asset",
+   "prompt": "A single handmade polymer clay 3D title sticker floating on a plain pure white background with a wide white margin all around it. Chunky hand-rolled pastel clay capital letters, thick and rounded with soft bevelled edges and subtle fingerprint texture, spelling exactly two short lines of English text, centred: the first line reads MOON OF and the second line reads QIN. Letters in a pastel palette of peach, mint, butter yellow and lilac, with a small cream clay crescent moon pressed beside the word QIN. Cute claymorphism 3D style, soft studio lighting, no shadows on the white background, no other text, no letters other than the words MOON OF QIN",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.041895,
+   "generated_at": "2026-08-15",
+   "files": {
+    "png": 1387674,
+    "cut.webp": 103024,
+    "md.webp": 31738
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026(纽约出发,英文) 测试行程(Opus 测试员生成)"
+  },
+  {
+   "name": "china-clay-title2",
+   "kind": "asset",
+   "prompt": "A single handmade polymer clay 3D title sticker floating on a plain pure white background with a wide empty white margin all around. Chunky hand-rolled pastel clay capital letters, thick, rounded, soft bevelled edges, subtle fingerprint texture, glossy studio lighting. Exactly two lines of text, both lines centred on the same vertical axis and the SAME letter height, no other objects, no icons, no moon, no decorations: the first line reads MOON OF, the second line reads QIN. Letters alternate coral, mint green, butter yellow and lavender clay. Every letter fully visible and complete, generous spacing between letters, nothing touching the image edges.",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.04185,
+   "generated_at": "2026-08-15",
+   "files": {
+    "cut.webp": 104298,
+    "md.webp": 29594
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026 测试行程(封面/地形带补做,owner 08-15 反馈后)"
+  },
+  {
+   "name": "china-splash-hero",
+   "kind": "asset",
+   "prompt": "A single large floating-island hero vignette centred on a plain pure white background with a wide white margin all around it, painted in Supercell Brawl Stars splash art style: hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated proportions, magenta and cyan rim light. A big floating rock chunk with a green ridge on top, along which a chunky crenellated ancient stone wall snakes up to a square watchtower at the summit; on a lower shelf of the same floating chunk stands a small tiered pagoda beside two chunky terracotta warrior statues; small floating rock bits and a few red paper lanterns drift below the island, with soft mist puffs and three tiny sparkles. No ground plane, no shadows on the white background, no text, no labels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "1:1",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.05355,
+   "generated_at": "2026-08-15",
+   "files": {
+    "png": 1166919,
+    "cut.webp": 137942,
+    "md.webp": 57402
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026(纽约出发,英文) 测试行程(Opus 测试员生成)"
+  },
+  {
+   "name": "china-splash-sheet-nodes",
+   "kind": "asset",
+   "prompt": "A product sheet of SIX separate small floating-island vignettes arranged in a clean 3-column by 2-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each is clearly isolated and never touches another. ALL SIX painted in the identical Supercell Brawl Stars splash art style: hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated proportions, magenta and cyan rim light, each vignette a small floating rock chunk with grass or ground on top and small floating rock bits below. Row 1 first: a chunky glossy white high-speed bullet train with a long pointed nose and a red side stripe speeding along a short floating rail chunk with two tiny signal lights. Row 1 second: three chunky ancient clay-orange warrior statues in layered armour standing shoulder to shoulder in a floating earth-brown excavation pit chunk, one tiny cracked shard beside them. Row 1 third: a chunky seven-tier stone pagoda with wide sweeping eaves on a floating chunk of grass with two small dark green cypress trees. Row 2 first: a chunky round triple-eaved temple hall with a deep blue tiled roof and a white marble circular terrace on a floating chunk, tiny cypress trees around the rim. Row 2 second: a chunky grey stone watchtower on a steep green ridge with a crenellated wall snaking off both sides of a floating rock chunk, thin mist below. Row 2 third: a chunky vermilion-red palace gate hall with a golden curved tiled roof and two tiny red lanterns on a floating grey stone terrace chunk. No shadows on the white background, no text, no labels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.042955,
+   "generated_at": "2026-08-15",
+   "files": {
+    "png": 2072059
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026(纽约出发,英文) 测试行程(Opus 测试员生成)",
+   "children": [
+    "china-clay-food.cut.webp",
+    "china-clay-pagoda.cut.webp",
+    "china-clay-palace.cut.webp",
+    "china-clay-title.cut.webp",
+    "china-clay-train.cut.webp",
+    "china-clay-wall.cut.webp",
+    "china-clay-warriors.cut.webp",
+    "china-splash-hero.cut.webp",
+    "china-splash-m-dumpling.cut.webp",
+    "china-splash-m-lantern.cut.webp",
+    "china-splash-m-panda.cut.webp",
+    "china-splash-m-tea.cut.webp",
+    "china-splash-m-warrior.cut.webp",
+    "china-splash-pagoda.cut.webp",
+    "china-splash-palace.cut.webp",
+    "china-splash-strip-beijing.cut.webp",
+    "china-splash-strip-xian.cut.webp",
+    "china-splash-tiantan.cut.webp",
+    "china-splash-title.cut.webp",
+    "china-splash-train.cut.webp",
+    "china-splash-veh-train.cut.webp",
+    "china-splash-wall.cut.webp",
+    "china-splash-warriors.cut.webp"
+   ]
+  },
+  {
+   "name": "china-splash-sheet-props",
+   "kind": "asset",
+   "prompt": "A product sheet of SIX separate small stickers arranged in a clean 3-column by 2-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each is clearly isolated and never touches another. ALL SIX painted in the identical Supercell Brawl Stars splash art style: hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated proportions, magenta and cyan rim light, each floating slightly with two or three tiny sparkles around it, no ground and no rock chunk. Row 1 first: a chunky glossy white high-speed bullet train car with a long pointed nose, a bold red stripe and big friendly round headlight eyes, seen from three-quarter front. Row 1 second: a round fluffy giant panda cub sitting and holding a green bamboo stalk, smiling and waving one paw. Row 1 third: a round bamboo steamer basket with its lid tilted open showing plump white dumplings and a curl of steam, with two big friendly eyes on the basket. Row 2 first: a plump red paper lantern with golden tassels and a gold rim, glowing warmly from inside, with a cheerful little face. Row 2 second: a small chibi ancient warrior statue in clay-orange layered armour with a rounded topknot, standing at attention and grinning. Row 2 third: a chunky pale celadon-green tea cup with a lid, warm tea steam curling above it and a tiny painted leaf on its side. No shadows on the white background, no text, no labels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.04283,
+   "generated_at": "2026-08-15",
+   "files": {
+    "png": 1625092
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026(纽约出发,英文) 测试行程(Opus 测试员生成)",
+   "children": [
+    "china-clay-food.cut.webp",
+    "china-clay-pagoda.cut.webp",
+    "china-clay-palace.cut.webp",
+    "china-clay-title.cut.webp",
+    "china-clay-train.cut.webp",
+    "china-clay-wall.cut.webp",
+    "china-clay-warriors.cut.webp",
+    "china-splash-hero.cut.webp",
+    "china-splash-m-dumpling.cut.webp",
+    "china-splash-m-lantern.cut.webp",
+    "china-splash-m-panda.cut.webp",
+    "china-splash-m-tea.cut.webp",
+    "china-splash-m-warrior.cut.webp",
+    "china-splash-pagoda.cut.webp",
+    "china-splash-palace.cut.webp",
+    "china-splash-strip-beijing.cut.webp",
+    "china-splash-strip-xian.cut.webp",
+    "china-splash-tiantan.cut.webp",
+    "china-splash-title.cut.webp",
+    "china-splash-train.cut.webp",
+    "china-splash-veh-train.cut.webp",
+    "china-splash-wall.cut.webp",
+    "china-splash-warriors.cut.webp"
+   ]
+  },
+  {
+   "name": "china-splash-sheet-strips",
+   "kind": "asset",
+   "prompt": "A product sheet of TWO separate wide horizontal silhouette banner strips stacked vertically on a plain pure white background, with a WIDE empty white gutter between them and wide white margins around them, both painted in Supercell Brawl Stars splash art style with soft airbrushed gradients inside bold clean silhouettes and chunky exaggerated proportions: the top strip a distant twilight silhouette of a row of imperial palace halls with wide upturned curved roofs and a tall corner tower, in deep indigo purple with tiny glowing amber lantern lights; the bottom strip a silhouette of a long crenellated ancient city wall with a two-tier gate tower at its centre and a tiered pagoda far to one side, in deep red-orange against a sunset haze. Each strip fades out softly at its left and right ends, no text, no watermark",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03317,
+   "generated_at": "2026-08-15",
+   "files": {
+    "png": 1200178
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026(纽约出发,英文) 测试行程(Opus 测试员生成)",
+   "children": [
+    "china-clay-food.cut.webp",
+    "china-clay-pagoda.cut.webp",
+    "china-clay-palace.cut.webp",
+    "china-clay-title.cut.webp",
+    "china-clay-train.cut.webp",
+    "china-clay-wall.cut.webp",
+    "china-clay-warriors.cut.webp",
+    "china-splash-hero.cut.webp",
+    "china-splash-m-dumpling.cut.webp",
+    "china-splash-m-lantern.cut.webp",
+    "china-splash-m-panda.cut.webp",
+    "china-splash-m-tea.cut.webp",
+    "china-splash-m-warrior.cut.webp",
+    "china-splash-pagoda.cut.webp",
+    "china-splash-palace.cut.webp",
+    "china-splash-strip-beijing.cut.webp",
+    "china-splash-strip-xian.cut.webp",
+    "china-splash-tiantan.cut.webp",
+    "china-splash-title.cut.webp",
+    "china-splash-train.cut.webp",
+    "china-splash-veh-train.cut.webp",
+    "china-splash-wall.cut.webp",
+    "china-splash-warriors.cut.webp"
+   ]
+  },
+  {
+   "name": "china-splash-title",
+   "kind": "asset",
+   "prompt": "A single hand-painted game title plate floating on a plain pure white background with a wide white margin all around it, painted in Supercell Brawl Stars splash art style: thick painterly capital letters with heavy dark outlines, glossy bevelled faces, magenta and cyan rim light and a soft golden glow behind them. The plate spells exactly two short lines of English text, centred: the first line reads MOON OF and the second, larger line reads QIN. A slim crescent moon sits at the upper right of the lettering and a thin gold banner ribbon curls under it. No other text, no letters other than the words MOON OF QIN, no watermark, no shadows on the white background",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.041895,
+   "generated_at": "2026-08-15",
+   "files": {
+    "png": 1905435,
+    "cut.webp": 244010,
+    "md.webp": 58274
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026(纽约出发,英文) 测试行程(Opus 测试员生成)"
+  },
+  {
+   "name": "china-strip-beijing",
+   "kind": "asset",
+   "prompt": "Wide horizontal diorama strip of handmade polymer clay scenery isolated on a solid pure white background: a range of purple and mint clay mountain ridges with a tiny pastel clay Great Wall snaking over the ridgeline with small square watchtowers, and nestled on the right a small vermilion-red and butter-yellow clay Forbidden City gate tower with golden tiled roofs and a tiny hutong courtyard, round clay pine trees on rolling hills at the base, the top half of the image is pure empty white, soft studio lighting, subtle clay texture, pastel palette, no shadow on background, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032965,
+   "generated_at": "2026-08-15",
+   "files": {
+    "cut.webp": 134290
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026 测试行程(封面/地形带补做,owner 08-15 反馈后)"
+  },
+  {
+   "name": "china-strip-xian",
+   "kind": "asset",
+   "prompt": "Wide horizontal diorama strip of handmade polymer clay scenery isolated on a solid pure white background: a warm loess-yellow clay plain band with, from left to right, a small pastel clay Xi'an city wall with a gate tower and crenellations, a tiny clay Bell Tower with a green tiled roof, a row of five small terracotta clay warriors standing in a pit, and a slender clay Big Wild Goose Pagoda on the right, a few round clay trees between them, the top half of the image is pure empty white, soft studio lighting, subtle clay texture, pastel palette, no shadow on background, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032995,
+   "generated_at": "2026-08-15",
+   "files": {
+    "cut.webp": 114366
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026 测试行程(封面/地形带补做,owner 08-15 反馈后)"
+  },
+  {
+   "name": "clay-bus-solo",
+   "kind": "asset",
+   "prompt": "Cute claymorphism 3D render, handmade polymer clay figurine of an orange vintage camper bus in side view driving toward the right, cream roof with tiny clay luggage stack, round happy headlight, two puffs of clay exhaust smoke behind, soft studio lighting, subtle fingerprints and clay texture, pastel palette, single isolated subject centered on a solid pure white background, no shadow, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.053105,
+   "generated_at": "2026-08-07",
+   "source_job": "clayworld.json",
+   "files": {
+    "png": 1005923,
+    "cut.png": 732595,
+    "cut.webp": 58594,
+    "md.webp": 21862
+   },
+   "transparent": true
+  },
+  {
+   "name": "clay-hero",
+   "kind": "asset",
+   "prompt": "Cute claymorphism 3D render, handmade polymer clay tabletop diorama of an American road trip: rounded clay mountains with snow caps, a chunky orange clay camper bus on a winding clay road, a small geyser puffing a clay steam cloud, round clay trees, a wavy blue clay ocean at the edge, soft studio lighting with gentle shadows, subtle fingerprints and clay texture, pastel palette of mint, peach, butter yellow and lilac, wide 16:9 composition with calm empty pastel sky in the upper half for a title, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03293,
+   "generated_at": "2026-08-07",
+   "source_job": "clay.json",
+   "files": {
+    "png": 1781441,
+    "webp": 87452
+   },
+   "transparent": false
+  },
+  {
+   "name": "clay-mock-flow",
+   "kind": "asset",
+   "prompt": "Long scrolling webpage design mockup shown as one tall vertical strip, 9:16, claymorphism travel itinerary web page on a warm cream background: (1) top banner — a large rounded-corner framed photo of a handmade polymer clay tabletop diorama with pastel clay mountains, a tiny orange clay camper bus and a puffing clay geyser, a white rounded title card overlapping its bottom-left corner holding a bold playful Chinese title 美国行 捏好了 and a small butter-yellow date pill; (2) below it a floating white pill navigation bar of eleven small round numbered buttons; (3) a bento grid of chunky rounded pastel tiles in mint green, peach, butter yellow and lilac, two columns, each tile with a big soft embossed two-digit day number, a cute polymer clay landmark figurine (clay Statue of Liberty, clay red bridge, clay round stadium, clay volcano with palm trees), a bold Chinese four-character day title, and a few small white rounded list rows with monospace times, one tile twice as wide as the others; (4) a butter-yellow budget tile with white pill table rows and a bold total line; (5) a small centered footer line. Squishy clay double shadows — soft outer shadow plus bright inner top highlight on every tile, rounded everything, subtle fingerprints and clay texture, soft studio lighting feel, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03376,
+   "generated_at": "2026-08-07",
+   "source_job": "claymock.json",
+   "files": {
+    "png": 1965240
+   },
+   "transparent": false
+  },
+  {
+   "name": "clay-mock-world",
+   "kind": "asset",
+   "prompt": "Long scrolling webpage design mockup shown as one tall vertical strip, 9:16. The ENTIRE page is one continuous edge-to-edge handmade polymer clay diorama world with NO frames, NO cards, NO visible module boundaries — sections melt into each other through terrain and color transitions only. From top to bottom as one unbroken scene: (1) a soft pastel clay sky filling the top, with a bold playful Chinese title 美国行 捏好了 floating directly in the sky as glossy 3D clay letters and a small clay date tag 09.25-10.07 hanging below it; (2) purple-and-mint clay mountains with snow caps rising from the horizon, a tiny clay New York skyline with a mint clay Statue of Liberty on a hill; (3) a winding cream clay road flowing continuously downward through the whole page, an orange clay camper bus driving along it, small numbered clay milestone pebbles 01 02 03 beside the road, and at each stop a little scene grows out of the terrain — a round clay stadium under tiny flags, a steaming clay geyser with rainbow pool, granite clay cliffs with a waterfall — each stop labeled only by floating Chinese text with soft shadow, no boxes; (4) the green valley gradually melts into warm orange desert with clay cacti and red rock arches; (5) the desert slopes into a turquoise wavy clay ocean at the bottom with a small clay volcano island puffing smoke and a clay sunrise; a few schedule times like 09:00 written as tiny soft floating text along the road, integrated into the scenery. Soft studio lighting, subtle fingerprints and clay texture, pastel palette of mint, peach, butter, lilac and turquoise, dreamy seamless flow, no browser chrome, no borders anywhere",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.034165,
+   "generated_at": "2026-08-07",
+   "source_job": "claymock2.json",
+   "files": {
+    "png": 2591262
+   },
+   "transparent": false
+  },
+  {
+   "name": "clay-prismatic",
+   "kind": "asset",
+   "prompt": "Cute claymorphism 3D render, handmade polymer clay model of Grand Prismatic hot spring, a round chunky clay pool with concentric rainbow clay rings from blue center to orange rim, two puffy white clay steam clouds on little wires, soft studio lighting, subtle fingerprints and clay texture, pastel palette, single isolated subject centered on a solid pure white background, no shadow, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.0531,
+   "generated_at": "2026-08-07",
+   "source_job": "clay.json",
+   "files": {
+    "png": 1110261,
+    "cut.png": 1060680,
+    "cut.webp": 89926,
+    "md.webp": 23790,
+    "sm.webp": 6686
+   },
+   "transparent": true
+  },
+  {
+   "name": "clay-sheet-deco",
+   "kind": "asset",
+   "prompt": "A product sheet photograph of EIGHT separate handmade polymer clay miniatures arranged in a clean 4-column by 2-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each miniature is clearly isolated and never touches another. Row 1 first: a big puffy rounded clay cloud, cream white with soft pink underside. Row 1 second: a medium chunky clay cloud, cream white with pale blue underside. Row 1 third: a small wispy three-lobe clay cloud, pure cream. Row 1 fourth: a cute pastel striped clay hot air balloon with a tiny woven basket. Row 2 first: a cluster of two chunky clay pine trees, mint and forest green with rounded tiers on a tiny grass mound. Row 2 second: a single clay palm tree with chunky curved leaves and a tan trunk on a tiny sand mound. Row 2 third: a cute clay saguaro cactus with two arms and tiny pink flower on top, on a tiny sand mound. Row 2 fourth: a clay wooden signpost with two blank rounded arrow boards pointing opposite directions on a tiny grass mound. All eight in identical cute claymorphism 3D style, soft studio lighting, subtle fingerprints and clay texture, pastel palette of mint, peach, butter yellow, lilac and turquoise, no shadows on the white background, no text, no letters, no labels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.042655,
+   "generated_at": "2026-08-08",
+   "source_job": "claydeco.json",
+   "files": {
+    "png": 1371097
+   },
+   "transparent": false
+  },
+  {
+   "name": "clay-sheet-props",
+   "kind": "asset",
+   "prompt": "A product sheet photograph of SIX separate handmade polymer clay miniatures arranged in a clean 3-column by 2-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each miniature is clearly isolated and never touches another. Row 1 left: a chunky pastel clay airplane flying with two small white clay clouds. Row 1 middle: a clay salt lake scene, a flat mirror-like pale blue clay lake with white salt crusted edges and small brown mountains behind. Row 1 right: a clay Grand Teton scene, sharp grey-blue clay peaks with snow caps reflected in a small dark blue clay lake with pine trees. Row 2 left: a clay tropical island, a small green clay island with palm trees ringed by turquoise clay water. Row 2 middle: a clay erupting volcano with a glowing orange lava crater, dark brown ridged cone and white smoke puff. Row 2 right: a clay suitcase and camera pair, a rounded tan clay suitcase with straps next to a small retro clay camera. All six in identical cute claymorphism 3D style, soft studio lighting, subtle fingerprints and clay texture, pastel palette of mint, peach, butter yellow, lilac and turquoise, no shadows on the white background, no text, no labels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.04254,
+   "generated_at": "2026-08-08",
+   "source_job": "claysheet.json",
+   "files": {
+    "png": 1561914
+   },
+   "transparent": false
+  },
+  {
+   "name": "clay-title",
+   "kind": "asset",
+   "prompt": "Glossy 3D polymer clay Chinese typography floating on a solid pure white background: two stacked lines of chunky rounded clay characters — first line 美国行 in alternating coral, butter yellow and lavender clay, second line 捏好了 in mint, pink and orange clay — and below them a small clay wooden sign hanging from two tiny ropes reading 09.25-10.07, soft studio lighting, subtle fingerprints, cute puffy letterforms, single isolated subject centered, no shadow on background",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.0532,
+   "generated_at": "2026-08-07",
+   "source_job": "clayworld.json",
+   "files": {
+    "png": 1224406,
+    "cut.png": 1134954,
+    "cut.webp": 135526,
+    "md.webp": 85526
+   },
+   "transparent": true
+  },
+  {
+   "name": "cover-hero",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel poster in gouache, 16:9 wide composition designed as a website cover: the LOWER THIRD shows a tiny layered landscape of an American road trip (winding cream road, small vintage bus, geyser steam, snow-capped dusty-teal mountains, red rocks, ocean bay on the right), and the UPPER TWO THIRDS is a vast calm sky in soft cream-to-pale-teal gradient with two small clouds and a few tiny birds, intentionally empty and quiet to hold a large page title, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, minimal cozy storybook style, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033,
+   "generated_at": "2026-08-05/06",
+   "source_job": "cover.json",
+   "files": {
+    "png": 2115498,
+    "webp": 103638
+   },
+   "transparent": false
+  },
+  {
+   "name": "glass-city",
+   "kind": "asset",
+   "prompt": "Bright airy travel photography, Manhattan skyline on a clear morning from the water, soft haze, high-key pastel light, clean minimalist composition, crisp modern travel-app aesthetic, wide 16:9, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032575,
+   "generated_at": "2026-08-07",
+   "source_job": "glass.json",
+   "files": {
+    "png": 2133849,
+    "webp": 153712
+   },
+   "transparent": false
+  },
+  {
+   "name": "glass-dawn",
+   "kind": "asset",
+   "prompt": "Bright airy travel photography, first light over a calm pacific horizon seen from a volcanic crater rim, soft peach and pale blue sky gradient, thin clouds, minimal silhouetted foreground ridge along the bottom edge, high-key pastel exposure, vast calm negative space, crisp modern travel-app aesthetic, wide 16:9, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032695,
+   "generated_at": "2026-08-08",
+   "source_job": "glass2.json",
+   "files": {
+    "png": 1473764,
+    "webp": 34554
+   },
+   "transparent": false
+  },
+  {
+   "name": "glass-hero",
+   "kind": "asset",
+   "prompt": "Bright airy travel photography, aerial view of a turquoise pacific coastline meeting soft white surf at golden morning light, high-key exposure, pastel blue sky with thin clouds, clean minimalist composition with calm negative space in the upper half, crisp modern travel-app aesthetic, wide 16:9, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032665,
+   "generated_at": "2026-08-07",
+   "source_job": "glass.json",
+   "files": {
+    "png": 1998732,
+    "webp": 138672
+   },
+   "transparent": false
+  },
+  {
+   "name": "glass-island",
+   "kind": "asset",
+   "prompt": "Bright airy travel photography, Diamond Head crater and Waikiki turquoise water on a bright clear morning from the air, high-key pastel light, clean minimalist composition, crisp modern travel-app aesthetic, wide 16:9, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032595,
+   "generated_at": "2026-08-07",
+   "source_job": "glass.json",
+   "files": {
+    "png": 2125907,
+    "webp": 158160
+   },
+   "transparent": false
+  },
+  {
+   "name": "glass-park",
+   "kind": "asset",
+   "prompt": "Bright airy travel photography, Grand Prismatic Spring from above on a clear morning, vivid turquoise and orange rings, light steam, high-key pastel light, clean minimalist composition, crisp modern travel-app aesthetic, wide 16:9, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03261,
+   "generated_at": "2026-08-07",
+   "source_job": "glass.json",
+   "files": {
+    "png": 2156973,
+    "webp": 156142
+   },
+   "transparent": false
+  },
+  {
+   "name": "hero",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel panorama, wide layered landscape of an American road trip: rolling sand-beige hills, a distant dusty-teal mountain range with snow caps, a winding cream road, small geyser steam on the left and a calm ocean horizon on the right, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, minimal cozy storybook style, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033,
+   "generated_at": "2026-08-05/06",
+   "source_job": "batch5.json",
+   "files": {
+    "png": 2694284,
+    "webp": 254576
+   },
+   "transparent": false
+  },
+  {
+   "name": "journal-sheet-photo-a",
+   "kind": "asset",
+   "prompt": "A sheet of SIX separate vintage 1970s film photographs arranged in a clean 3-column by 2-row grid on a plain pure white background, WIDE empty white gutters between every photo and a wide white margin around the grid, each photo a simple borderless rectangle, all in matching faded warm Kodachrome tones with film grain and slight vignetting. Row 1: the New York skyline from Brooklyn at dusk; the Statue of Liberty seen from a ferry deck; a baseball stadium under floodlights at night from the stands. Row 2: the white shoreline of the Great Salt Lake with mirror reflections; Old Faithful geyser mid-eruption; the Grand Teton peaks reflected in a still lake at dawn. No borders, no text, no watermark",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.04197,
+   "generated_at": "2026-08-09",
+   "source_job": "newthemes.json",
+   "files": {
+    "png": 2310693
+   },
+   "transparent": false
+  },
+  {
+   "name": "journal-sheet-photo-b",
+   "kind": "asset",
+   "prompt": "A sheet of SIX separate vintage 1970s film photographs arranged in a clean 3-column by 2-row grid on a plain pure white background, WIDE empty white gutters between every photo and a wide white margin around the grid, each photo a simple borderless rectangle, all in matching faded warm Kodachrome tones with film grain and slight vignetting. Row 1: the Golden Gate Bridge towers rising above fog; Yosemite valley from Tunnel View with El Capitan and Bridalveil Fall; a Hawaiian palm beach with turquoise water. Row 2: glowing red lava flowing over dark rock at night; Diamond Head crater seen from Waikiki beach; an airplane wing over clouds photographed through a cabin window. No borders, no text, no watermark",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.041945,
+   "generated_at": "2026-08-09",
+   "source_job": "newthemes.json",
+   "files": {
+    "png": 2395397
+   },
+   "transparent": false
+  },
+  {
+   "name": "journal-sheet-photo-c",
+   "kind": "asset",
+   "prompt": "A sheet of SIX separate vintage 1970s film photographs arranged in a clean 3-column by 2-row grid on a plain pure white background, WIDE empty white gutters between every photo and a wide white margin around the grid, each photo a simple borderless rectangle, all in matching faded warm Kodachrome tones with film grain and slight vignetting. Row 1: a night soccer match seen from the stands with floodlights over a green pitch; the white spires of the Salt Lake Temple with snow-capped mountains behind; giant sequoia trunks towering over a tiny person on a forest path. Row 2: Yosemite Tunnel View with El Capitan and Bridalveil Fall; the Lower Falls waterfall in the yellow-walled Grand Canyon of the Yellowstone; the elk antler arch in Jackson Hole town square. No borders, no text, no watermark",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033245,
+   "generated_at": "2026-08-12",
+   "source_job": "wishlist-batch.json",
+   "files": {
+    "png": 2346323
+   },
+   "transparent": false
+  },
+  {
+   "name": "journal-sheet-props",
+   "kind": "asset",
+   "prompt": "A flat-lay product sheet photograph of TWELVE separate vintage travel journal scrapbook items arranged in a clean 4-column by 3-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each item is clearly isolated and never touches another. Row 1: a strip of mustard yellow grid-pattern washi tape slightly wrinkled; a strip of faded teal striped washi tape; a strip of rust red polka-dot washi tape; a strip of plain kraft paper tape with torn ends. Row 2: a vintage USA postage stamp with the Statue of Liberty in engraved teal ink with perforated edges; a vintage postage stamp with the Golden Gate Bridge in rust red; a vintage postage stamp with a bison in olive green; a cream admission ticket stub with a red ADMIT ONE band and perforated edge. Row 3: a pale blue vintage airline boarding pass with faint printed grid; a kraft paper luggage tag with a brown string loop; a deep red wax seal with an embossed compass; two pressed dried yellow wildflowers with flat stems. Realistic paper textures, soft even lighting, no shadows on the white background, no other text than described",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.04244,
+   "generated_at": "2026-08-09",
+   "source_job": "newthemes.json",
+   "files": {
+    "png": 2126020
+   },
+   "transparent": false
+  },
+  {
+   "name": "journal-sheet-props2",
+   "kind": "asset",
+   "prompt": "A flat-lay product sheet photograph of SIX separate vintage travel journal scrapbook items arranged in a clean 3-column by 2-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each item is clearly isolated and never touches another. Row 1: a pressed dried white daisy with stem and two small leaves; a pressed dried green fern frond; a pressed dried red-orange maple leaf. Row 2: a strip of floral-print fabric washi tape with frayed woven edges; a strip of blue ticking-stripe fabric washi tape slightly wrinkled; a strip of red gingham-check fabric washi tape with torn ends. Soft even studio light, subtle paper shadows, no text, no watermark",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03317,
+   "generated_at": "2026-08-12",
+   "source_job": "wishlist-batch.json",
+   "files": {
+    "png": 1494930
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-bento",
+   "kind": "mockup",
+   "prompt": "Long scrolling webpage design mockup shown as one tall vertical strip, 9:16. The entire page is ONE traditional Japanese bento lunch box seen from directly above, filling the full width edge to edge — the page IS the box, light hinoki wood frame with soft lacquer edges, NOT floating web cards. Top section: the wooden lid partly slid open revealing the title 美国行 painted in clean black ink on the lid with a small red hanko seal stamp and the dates 09.25-10.07 branded into the wood. Below, the open bento interior divided into compartments of DIFFERENT sizes in a tight gapless grid, thin wooden dividers only: one large compartment holds a miniature New York skyline arranged like food — skyscrapers as neat onigiri rice blocks, a tiny Statue of Liberty as a wasabi-green tamago on a skewer; another compartment holds Yellowstone as a steaming ramekin of hot-spring soup with rainbow edges; another holds Yosemite as broccoli forests and a granite tofu cliff; a long thin compartment holds a shinkansen-style airplane made of fish cake; a small compartment holds Hawaii as a volcano onigiri with red tobiko lava on blue jelly sea; other compartments hold day labels written on small folded paper slips 01 02 03, chopsticks resting diagonally across, a small soy sauce bottle. Soft natural light, warm wood, cream cloth underneath, appetizing clean Japanese food photography style, muted palette of wood, cream, nori green, salmon orange, no browser chrome, no borders outside the box",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03395,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks.json",
+   "files": {
+    "png": 2374809
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-bento2",
+   "kind": "mockup",
+   "prompt": "Modern premium travel webpage design mockup in a BENTO GRID layout, desktop viewport. Clean warm white background, a tight grid of rounded-corner cards of DIFFERENT sizes with small consistent gaps, soft subtle shadows, modern clean sans-serif typography, generous breathing space. Left half: one large tall hero card filled edge-to-edge with a real golden-hour photograph of Yosemite valley granite cliffs, overlaid with the large Chinese title 美国行 in bold white and a coral button reading 开始探索. Right half, a mosaic of smaller cards: a card with a clean pale-blue USA map showing a dotted flight route from New York through Yellowstone and San Francisco to Hawaii with small coral pins; a card with a giant coral number 13 above the small word 天; a card with a big blue number 6 and the word 城市 with a faint skyline watermark; a card titled 行程 listing numbered coral dots 01 02 03 with the city names 纽约 黄石 优胜美地 and small day ranges on the right; a warm peach gradient card with a tiny camper bus illustration, the text 出发 09.25 and a coral call-to-action button; a small card with a sunrise icon and 06:45 日出. Palette: warm white, cream, pale blue, soft peach, coral red accent. Airy, premium travel app aesthetic, crisp readable text, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.042595,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks2.json",
+   "files": {
+    "png": 1980996
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-bento3",
+   "kind": "mockup",
+   "prompt": "Original premium travel webpage design mockup in a BENTO GRID layout, desktop viewport, art-directed like a set of vintage American national-park posters arranged in a tight grid — NOT a generic white travel dashboard. Deep forest green page background with subtle paper grain, rounded-corner cards of different sizes with consistent small gaps. Cards: one large card is a flat WPA-style screen-print illustration poster of Yosemite valley in terracotta, cream and dark green with the Chinese title 美国行 set in large cream retro display type and small dates 09.25-10.07; a tall card is a matching flat poster of a Yellowstone geyser erupting at dusk in mustard and rust tones; a cream card carries a huge chunky retro terracotta numeral 13 over the small word 天 with fine topographic contour lines in the background; another cream card shows a minimal US route map drawn as a single mustard line with small triangle markers and city names 纽约 黄石 优胜美地 夏威夷 in small dark green type; a narrow card styled like a vintage park entry ticket with perforated edge reading 行程 01 02 03 with day ranges; a small dark green card with a cream sunrise diagram and 06:45; a terracotta card with retro white letterspaced text 开始探索 as the only button. Muted heritage palette: deep forest green, terracotta, mustard, cream. Grainy print texture across everything, flat illustration only, no photographs, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.04269,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks3.json",
+   "files": {
+    "png": 3561506
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-candy",
+   "kind": "mockup",
+   "prompt": "Long scrolling webpage design mockup shown as one tall vertical strip, 9:16. The entire page is ONE continuous glossy candy wonderland flowing top to bottom with no frames and no cards — sections melt into each other through sugar terrain only. Top: a pastel sherbet sky with spun-sugar clouds, the title 美国行 as chunky translucent hard-candy 3D letters in different bright colors with glassy highlights, a candy-cane striped tag reading 09.25-10.07 hanging below. Flowing downward as one scene: a winding ribbon-candy road in red-and-white stripes flows down the entire page with jellybean milestone markers 01 02 03 beside it; a little gumdrop bus drives along; stops grow from the sugar landscape — a New York skyline of stacked wafer cookies and rock-candy skyscrapers with a mint lollipop Statue of Liberty, a Yellowstone geyser erupting whipped-cream steam from a caramel crater ringed by rainbow sour-belt pools, Yosemite cliffs of chocolate brittle with a marshmallow waterfall, then the road melts into a blue jelly ocean with a strawberry gumdrop volcano island dripping icing lava. Glossy hard-candy shine everywhere, saturated rainbow palette on soft pink sky, studio sweets photography lighting, playful and delicious, no browser chrome, no borders",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033685,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks.json",
+   "files": {
+    "png": 2836749
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-candy2",
+   "kind": "mockup",
+   "prompt": "Tall vertical scrolling game world map splash art, 9:16, in the style of a modern mobile hero-shooter game: chunky stylized 3D cartoon render, ultra-saturated vivid purple, magenta, cyan and sunny yellow palette, glossy toy-like plastic and candy-gloss materials, strong rim lighting, dynamic energy, heart and star confetti particles scattered through the air. The entire page is ONE continuous game world map of a USA road trip flowing top to bottom: at the top a chunky 3D game-logo title 美国行 with a thick white outline, gold bevel edges and a purple-to-magenta glow, small banner 09.25-10.07 beneath it; a winding glossy candy-striped road rolls down through the whole map connecting big round glossy level buttons numbered 01 02 03 with star slots; themed zones along the road: a neon New York of chunky cartoon skyscrapers with a cute big-eyed Statue of Liberty character waving her torch; a Yellowstone zone where a happy chunky purple bison character watches a cartoon geyser erupt rainbow water; a Yosemite zone of stylized bevel-edged granite cliffs with a glowing turquoise waterfall; at the bottom a bright blue ocean zone with a cheerful volcano island character puffing pink smoke clouds and a surfing shaka hand; a tiny orange camper van character with big headlight eyes drives along the road leaving sparkle trails. High contrast, crisp AAA mobile game art quality, dramatic depth, no browser chrome, no UI buttons",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033865,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks2.json",
+   "files": {
+    "png": 2792709
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-cover",
+   "kind": "mockup",
+   "prompt": "Website landing page UI design mockup, desktop viewport 16:9. A travel itinerary site cover screen in hand-drawn gouache illustration style: full-bleed painted American landscape panorama fills the entire viewport (calm cream-to-dusty-teal sky upper half, tiny road-trip scene along the bottom), a very large elegant Chinese serif display title of 3-5 characters centered in the sky area with a small thin eyebrow line of dates above it, and along the lower portion a bento grid menu of small paper cards, each card holding a tiny hand-drawn landmark sticker (statue of liberty, bridge, volcano, geyser) with a short Chinese label, one card twice as wide as the others, a small hand-drawn down-arrow scroll cue at bottom center, warm muted palette of terracotta #c46f4f, sand beige, dusty teal #6d9a94 and cream #f6efe3, generous whitespace, editorial refined layout, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033,
+   "generated_at": "2026-08-05/06",
+   "source_job": "mockups.json",
+   "files": {
+    "png": 2382402
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-day",
+   "kind": "mockup",
+   "prompt": "Website UI design mockup, desktop viewport 16:9, mid-page scroll state of a travel itinerary site in hand-drawn gouache illustration style on cream paper #f6efe3: top has a slim sticky navigation bar of small pill chips reading DAY 1 to DAY 11 in Chinese serif with one chip highlighted terracotta; below, a day section with a full-width soft sand-tinted header band containing a huge ghosted outline day numeral, a hand-drawn Golden Gate Bridge sticker tilted slightly, and a Chinese day title; underneath, a vertical hourly timeline running down the center-left with a dashed terracotta spine line and small round node dots, times in monospace terracotta, Chinese activity text; on the right margin a narrow column of small handwritten-style meta notes on tiny paper cards; warm muted palette of terracotta, sand beige, dusty teal and cream, editorial magazine layout with a readable text measure, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033,
+   "generated_at": "2026-08-05/06",
+   "source_job": "mockups.json",
+   "files": {
+    "png": 1929314
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-flow",
+   "kind": "mockup",
+   "prompt": "Long scrolling webpage design mockup shown as one tall vertical strip, 9:16. A travel itinerary single-page site in hand-drawn gouache illustration style, showing the full page flow from top to bottom: (1) full-viewport painted panorama cover with a large Chinese serif title in the sky, (2) a bento grid menu of small landmark sticker cards, (3) three day sections each with a tinted full-width header band, a tilted landmark sticker, and a compact vertical timeline with dashed spine and dots, separated by thin dashed dividers, (4) a budget table and small appendix cards at the bottom, (5) a painted Tiananmen gate closing card. Cream paper background, warm muted palette of terracotta, sand beige, dusty teal, cohesive editorial rhythm alternating full-bleed art bands with narrow text columns, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033,
+   "generated_at": "2026-08-05/06",
+   "source_job": "mockups.json",
+   "files": {
+    "png": 2534181
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-game2",
+   "kind": "mockup",
+   "prompt": "Tall vertical scrolling game world map, 9:16, pure AAA mobile strategy-game art style: chunky stylized 3D with hand-painted textures, bold silhouettes, saturated grass green, ocean teal, warm gold and stone grey palette, soft ambient occlusion, strong rim light, slight tilt-shift miniature depth. The page is ONE continuous adventure map of a USA road trip read top to bottom: at the top the title 美国行 as a proper game logo — chunky gold-rimmed dark blue metal letters with a red banner ribbon underneath reading 09.25-10.07 and two small crossed flags; below, a winding cobblestone road with wooden plank bridges rolls down the whole map connecting round stone-and-gold level medallions numbered 01 02 03 each with three empty gold star sockets; themed zones along the road: a chunky stylized New York island city of leaning cartoon skyscrapers with gold windows and a small heroic Statue of Liberty statue on a rock; a Yellowstone forest zone with low-poly pine trees, a steaming turquoise hot spring pool ringed in orange, and a chunky brown bison grazing; a Yosemite zone of massive grey stylized cliffs with a white waterfall pouring into a river that flows alongside the road; the road ends at a tropical ocean zone with a small volcano island, palm trees, a wooden pier and a docked ferry boat; a small orange camper van with luggage on the roof drives the road mid-map; scattered map furniture: wooden direction signs, tiny tents, gold coins on the path, a treasure chest at the final stop, drifting clouds casting soft shadows at the map edges. Crisp game-art rendering, cohesive warm daylight, no text other than the logo, dates and numbers, no browser chrome, no UI panels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.034155,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks3.json",
+   "files": {
+    "png": 3095958
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-journal",
+   "kind": "mockup",
+   "prompt": "Long scrolling webpage design mockup shown as one tall vertical strip, 9:16. The entire page is ONE continuous vintage travel journal double spread on aged cream paper, edge to edge, sections flowing into each other like a scrapbook kept during a long trip — no web cards, no module boxes. Top: the title 美国行 hand-lettered in warm brush ink with a red rubber stamp date 09.25-10.07, surrounded by a torn airmail envelope edge, red-and-blue airmail border tape, and a row of vintage USA postage stamps postmarked. Flowing downward: a hand-drawn dotted travel route in fountain pen ink winding down the whole page connecting numbered brass paper fasteners 01 02 03, tilted polaroid photos taped with washi tape showing a sepia New York skyline, a hand-tinted Yellowstone geyser, a Yosemite valley postcard; torn ticket stubs and boarding passes tucked at angles, a luggage tag with string, handwritten margin notes in pencil, small coffee cup stains, pressed flat flowers, a wax seal; near the bottom a folded map corner of Hawaii peeks out with a hula postcard and a paper hibiscus. Kraft paper, cream, faded teal, rust red and ink navy palette, soft top-down light, tactile paper fiber texture everywhere, cohesive analog collage, no browser chrome, no clean digital boxes",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033765,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks.json",
+   "files": {
+    "png": 2935538
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-odyssey",
+   "kind": "mockup",
+   "prompt": "Tall vertical webpage design, 9:16, as ONE cheerful clean 3D world in the style of Super Mario Odyssey kingdom art: simple bold rounded geometry, smooth matte surfaces with minimal texture, bright saturated but CLEAN colors — sky blue, grass green, coral red, sunny yellow — crisp soft shadows, uncluttered toy-diorama feel with plenty of open sky. NO game characters, an original small round traveler character with a yellow cap and backpack instead. Top: clear blue sky, the title 美国行 as clean rounded glossy 3D letters floating with a tiny red paper airplane circling, small tag 09.25-10.07. Below, a vertical chain of small floating kingdom islands connected by a simple dotted travel line down the page, each island a minimal rounded diorama with ONE idea: a city island of chunky rounded skyscrapers in cream and teal with a tiny yellow taxi and a simple mint liberty statue; a park island with a round turquoise hot-spring pool erupting one clean white water column and two fat pine trees; a cliff island of smooth grey stone with a single blue waterfall pouring off the edge into空 air; a beach island with a small smiling-free simple volcano, two palm trees and a tiny moored boat; the traveler character stands on the second island waving; a few puffy white clouds float between islands, tiny 01 02 03 printed subtly beside each island. Lots of empty sky between islands, clean minimal rendering, no coins, no game UI, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03391,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks5.json",
+   "files": {
+    "png": 1507153
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-splash",
+   "kind": "mockup",
+   "prompt": "Tall vertical scrolling webpage design, 9:16, the ENTIRE page is ONE continuous dynamic splash-art illustration in modern AAA mobile game KEY ART style: chunky stylized 3D with exaggerated cartoon proportions, glossy toy-like plastic materials, ultra-saturated purple, magenta, cyan and gold palette, strong colored rim light, dramatic diagonal action energy, heart-shaped and shard-shaped confetti particles, subtle motion streaks — pure splash art, absolutely NO game UI, no buttons, no level medallions, no coins. Top: the title 美国行 as chunky glossy 3D letters tumbling dynamically with sparkle trails, a small ribbon 09.25-10.07 fluttering beneath. The page flows downward as one continuous action scene: a cheerful chunky cartoon traveler girl with a yellow cap, goggles and a big backpack rides an orange camper van mid-jump over a purple hill with white cloud puffs and speed lines, a New York skyline of stylized glowing skyscrapers tilting behind her and a cute winking Statue of Liberty leaning into frame; further down the van splashes through an erupting rainbow geyser, water droplets frozen glossy in the air, while a fluffy wide-eyed purple bison sidekick gallops alongside; then the van drifts around a massive stylized granite cliff with a glowing cyan waterfall, spray flying; at the bottom the van is parked on a teal ocean beach at sunset before a cute erupting volcano island puffing pink heart-shaped smoke, the girl and the bison cheering with arms up; soft glowing numerals 01 02 03 drift faintly in the air along the journey like floating dust, barely-there; confetti everywhere, cinematic depth of field, crisp AAA splash-art rendering, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.034145,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks4.json",
+   "files": {
+    "png": 2522714
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-splash2",
+   "kind": "mockup",
+   "prompt": "Tall vertical webpage design, 9:16, as ONE 2D game splash ILLUSTRATION — flat painterly shapes with soft airbrush gradients, clean bold silhouettes, and GENEROUS negative space; airy pastel-leaning palette of lilac, cyan, pink and warm gold; only a FEW large elements, nothing dense, no photoreal 3D rendering. Top third: soft lilac sky with the title 美国行 in clean chunky 2D lettering with a simple offset shadow, small tag 09.25-10.07, two tiny paper-plane shapes and sparse heart confetti. Middle: one big dynamic scene painted flat — a cheerful girl in a yellow cap leans out of an orange camper van drawn in simple rounded 2D shapes, driving along a sweeping curved ribbon of road; behind them a MINIMAL flat-silhouette New York skyline in two tones of purple and a simple mint Statue of Liberty silhouette; large soft cloud shapes fill space calmly. Lower third: the road curves down past a single flat geyser plume in white-and-rainbow gradient, a simple grey cliff shape with one waterfall stripe, ending at a small flat volcano island on a wide calm cyan sea with a big soft sunset circle; tiny 01 02 03 written like faint chalk marks along the road. Flat 2D illustration only, crisp edges with soft gradient fills, lots of breathing room, no clutter, no game UI, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03386,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks5.json",
+   "files": {
+    "png": 1785994
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-splash3",
+   "kind": "mockup",
+   "prompt": "Tall vertical webpage splash, 9:16, painted EXACTLY in the illustration style of Supercell Brawl Stars loading-screen splash art: hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated proportions with big hands and boots, strong magenta-and-cyan rim light, glowing accents — NOT photorealistic 3D render, NOT flat vector children's book. The background is ABSTRACT: diagonal soft gradient fields of lilac, violet and pale pink, a few blurred simple shapes, scattered flat heart and triangle confetti, thin light speed-streaks, lots of soft empty space. Top: the title 美国行 painted as chunky white letters with a violet offset shadow and small paint chips flying, tag 09.25-10.07 on a small ribbon. Center, one big dynamic focal cluster on a strong diagonal: a GIANT friendly mint-green Statue of Liberty leans into frame from the left at monster scale, smiling, her huge copper hand reaching in; a small chunky traveler girl with yellow cap, goggles and backpack LEAPS across her hand toward the right, mid-air with one fist forward, holding a rolled map like a sword; her orange camper van, drawn as a cute chunky sidekick with headlight eyes, bounces in at the bottom right with luggage flying off its roof; paint-splash shards, hearts and sparkles burst around the action. Below the cluster: two SMALL floating vignette props painted in the same style with soft space around them — a tiny rainbow geyser puff with a round purple bison cub, and a tiny smoking volcano island on a cyan splash; faint painted numerals 01 02 03 drifting beside them. Generous breathing room, crisp painterly edges, saturated but harmonized, no game UI, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.034225,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks6.json",
+   "files": {
+    "png": 2101010
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-splash4",
+   "kind": "mockup",
+   "prompt": "Tall vertical webpage splash, 9:16, painted EXACTLY in the illustration style of Supercell Brawl Stars loading-screen splash art: hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated toy-like proportions, strong magenta-and-cyan rim light — NOT photorealistic 3D render, NOT flat vector. Abstract background of diagonal lilac and violet gradient fields with flat heart and shard confetti and soft speed streaks, plenty of calm empty space between elements. Reading top to bottom like a page: (1) title 美国行 as chunky white painted letters with violet offset shadow, small ribbon 09.25-10.07; (2) hero moment: a chunky traveler girl with yellow cap and big boots rides her cute orange camper van (headlight eyes, tongue-out grille) as it drifts hard around a curve of an abstract glowing ribbon road, luggage flying, sparks and hearts trailing — behind them only a SIMPLIFIED floating New York vignette: three chunky purple skyscraper silhouettes and a small mint Liberty statue on a floating rock chunk; (3) mid-page: the ribbon road loops down past a floating rock chunk where a chunky rainbow geyser erupts beside a round fluffy purple bison cub cheering; (4) bottom: the road ends at a floating volcano island chunk with two palm trees, pink smoke hearts, the van parked and the girl doing a victory pose, big soft gold sun disc behind; painted numerals 01 02 03 sit small and faint beside each stop. Crisp painterly edges, saturated harmonized violet-magenta-cyan-gold palette, generous breathing room, no game UI, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.034115,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks6.json",
+   "files": {
+    "png": 1986050
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-zelda",
+   "kind": "mockup",
+   "prompt": "Tall vertical webpage design, 9:16, as ONE continuous painterly cel-shaded open-world vista in the style of The Legend of Zelda Breath of the Wild concept art: soft watercolor-like brushwork, strong aerial perspective with hazy atmospheric distance, muted sage green, misty blue, warm gold light, gentle god rays, vast quiet landscape with tiny figures — calm, spacious, epic. NO game characters, an original small traveler girl with a backpack instead. Top: pale morning sky with drifting mist, the title 美国行 in thin elegant hand-lettered strokes with a small circular travel emblem, dates 09.25-10.07 tiny beneath. The vista flows downward: the tiny traveler stands on a grassy cliff edge with wind-blown grass in the foreground, overlooking a vast painted continent — a distant New York skyline half dissolved in golden morning haze; wide plains below with thin white geyser steam columns catching light; a deep granite valley with a silver waterfall thread; a winding pale road stitches through it all toward a far shimmering sea where a small volcano island smokes on the horizon; birds in loose brushstroke flocks, cloud shadows moving across the land; three tiny cartographic ring markers 01 02 03 sit along the road, barely visible. Painterly texture everywhere, huge sense of air and distance, most of the page is landscape and sky, no clutter, no UI, no browser chrome",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.0338,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks5.json",
+   "files": {
+    "png": 2476328
+   },
+   "transparent": false
+  },
+  {
+   "name": "mock-zine",
+   "kind": "mockup",
+   "prompt": "Long scrolling webpage design mockup shown as one tall vertical strip, 9:16, in the style of an independent art zine collage poster printed on textured paper. Asymmetric editorial composition where ONE real photograph anchors each zone and flat high-saturation solid color planes extend the space the photo left unfinished — torn paper edges, visible paper fiber, dry ink, slight risograph misprint offsets, generous breathing negative space. Top zone: a real black-and-white photograph of the New York skyline torn along its bottom edge, overlapped by a huge cobalt blue solid plane, the title 美国行 set in large clean sans-serif type placed vertically along the right edge, with 09.25-10.07 in small letterpress numerals; middle zone: a warm color photograph of a Yellowstone geyser eruption cropped hard into a tall narrow strip, its steam continued upward as a flat cream illustrated shape, a tomato red circle and thin rules carrying day numbers 01 02 03 like a printed index; lower zone: a Yosemite granite cliff photo reduced to a small square anchored on a mustard yellow plane with a single thin ink line drawing extending the ridge line; bottom: a Hawaii ocean photo strip under a torn vermilion paper wave, small type scattered sparsely. Palette: cobalt, tomato red, mustard, cream paper, black ink. Tactile, deliberate, quiet confidence, no browser chrome, no glossy digital effects",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "9:16",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.0338,
+   "generated_at": "2026-08-09",
+   "source_job": "stylemocks.json",
+   "files": {
+    "png": 2635144
+   },
+   "transparent": false
+  },
+  {
+   "name": "noir-hero",
+   "kind": "asset",
+   "prompt": "Cinematic moody night scene, wide aerial view of an American road trip route at dusk: a lone highway with headlights winding through dark mountains toward a distant glowing city skyline, deep charcoal and ink-blue palette with warm amber and gold highlights, painterly realism with subtle film grain, vast dark sky occupying the upper half with faint stars, wide 16:9 composition, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03275,
+   "generated_at": "2026-08-07",
+   "source_job": "noir.json",
+   "files": {
+    "png": 1852091,
+    "webp": 61268
+   },
+   "transparent": false
+  },
+  {
+   "name": "noir-sunrise",
+   "kind": "asset",
+   "prompt": "Cinematic moody dawn scene, Diamond Head crater rim with hikers silhouetted against the first orange band of sunrise over a dark Pacific ocean, deep charcoal and ink-blue palette warming to gold at the horizon, painterly realism with subtle film grain, wide 16:9, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032655,
+   "generated_at": "2026-08-07",
+   "source_job": "noir.json",
+   "files": {
+    "png": 1682854,
+    "webp": 51942
+   },
+   "transparent": false
+  },
+  {
+   "name": "plane",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel illustration of a vintage twin-engine propeller airliner in flight, low three-quarter view, two small puffy clouds beside it, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, clean rounded shapes, minimal cozy storybook style, thick organic silhouette, no text, no border, single isolated subject centered on a solid pure white background, no shadow",
+   "params": {
+    "background": "auto",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": null,
+   "generated_at": "2026-08-05/06",
+   "source_job": "batch7.json",
+   "files": {
+    "png": 1045262,
+    "cut.png": 771112,
+    "cut.webp": 81700,
+    "md.webp": 30730,
+    "sm.webp": 9826,
+    "lg.webp": 36438
+   },
+   "transparent": true
+  },
+  {
+   "name": "prismatic",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel illustration of Grand Prismatic Spring in Yellowstone, a round rainbow-ringed hot spring seen from a slight angle with rising steam wisps, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream with a soft rainbow ring, clean rounded shapes, minimal cozy storybook style, thick organic silhouette, no text, no border, single isolated subject centered on a solid pure white background, no shadow",
+   "params": {
+    "background": "auto",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.053,
+   "generated_at": "2026-08-05/06",
+   "source_job": "batch5.json",
+   "files": {
+    "png": 1385883,
+    "cut.png": 1306736,
+    "cut.webp": 153482,
+    "md.webp": 28234,
+    "sm.webp": 7788,
+    "lg.webp": 50888
+   },
+   "transparent": true
+  },
+  {
+   "name": "splash-hero",
+   "kind": "asset",
+   "prompt": "One connected character cluster painted in Supercell Brawl Stars splash art style — hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated proportions, magenta and cyan rim light: a GIANT friendly mint-green Statue of Liberty leaning in diagonally from the lower left, smiling warmly, her huge verdigris copper hand extended palm-up; a small chunky cartoon traveler girl with a yellow cap, goggles on the brim and a brown leather backpack LEAPS dynamically off the palm toward the upper right, one fist forward, holding a rolled tan paper map, hair flying; tucked at the lower right a cute orange camper van sidekick with big round headlight eyes and a happy grille mouth, one suitcase and a retro camera bouncing off its roof rack; a few heart and triangle confetti pieces close around the figures; everything forms ONE overlapping connected group, on a plain pure white background, no background shapes, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "2:3",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.042155,
+   "generated_at": "2026-08-09",
+   "source_job": "newthemes.json",
+   "files": {
+    "png": 2240951,
+    "cut.png": 2364100,
+    "cut.webp": 299984,
+    "md.webp": 160642
+   },
+   "transparent": true
+  },
+  {
+   "name": "splash-sheet-mascots",
+   "kind": "asset",
+   "prompt": "A product sheet of SIX separate small mascot stickers arranged in a clean 3-column by 2-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each is clearly isolated and never touches another. ALL SIX painted in the identical Supercell Brawl Stars splash art style: hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated proportions, magenta and cyan rim light, each mascot floating slightly with two or three tiny sparkles around it, no ground and no rock chunk. Row 1 first: a cheerful little New York hot dog cart with a red-and-yellow striped umbrella and big friendly round eyes. Row 1 second: a chunky golden referee whistle wrapped in a flowing black-and-gold striped team scarf. Row 1 third: a round fluffy brown bison calf with a tiny green ranger hat, smiling and waving one hoof. Row 2 first: a chunky young moose with soft antlers wearing a red knitted scarf, warm friendly smile. Row 2 second: a cheerful little San Francisco cable car in burgundy and cream with big friendly eyes and a tiny golden bell. Row 2 third: a small smiling ukulele wearing a pink flower lei, strings glinting. No shadows on the white background, no text, no labels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.042595,
+   "generated_at": "2026-08-14",
+   "source_job": "splashwish.json",
+   "files": {
+    "png": 1599946
+   },
+   "transparent": false
+  },
+  {
+   "name": "splash-sheet-nodes",
+   "kind": "asset",
+   "prompt": "A product sheet of SIX separate small floating-island vignettes arranged in a clean 3-column by 2-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each is clearly isolated and never touches another. ALL SIX painted in the identical Supercell Brawl Stars splash art style: hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated proportions, magenta and cyan rim light, each vignette a small floating rock chunk with grass or ground on top and small floating rock bits below. Row 1 first: a cheerful chunky yellow New York taxi with big round headlight eyes parked on a floating asphalt chunk with a tiny fire hydrant. Row 1 second: a chunky baseball with thick red stitching resting in a worn leather glove on a floating grass chunk with a tiny pennant flag. Row 1 third: two sharp grey-blue snowy mountain peaks with a tiny mirror lake on a floating rock chunk with pine trees. Row 2 first: a chunky Golden Gate bridge tower in bright international orange rising from a floating chunk wrapped in soft fog wisps. Row 2 second: a massive granite cliff face with a glowing cyan waterfall pouring off a floating stone chunk into empty air with mist puffs. Row 2 third: a striped surfboard standing in sand on a floating beach chunk with a tiny palm sprout and a cyan wave curl. No shadows on the white background, no text, no labels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.04275,
+   "generated_at": "2026-08-09",
+   "source_job": "splashnodes.json",
+   "files": {
+    "png": 1862809
+   },
+   "transparent": false
+  },
+  {
+   "name": "splash-sheet-nodes2",
+   "kind": "asset",
+   "prompt": "A product sheet of SIX separate small floating-island vignettes arranged in a clean 3-column by 2-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each is clearly isolated and never touches another. ALL SIX painted in the identical Supercell Brawl Stars splash art style: hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated proportions, magenta and cyan rim light, each vignette a small floating rock chunk with grass or ground on top and small floating rock bits below. Row 1 first: a chunky friendly white-and-cream jet airliner with a warm glowing cabin window strip resting on a floating night-blue cloud chunk with three tiny stars. Row 1 second: a small white temple-like building with slender cream spires standing on a floating chunk of mirror-flat white salt crust that reflects pale ice blue, a tiny snowy ridge behind it. Row 1 third: a chunky glossy black-and-white soccer ball resting on a floating green pitch chunk with crisp white chalk lines and one tiny golden floodlight mast. Row 2 first: the wide green-brown volcanic crater rim of Diamond Head on a floating rock chunk, a BIG glossy warm sun disc rising from behind the rim with thick painterly golden rays. Row 2 second: one giant rust-red sequoia trunk with a tiny arched walk-through tunnel at its base on a floating forest-floor chunk with small ferns. Row 2 third: a cozy striped magenta-and-cream hot-air balloon with a tiny wicker basket tethered to a small floating cloud puff chunk. No shadows on the white background, no text, no labels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.04296,
+   "generated_at": "2026-08-14",
+   "source_job": "splashwish.json",
+   "files": {
+    "png": 1743024
+   },
+   "transparent": false
+  },
+  {
+   "name": "splash-sheet-props2",
+   "kind": "asset",
+   "prompt": "A product sheet of SIX separate small items arranged in a clean 3-column by 2-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each is clearly isolated and never touches another. ALL SIX painted in the identical Supercell Brawl Stars splash art style: hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated proportions, magenta and cyan rim light. Row 1: a chunky cheerful cream-and-coral propeller airplane with round windows banking slightly; a chunky rounded orange tour bus with luggage strapped to its roof rack and big friendly headlights; a puffy cartoon cumulus cloud with soft lilac under-shading. Row 2: a smaller wispy stylized cloud; a pair of tiny puffy clouds; a soft glowing four-point sparkle star. No text, no watermark",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03331,
+   "generated_at": "2026-08-12",
+   "source_job": "wishlist-rest.json",
+   "files": {
+    "png": 1110110
+   },
+   "transparent": false
+  },
+  {
+   "name": "splash-sheet-strips",
+   "kind": "asset",
+   "prompt": "A product sheet of TWO separate wide horizontal silhouette banner strips stacked vertically on a plain pure white background, with a WIDE empty white gutter between them and wide white margins around them, both painted in Supercell Brawl Stars splash art style with soft airbrushed gradients inside bold clean silhouettes and chunky exaggerated proportions: the top strip a distant twilight city skyline silhouette in deep purple with tiny glowing amber windows and chunky art-deco towers; the bottom strip the Golden Gate Bridge silhouette in deep red-orange with soft fog rolling under the deck. Each strip fades out softly at its left and right ends, no text, no watermark",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032985,
+   "generated_at": "2026-08-12",
+   "source_job": "wishlist-batch.json",
+   "files": {
+    "png": 1260240
+   },
+   "transparent": false
+  },
+  {
+   "name": "splash-title",
+   "kind": "asset",
+   "prompt": "Hand-painted chunky display lettering of the three Chinese characters 美国行 in warm cream color with a thick deep-violet outline and a solid violet offset drop shadow, a few small paint chips and paint droplets flying off the strokes, in the style of Supercell Brawl Stars splash art lettering, soft airbrushed painted texture inside bold shapes, on a plain pure white background, no other elements, no watermark",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.04159,
+   "generated_at": "2026-08-09",
+   "source_job": "newthemes.json",
+   "files": {
+    "png": 1501915,
+    "cut.png": 1376282,
+    "cut.webp": 137504,
+    "md.webp": 78574
+   },
+   "transparent": true
+  },
+  {
+   "name": "splash-volcano",
+   "kind": "asset",
+   "prompt": "A small floating volcano island chunk painted in Supercell Brawl Stars splash art style — hand-painted 2.5D, airbrushed volume in bold silhouettes, magenta and cyan rim light: a brown ridged volcano cone with a glowing orange crater dripping thick stylized lava streams, puffing three pink heart-shaped smoke clouds, two chunky palm trees, a tiny cream sand beach and a cyan water splash frozen around the island base, small floating rock bits below, on a plain pure white background, no other elements, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "1:1",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.053245,
+   "generated_at": "2026-08-09",
+   "source_job": "newthemes.json",
+   "files": {
+    "png": 1087729,
+    "cut.png": 976075,
+    "cut.webp": 103520,
+    "md.webp": 85646,
+    "sm.webp": 41342
+   },
+   "transparent": true
+  },
+  {
+   "name": "strip-desert",
+   "kind": "asset",
+   "prompt": "Wide horizontal diorama strip of handmade polymer clay scenery isolated on a solid pure white background: a warm orange clay desert band with a red clay rock arch, layered mesa rocks, green clay cacti with tiny pink flowers, small tumbleweed pebbles, the top half of the image is pure empty white, soft studio lighting, subtle clay texture, pastel palette, no shadow on background, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03277,
+   "generated_at": "2026-08-07",
+   "source_job": "clayworld.json",
+   "files": {
+    "png": 1213495,
+    "cut.png": 821724,
+    "cut.webp": 108388
+   },
+   "transparent": true
+  },
+  {
+   "name": "strip-mountains",
+   "kind": "asset",
+   "prompt": "Wide horizontal diorama strip of handmade polymer clay scenery isolated on a solid pure white background: a mountain range of purple and mint clay peaks with white snow caps, and nestled on the right a tiny pastel clay New York skyline with a small mint clay Statue of Liberty, a few round clay trees on rolling hills at the base, the top half of the image is pure empty white, soft studio lighting, subtle clay texture, pastel palette, no shadow on background, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03284,
+   "generated_at": "2026-08-07",
+   "source_job": "clayworld.json",
+   "files": {
+    "png": 1225781,
+    "cut.png": 814891,
+    "cut.webp": 92828
+   },
+   "transparent": true
+  },
+  {
+   "name": "strip-ocean",
+   "kind": "asset",
+   "prompt": "Wide horizontal diorama strip of handmade polymer clay scenery isolated on a solid pure white background: a turquoise wavy clay ocean band with curling white clay wave crests, a small clay volcano island with brown ridges puffing a white smoke cloud and tiny green palm trees, a glossy butter-yellow clay sun with short ray sticks on the left, the top half of the image is pure empty white, soft studio lighting, subtle clay texture, pastel palette, no shadow on background, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032855,
+   "generated_at": "2026-08-07",
+   "source_job": "clayworld.json",
+   "files": {
+    "png": 1240747,
+    "cut.png": 934585,
+    "cut.webp": 102132
+   },
+   "transparent": true
+  },
+  {
+   "name": "tiananmen",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel illustration of the Tiananmen gate tower in Beijing with red walls, a golden double-eave roof and five arched gates, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream with soft red accent, clean rounded shapes, minimal cozy storybook style, thick organic silhouette, no text, no border, single isolated subject centered on a solid pure white background, no shadow",
+   "params": {
+    "background": "auto",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": null,
+   "generated_at": "2026-08-05/06",
+   "source_job": "batch7.json",
+   "files": {
+    "png": 1239822,
+    "cut.png": 967345,
+    "cut.webp": 117220,
+    "md.webp": 33414,
+    "sm.webp": 8960
+   },
+   "transparent": true
+  },
+  {
+   "name": "yn-cover-hero",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel poster in gouache, 16:9 wide composition designed as a website cover: the LOWER THIRD shows a tiny layered landscape of a south-west China mountain journey (a cluster of tall grey limestone karst pinnacles on the left, three slender white pagodas beside a long blue lake in the middle, a snow-capped ridge with pines on the right, a few grey-tiled sloping roofs and a small stone bridge in front), and the UPPER TWO THIRDS is a vast calm sky in a soft cream-to-pale-teal gradient with two small clouds and a few tiny birds, intentionally empty and quiet to hold a large page title, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, clean rounded shapes, minimal cozy storybook style, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033235,
+   "generated_at": "2026-08-29",
+   "files": {
+    "webp": 104472
+   },
+   "transparent": false,
+   "source_job": "trips/test-yunnan-2026/jobs.json",
+   "trip": "yunnan",
+   "note": "云南 2026(悉尼出发,英文)测试行程(插画+玻璃+手账+闪屏 四版);png 母图留在 trips/test-yunnan-2026/,未入 repo"
+  },
+  {
+   "name": "yn-glass-dawn",
+   "kind": "asset",
+   "prompt": "Bright airy travel photography, first light over a cluster of grey-tiled sloping old-town roofs with thin mist lying in the lanes and a distant snow peak catching pink light on the horizon, soft pastel dawn palette, high-key exposure, clean minimalist composition with calm negative space in the upper half, crisp modern travel-app aesthetic, wide 16:9, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032735,
+   "generated_at": "2026-08-29",
+   "files": {
+    "webp": 131496
+   },
+   "transparent": false,
+   "source_job": "trips/test-yunnan-2026/jobs.json",
+   "trip": "yunnan",
+   "note": "云南 2026(悉尼出发,英文)测试行程(插画+玻璃+手账+闪屏 四版);png 母图留在 trips/test-yunnan-2026/,未入 repo"
+  },
+  {
+   "name": "yn-glass-hero",
+   "kind": "asset",
+   "prompt": "Bright airy travel photography, aerial view of a long deep-blue highland lake lying between a high snow-streaked mountain ridge on one side and a wide plain of small whitewashed grey-tiled villages and pale stubble fields on the other, golden morning light, high-key exposure, pastel blue sky with thin clouds, clean minimalist composition with calm negative space in the upper half, crisp modern travel-app aesthetic, wide 16:9, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03282,
+   "generated_at": "2026-08-29",
+   "files": {
+    "webp": 153596
+   },
+   "transparent": false,
+   "source_job": "trips/test-yunnan-2026/jobs.json",
+   "trip": "yunnan",
+   "note": "云南 2026(悉尼出发,英文)测试行程(插画+玻璃+手账+闪屏 四版);png 母图留在 trips/test-yunnan-2026/,未入 repo"
+  },
+  {
+   "name": "yn-glass-karst",
+   "kind": "asset",
+   "prompt": "Bright airy travel photography, a wide field of tall narrow grey limestone karst pinnacles rising out of green grass and low shrubs under a very high pale blue sky, soft late-morning light, high-key exposure, clean minimalist composition with calm negative space in the upper half, crisp modern travel-app aesthetic, wide 16:9, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032715,
+   "generated_at": "2026-08-29",
+   "files": {
+    "webp": 148410
+   },
+   "transparent": false,
+   "source_job": "trips/test-yunnan-2026/jobs.json",
+   "trip": "yunnan",
+   "note": "云南 2026(悉尼出发,英文)测试行程(插画+玻璃+手账+闪屏 四版);png 母图留在 trips/test-yunnan-2026/,未入 repo"
+  },
+  {
+   "name": "yn-glass-snow",
+   "kind": "asset",
+   "prompt": "Bright airy travel photography, a long snow-capped mountain ridge above a high plateau of dark pines and a small turquoise glacier-melt pool, crisp thin cold air, pale blue sky with a few high clouds, high-key exposure, clean minimalist composition with calm negative space in the upper half, crisp modern travel-app aesthetic, wide 16:9, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032735,
+   "generated_at": "2026-08-29",
+   "files": {
+    "webp": 205876
+   },
+   "transparent": false,
+   "source_job": "trips/test-yunnan-2026/jobs.json",
+   "trip": "yunnan",
+   "note": "云南 2026(悉尼出发,英文)测试行程(插画+玻璃+手账+闪屏 四版);png 母图留在 trips/test-yunnan-2026/,未入 repo"
+  },
+  {
+   "name": "yn-illus-sheet",
+   "kind": "asset",
+   "prompt": "A sheet of NINE separate flat hand-drawn travel illustrations arranged in a clean 3-column by 3-row grid on a plain pure white background, WIDE empty white gutters between every illustration and a wide white margin around the grid, each one a single isolated subject with a thick organic silhouette, no ground line and no shadow, all sharing the same gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, clean rounded shapes, minimal cozy storybook style. Row 1: a small flock of white gulls with red beaks wheeling above a willow-fringed lake pavilion; a cluster of tall narrow grey limestone karst pinnacles with a thin path winding between them; three slender white pagodas standing in a row in front of a long snow-capped ridge. Row 2: a white-walled grey-tiled courtyard house with painted eaves and a carved screen wall; a snow-capped mountain ridge with one slim cable-car pylon and a thin cable; three terraced turquoise pools stepping down over low pale weirs with two small pines. Row 3: a cluster of grey-tiled sloping roofs above a small arched stone bridge over a narrow water channel; a square of indigo-blue tie-dyed cloth with white sunburst patterns hanging from a bamboo pole; a harbour skyline at dusk with a large white sail-shell opera house and a wide steel arch bridge. No borders, no text, no watermark",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "1:1",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.05422,
+   "generated_at": "2026-08-29",
+   "files": {
+    "png": 1731189
+   },
+   "transparent": false,
+   "source_job": "trips/test-yunnan-2026/jobs.json",
+   "trip": "yunnan",
+   "note": "云南 2026(悉尼出发,英文)测试行程(插画+玻璃+手账+闪屏 四版);png 母图留在 trips/test-yunnan-2026/,未入 repo",
+   "split_into": [
+    "yn-i-gulls",
+    "yn-i-karst",
+    "yn-i-pagodas",
+    "yn-i-baihouse",
+    "yn-i-snowridge",
+    "yn-i-pools",
+    "yn-i-roofs",
+    "yn-i-tiedye",
+    "yn-i-sydney"
+   ]
+  },
+  {
+   "name": "yn-journal-sheet",
+   "kind": "asset",
+   "prompt": "A sheet of NINE separate vintage 1970s film photographs arranged in a clean 3-column by 3-row grid on a plain pure white background, WIDE empty white gutters between every photo and a wide white margin around the grid, each photo a simple borderless rectangle, all in matching faded warm Kodachrome tones with film grain and slight vignetting. Row 1: a city park lake at dawn with white red-beaked gulls wheeling over a small red lakeside pavilion; a field of tall grey limestone pinnacles rising out of green grass under a high sky; three slender white pagodas mirrored in a still pool with a long snow ridge behind them. Row 2: a wide blue mountain lake with a weathered wooden jetty and one small fishing boat; a whitewashed courtyard farmhouse with painted eaves at the edge of a stubble field; lengths of indigo-dyed cloth hanging to dry on lines in a village yard. Row 3: a wooden boardwalk on a bare snow ridge in thin bright air above a sea of cloud; terraced turquoise pools below a snow mountain, pines at the water's edge; a narrow night lane of grey-tiled roofs with red lanterns strung above a stone water channel. No borders, no text, no watermark",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "1:1",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.05403,
+   "generated_at": "2026-08-29",
+   "files": {
+    "png": 1855339
+   },
+   "transparent": false,
+   "source_job": "trips/test-yunnan-2026/jobs.json",
+   "trip": "yunnan",
+   "note": "云南 2026(悉尼出发,英文)测试行程(插画+玻璃+手账+闪屏 四版);png 母图留在 trips/test-yunnan-2026/,未入 repo",
+   "split_into": [
+    "yn-ph-greenlake",
+    "yn-ph-karst",
+    "yn-ph-pagodas",
+    "yn-ph-erhai",
+    "yn-ph-xizhou",
+    "yn-ph-indigo",
+    "yn-ph-snowridge",
+    "yn-ph-pools",
+    "yn-ph-nightlane"
+   ]
+  },
+  {
+   "name": "yn-splash-sheet",
+   "kind": "asset",
+   "prompt": "A product sheet of NINE separate items arranged in a clean 3-column by 3-row grid on a plain pure white background, with WIDE empty white gutters between every item and a wide white margin around the whole grid so each is clearly isolated and never touches another. ALL NINE painted in the identical Supercell Brawl Stars splash art style: hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated proportions, magenta and cyan rim light. Row 1 first: a single hand-painted game title plate of thick painterly capital letters with heavy dark outlines and glossy bevelled faces, spelling exactly two centred lines of the SAME letter height, the first line reading SOUTH OF THE and the second line reading CLOUDS, with a wide empty margin around the plate and nothing else inside or over the letters. Row 1 second: a large floating rock chunk with a chunky twin-peaked snow mountain on top, dark green pines around its base and small floating rock bits below. Row 1 third: a floating grass chunk holding a small round green lake with a chunky red-roofed lakeside pavilion and three tiny white birds above it. Row 2 first: a floating rock chunk crowded with tall narrow grey limestone pinnacles and a thin winding path. Row 2 second: a floating grass chunk with three chunky slender white pagodas in a row and a strip of blue lake water along its front edge. Row 2 third: a floating chunk of grey-tiled sloping roofs with a tiny arched stone bridge and a thin stream running off the edge as a small waterfall. Row 3 first: a floating chunk of blue-white glacier ice with a slim cable-car pylon and one cable, thin mist below. Row 3 second: a floating wetland chunk of green reeds with a small wooden rowing boat and two tiny geese. Row 3 third: a floating chunk with a black-tiled open pavilion beside a still dark pool reflecting a small snow peak. No shadows on the white background, no text or letters anywhere except the two title lines in the first item, no labels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "1:1",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.05488,
+   "generated_at": "2026-08-29",
+   "files": {
+    "png": 1535622
+   },
+   "transparent": false,
+   "source_job": "trips/test-yunnan-2026/jobs.json",
+   "trip": "yunnan",
+   "note": "云南 2026(悉尼出发,英文)测试行程(插画+玻璃+手账+闪屏 四版);png 母图留在 trips/test-yunnan-2026/,未入 repo",
+   "split_into": [
+    "yn-splash-title",
+    "yn-splash-hero",
+    "yn-si-greenlake",
+    "yn-si-karst",
+    "yn-si-pagodas",
+    "yn-si-roofs",
+    "yn-si-glacier",
+    "yn-si-wetland",
+    "yn-si-dawnpool"
+   ]
+  }
+ ]
+}

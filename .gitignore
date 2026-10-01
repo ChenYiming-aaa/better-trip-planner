@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Trip working data — caches stay out; the finished showcase trip
+# (trips/hangzhou-qingdao-2026) IS tracked as a real-world demo.
+# gen/ holds the large PNG originals; the shipped assets are the webp variants.
+/geocache.json
+/trips/*/geocache.json
+/trips/*/routecache.json
+/trips/*/*.log
+/trips/*/gen/
+
+# Secrets — AMAP_KEY etc. (.env.example is the tracked placeholder, .env is not)
+.env
+**/.env
+!**/.env.example
+secrets/
+*.key
+
+# Route cache (check --live, personal generated data like geocache.json)
+**/routecache.json
+
+# macOS
+.DS_Store
+
+# themes/ — the theme system ships (code + webp/woff2/mp4 assets); keep out
+# the OpenRouter credentials gen.py reads from there and the PNG originals.
+themes/.or_key
+themes/.auth_header
+themes/.payload.json
+themes/**/*.png
+
+# Built demo site (scripts/build_site.py) — GitHub Actions builds it on push
+_site/
+
+# US portal reference chain (19 mp4, ~35 MB) is a release asset, not tracked:
+# https://github.com/skywain/trip-planner-skill/releases/tag/demo-assets-v1
+themes/assets/portal/*.mp4
