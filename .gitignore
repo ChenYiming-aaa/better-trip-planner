@@ -4,14 +4,16 @@ __pycache__/
 .venv/
 venv/
 
-# Trip working data — caches stay out; the finished showcase trip
-# (trips/hangzhou-qingdao-2026) IS tracked as a real-world demo.
-# gen/ holds the large PNG originals; the shipped assets are the webp variants.
+# Personal trip working data — anything you plan under trips/ is yours and
+# never committed. Showcase trips live under examples/ instead.
+trips/
 /geocache.json
-/trips/*/geocache.json
-/trips/*/routecache.json
-/trips/*/*.log
-/trips/*/gen/
+**/geocache.json
+**/suncache.json
+
+# Large generated originals (ImageGen PNG sources); the shipped assets
+# are the compressed webp variants, so gen/ stays out everywhere.
+**/gen/
 
 # Secrets — AMAP_KEY etc. (.env.example is the tracked placeholder, .env is not)
 .env

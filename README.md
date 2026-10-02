@@ -12,7 +12,7 @@
 
 ## 成品示例：杭州 → 青岛，5 天 4 晚
 
-[`trips/hangzhou-qingdao-2026/`](trips/hangzhou-qingdao-2026/) 是用本 skill 完整跑通的一趟真实规划（2026-10-26 至 10-30，双飞往返，老城单基地，含崂山全天与啤酒博物馆线路），交付物包括成品页、离线 KML、行前清单日历和五天全部插画。
+[`examples/hangzhou-qingdao-2026/`](examples/README.md) 是用本 skill 完整跑通的一趟真实规划（2026-10-26 至 10-30，双飞往返，老城单基地，含崂山全天与啤酒博物馆线路），同一份计划渲染了**全部七种主题**的成品页，另附离线 KML、行前清单日历和五天全部插画。
 
 **成品页封面**（水彩风格，为本次行程定制绘制，页面完全自包含、双击即开）：
 
@@ -157,8 +157,10 @@ themes/
   ART-SCHEMA.md               art.json 契约
   assets/                     图库与素材库（stock kit）
 assets/plan.example.json      计划文件 schema 模板
-examples/china-2026/          沪京西 8 天多城示例（两种主题成品页 + KML/ICS）
-trips/hangzhou-qingdao-2026/  杭州 → 青岛 5 天实战交付（成品页、插画、KML、ICS）
+examples/
+  README.md                   示例介绍：七种主题版本对照、渲染命令、已知限制
+  hangzhou-qingdao-2026/      杭州 → 青岛 5 天实战（七种主题成品页 + 插画 + KML + ICS）
+  china-2026/                 沪京西 8 天多城示例（两种主题成品页）
 docs/screenshots/             README 配图
 .env.example                  环境变量模板（.env 本体不入库）
 ```
