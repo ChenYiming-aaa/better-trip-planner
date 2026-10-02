@@ -497,9 +497,6 @@ def main():
     box-shadow:inset 0 1px 1px rgba(255,255,255,.9), 0 3px 10px -4px rgba(21,23,26,.35); }}
   .rail .raildiv {{ height:1px; margin:10px 12px 8px; flex:none;
     background:rgba(21,23,26,.12); }}
-  .rail .foot {{ margin-top:16px; padding:0 12px; font-size:10.5px; color:var(--dim);
-    line-height:2; }}
-  .rail .foot a {{ display:inline; padding:0; margin-right:8px; text-decoration:underline; }}
 
   main {{ min-width:0; padding-top:26px; }}
   .day {{ margin-bottom:76px; position:relative; }}
@@ -632,12 +629,16 @@ def main():
      heading box on its left */
   .appx .xbtn {{ position:absolute; right:0; top:-6px; }}
 
-  .js .reveal {{ opacity:0; transform:translateY(28px);
+  /* reveal slides the CONTENT, never the section itself: the section's rect
+     must stay layout-true or Chrome's anchor scroll (computed from the
+     transformed rect at click time) lands 28px past the target once the
+     reveal transition zeroes the translate mid-flight */
+  .js .reveal > * {{ opacity:0; transform:translateY(28px);
     transition:opacity .8s var(--spring), transform .8s var(--spring); }}
-  .reveal.in {{ opacity:1; transform:none; }}
+  .reveal.in > * {{ opacity:1; transform:none; }}
   section[id] {{ scroll-margin-top:20px; }}
   @media (prefers-reduced-motion:reduce) {{
-    .reveal {{ opacity:1; transform:none; transition:none; }}
+    .reveal > * {{ opacity:1; transform:none; transition:none; }}
     .bd, .pill, .cta, .rail a {{ transition:none; }}
     html {{ scroll-behavior:auto; }}
   }}
@@ -654,11 +655,6 @@ def main():
       align-items:center; }}
     .rail a span {{ display:none; }}
     .rail a b {{ font-size:12px; }}
-    .rail .foot {{ display:flex; flex:0 0 auto; align-items:center; gap:4px;
-      margin:0; padding:0; font-size:0; }}
-    .rail .foot br {{ display:none; }}
-    .rail .foot a {{ font-size:12px; min-height:36px; display:inline-flex;
-      align-items:center; padding:0 13px; margin:0; text-decoration:none; }}
     main {{ padding-top:8px; }}
     /* the chip is a grid track now, not a floater — no reserved gutter needed;
        it just takes its own column and the title wraps in the one that's left */
@@ -676,7 +672,7 @@ def main():
     .tchip, .k-anchor .tchip, .k-meal .tchip, .tag.hot, .total, .cta {{
       background:transparent !important; color:#111 !important;
       border:1px solid #111 !important; }}
-    .reveal {{ opacity:1; transform:none; }}
+    .reveal, .reveal > * {{ opacity:1; transform:none; }}
     .day {{ break-inside:avoid-page; }}
   }}
 </style>
@@ -702,11 +698,6 @@ def main():
 <div class="shell">
   <nav class="glass rail" id="rail">
     {rail}
-    <p class="foot">
-      <a href="#legs">{esc(T("sec.legs"))}</a><a href="#hotels">{esc(T("sec.hotels"))}</a><a href="#budget">{esc(T("sec.budget"))}</a>
-      <a href="#checklist">{esc(T("sec.checklist"))}</a><a href="#brief">{esc(t("brief_short"))}</a><br>
-      {esc(dates)} · {esc(meta.get("party",""))}
-    </p>
   </nav>
   <main>
     {blocks}
@@ -723,7 +714,12 @@ def main():
   if (window.chrome) document.documentElement.classList.add('lens');
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- backdrop cross-fade: whichever zone owns the middle of the screen wins ---- */
+  /* ---- backdrop cross-fade + rail scrollspy: one deterministic painter ----
+     Both used to be IntersectionObserver band watches; short appendix
+     sections (航段/住宿/预算…) never reached the band, so after an anchor
+     jump the active pill (and backdrop) stayed on the previous section.
+     "Last section whose top passed the 40% line" is exact for any section
+     height and any jump direction. */
   var layers = {{}};
   document.querySelectorAll('.bd').forEach(function (b) {{ layers[b.dataset.zone] = b; }});
   var current = null;
@@ -740,30 +736,52 @@ def main():
       if (current === z && prev && layers[prev]) layers[prev].classList.remove('on');
     }}, 1200);
   }}
-  setZone({js_str(hero_zone)});
-  var zoneSpy = new IntersectionObserver(function (es) {{
-    es.forEach(function (e) {{ if (e.isIntersecting) setZone(e.target.dataset.zone); }});
-  }}, {{ rootMargin: '-45% 0px -45% 0px' }});
-  document.querySelectorAll('[data-zone]').forEach(function (n) {{ zoneSpy.observe(n); }});
-
-  /* ---- rail scrollspy ---- */
   var links = [].slice.call(document.querySelectorAll('.rail a[data-spy]'));
-  var spy = new IntersectionObserver(function (es) {{
-    es.forEach(function (e) {{
-      if (!e.isIntersecting) return;
-      links.forEach(function (l) {{
-        l.classList.toggle('active', l.getAttribute('data-spy') === e.target.id);
-      }});
-      var act = document.querySelector('.rail a.active'), rail = document.getElementById('rail');
-      if (act && rail.scrollWidth > rail.clientWidth)
-        rail.scrollTo({{ left: act.offsetLeft - rail.clientWidth / 2 + act.offsetWidth / 2,
-                        behavior: reduce ? 'auto' : 'smooth' }});
-    }});
-  }}, {{ rootMargin: '-35% 0px -55% 0px' }});
-  links.forEach(function (l) {{
-    var t = document.getElementById(l.getAttribute('data-spy'));
-    if (t) spy.observe(t);
+  var targets = links.map(function (l) {{
+    return document.getElementById(l.getAttribute('data-spy'));
   }});
+  var rail = document.getElementById('rail');
+  /* after a rail click the target owns the highlight until the user scrolls
+     by hand: short appendix sections can't win a position comparison once
+     the next section's top also passes the line, which read as "clicked
+     住宿 and it slid back to 航段" */
+  var lock = null;
+  function unlock() {{ lock = null; spyPaint(); }}
+  addEventListener('wheel', unlock, {{ passive: true }});
+  addEventListener('touchmove', unlock, {{ passive: true }});
+  addEventListener('keydown', unlock);
+  links.forEach(function (l) {{
+    l.addEventListener('click', function () {{ lock = l.getAttribute('data-spy'); }});
+  }});
+  function spyPaint() {{
+    var line = innerHeight * 0.4;
+    var cur = 0;
+    if (lock) {{
+      for (var i = 0; i < targets.length; i++) {{
+        if (targets[i] && targets[i].id === lock) cur = i;
+      }}
+    }} else {{
+      for (var i = 0; i < targets.length; i++) {{
+        if (targets[i] && targets[i].getBoundingClientRect().top <= line) cur = i;
+      }}
+      if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2)
+        cur = targets.length - 1;
+    }}
+    links.forEach(function (l, i) {{ l.classList.toggle('active', i === cur); }});
+    setZone(targets[cur] && targets[cur].dataset.zone);
+    var act = links[cur];
+    if (act && rail.scrollWidth > rail.clientWidth)
+      rail.scrollTo({{ left: act.offsetLeft - rail.clientWidth / 2 + act.offsetWidth / 2,
+                      behavior: reduce ? 'auto' : 'smooth' }});
+  }}
+  var spyRaf = 0;
+  function onScroll() {{
+    if (spyRaf) return;
+    spyRaf = requestAnimationFrame(function () {{ spyRaf = 0; spyPaint(); }});
+  }}
+  addEventListener('scroll', onScroll, {{ passive: true }});
+  addEventListener('resize', onScroll, {{ passive: true }});
+  spyPaint();
 
   /* ---- reveal ---- */
   if (reduce) {{
@@ -814,7 +832,7 @@ EXPORT_JS_PLACEHOLDER
     html_out = html_out.replace("EXPORT_JS_PLACEHOLDER", export_js(
         theme_name(THEME), "#eef2f4",
         extra_css=(
-            ".reveal,.js .reveal{opacity:1!important;transform:none!important}"
+            ".reveal,.reveal>*,.js .reveal,.js .reveal>*{opacity:1!important;transform:none!important}"
             ".glass{background:rgba(255,255,255,.86)!important;"
             "backdrop-filter:none!important;-webkit-backdrop-filter:none!important}"
             ".pill{background:rgba(255,255,255,.82)!important;"
