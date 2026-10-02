@@ -1,295 +1,196 @@
-[English](README.md) | [简体中文](README.zh-CN.md)
+# Trip Planner Skill（中国境内版）
 
-> **Domestic-China-only edition** — this directory is the domestic-travel-only branch of
-> trip-planner-skill: destinations must be in mainland China (Hong Kong / Macao / Taiwan
-> included in the stop rule); map links are 高德/百度 only, geocoding uses the Amap API
-> (`AMAP_KEY`) with Baidu fallback (`BAIDU_MAP_AK`), flights/trains ship as Ctrip/Trip.com/
-> Qunar/12306 deep links (`flight_scan.py`), sun times come from a local NOAA solar model
-> (zero network), budgets are RMB-only (no FX), and image generation goes through
-> DashScope/SiliconFlow (the OpenRouter path was removed). **All video capability (the
-> portal theme, genvideo, any embed) has been removed** — deliverables are image-and-text
-> only. Adaptation record: [`ADAPTATION.md`](ADAPTATION.md).
-
-# Trip Planner Skill (domestic China edition)
-
-**One sentence in, a verified, hour-by-hour, bookable-as-written domestic itinerary out —
-delivered as a designed page in one of seven visual themes.** An open-format Agent Skill
-(`SKILL.md`) that runs inside the coding agent you already use — Claude Code, Codex,
-Gemini CLI, Cursor, GitHub Copilot, OpenCode, Qwen Code, Goose, Kiro, Roo Code, or any
-host that loads Agent Skills: opening hours, prices and holidays are looked up with
-tools, never guessed; every booking line ships with a link; nothing is ever booked or
-paid on your behalf.
-
-![Agent Skills: open format](https://img.shields.io/badge/Agent%20Skills-open%20format-0A7B83.svg)
 ![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB.svg)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
-![Domestic-only](https://img.shields.io/badge/scope-destinations%20in%20China-CE0000.svg)
+![scope-境内行程](https://img.shields.io/badge/scope-境内行程-CE0000.svg)
 
-## Example
+一个开放格式的 Agent Skill：跑在你正在使用的编码智能体（Claude Code、Codex、Gemini CLI、Cursor 等，任何能加载 Agent Skills 的宿主）里。你给一句旅行需求，它产出一份逐小时、信息核实过、可以直接照着订的境内行程，最终交付为一个自包含的设计版 HTML 页面。
 
-[`examples/china-2026/`](examples/) ships one complete worked example: Shanghai → Beijing
-→ Xi'an → Beijing → Shanghai, 8 days, from a domestic traveller's point of view
-(ID-card entry, 12306 real-name tickets, venue reservations), with two finished themed
-pages:
+它只做规划：查营业时间、排行程、给深链、列清单；不代订、不付款、不填个人信息。
 
-- **clay 黏土** — one continuous clay landscape with a road threading the milestone
-  stones. Render: `python3 themes/render_clay2.py examples/china-2026/china.geo.json -o china-clay.html`
-- **splash 闪屏** — a game-splash screen stretched into a scroll: floating day-islands
-  under chained sky gradients.
+适配范围与改造记录见 [ADAPTATION.md](ADAPTATION.md)。
 
-Both pages are self-contained HTML — double-click to open, zero network requests.
-`examples/china-2026/` also carries the trip's `gates.ics` (the T-14/T-7/T-3/T-1
-pre-departure ladder) and `trip.kml` (40 numbered pins for offline use in Organic Maps).
+## 成品示例：杭州 → 青岛，5 天 4 晚
 
-The plain, un-themed printable page (`scripts/render_plan.py`) is an extra, never the
-default deliverable; `themes/render_picker.py` renders a one-page style chooser linking
-every rendered edition of a trip as `<prefix>-<theme>.html`.
+[`trips/hangzhou-qingdao-2026/`](trips/hangzhou-qingdao-2026/) 是用本 skill 完整跑通的一趟真实规划（2026-10-26 至 10-30，双飞往返，老城单基地，含崂山全天与啤酒博物馆线路），交付物包括成品页、离线 KML、行前清单日历和五天全部插画。
 
-## What you get
+**成品页封面**（水彩风格，为本次行程定制绘制，页面完全自包含、双击即开）：
 
-Say *"Yunnan, 8 days in October, mid budget, nature and old towns."* The skill gives you:
+![成品页封面](docs/screenshots/cover.jpg)
 
-- **One intercity route** — 2–3 skeletons to pick from, then flight/rail deep links
-  (`flight_scan.py`: Ctrip/Trip.com/Qunar flights + Ctrip rail; there is no keyless fare
-  API in China, so prices are checked by opening the links), plus a rail-vs-fly verdict
-  per leg.
-- **An hour-level plan for every day** — hours and closure days tool-checked, reservation
-  policies (Forbidden City / Shaanxi History Museum / Mogao Caves timed real-name slots)
-  on the checklist, a tappable Amap/Baidu link on every hop.
-- **A designed page, not a wall of text** — the plan renders through one of **seven theme
-  renderers** (default **illustrated 插画版**) into one self-contained, phone-friendly
-  `trip-<theme>.html`. All seven themes are image-and-text, with offline share-image
-  buttons (save this day / save appendix / save long image; noir and glass export day
-  modules only).
-- **`plan.geo.json`, the single source of truth** — the themed page, the map links and an
-  offline KML for Organic Maps all come from this one file.
-- **Hotel shortlists per base** (dated deep links, never invented rates), an **RMB-only**
-  budget summary, and a **deadline-sorted booking checklist** (reservations / ticket
-  drops / 12306 release instants first).
-- **A pre-trip brief** — emergency numbers (110/120/119/122/12301), the national
-  weather-centre warning line, altitude-sickness guidance, holiday/makeup-workday
-  collisions, payment layering, offline-map preparation — all domestic sources.
-- **Pictures matched to what your agent can do** — a three-step ladder, checked silently
-  before styles come up: the agent's **native** image generation → a domestic **key** in
-  the environment (DashScope / SiliconFlow) → the built-in **stock kit**. The last step
-  still delivers a themed page and says so.
+**每一天是独立的一屏**：时间轴逐小时排列，右侧给出步行量、雨备和晚点剪法三类现场贴士：
 
-It does not: book, pay, hold seats, or fill in personal information. You click the links.
+![第 2 天 老城经典](docs/screenshots/day2.jpg)
 
-## Quick start
+![第 3 天 崂山全天](docs/screenshots/day3.jpg)
 
-**1. Install** — Agent-Skills hosts discover skills by directory: drop this folder into
-your skills directory (Claude Code: `~/.claude/skills/trip-planner`). Optional dependency:
-Pillow (asset pipeline); everything else is Python 3.9+ standard library.
+**每一天可展开高德路线地图**——静态地图直接烙进页面，离线可看，不泄漏任何密钥：
 
-**30-second test** — no keys, no agent, from this directory:
+![高德路线地图](docs/screenshots/map-day2.jpg)
 
-```bash
-python3 themes/render_clay2.py examples/china-2026/china.geo.json -o china-clay.html \
-  && python3 themes/qc.py china-clay.html    # a themed page + its QC (exit 0)
-```
+**行前清单**按截止日期排序，预约、购票、查证任务各自带深链与核对日期，并可导出为 `.ics` 日历：
 
-**2. Plan a trip** — one sentence to your agent. Travel requests trigger the skill on
-their own, or invoke it explicitly:
+![行前清单](docs/screenshots/checklist4.jpg)
 
-```
-/trip-planner 云南 8 天，10 月出发，中等预算，自然风光和古城，日期前后可挪 2 天
-```
+**交付前全部通过内容门禁**。以下为本仓库实际运行 `plan_lint`（内容门禁）、`qc`（页面静态质检）与 `check --live`（高德实时时距核对）的输出：
 
-The page's UI language follows the language you asked in (`"lang": "zh"|"en"`; every
-renderer accepts `--lang`). Four modes:
+![门禁实测](docs/screenshots/gates-terminal.jpg)
 
-| Mode | Trigger | What runs |
-|---|---|---|
-| **Full trip** | "帮我规划云南 8 天" | All phases: intake → brief → skeleton → transport → day plans → hotels → assemble + self-check |
-| **Single day** | "我们在杭州有一天" | Holiday/festival check + one day + self-check; skips transport and hotels |
-| **Gap fill** | "2 hours free near X" | 2–3 options within a 15-minute radius, each with walk times, map links, turn-back points |
-| **On-trip replan** | "train missed / downpour" | Rebuilds only the affected day from the downgrade tags |
+[`examples/china-2026/`](examples/) 另收一个上海 → 北京 → 西安 → 北京 → 上海的 8 天多城示例，附黏土与闪屏两种主题的成品页。
 
-**3. The designed page** — render through the theme picked at Phase 0 (default
-**illustrated** = `render_theme2.py`); a plain text page is never the deliverable:
+## 功能特性
+
+- **跨城交通深链**：`scripts/flight_scan.py` 把日期网格翻译成携程 / Trip.com / 去哪儿机票与携程火车票的直达链接。国内没有免密钥的票价接口，脚本不做任何网络请求，价格由你点开链接核对。
+- **逐小时每日计划**：营业时间、闭馆日、预约政策（分时实名预约类景区）全部用工具核实后写入，每一跳都有高德/百度地图链接。
+- **高德静态路线图**：每天的路线图以静态图片形式内嵌页面，离线可用，密钥不出现在成品文件里。
+- **`plan.geo.json` 单一事实源**：主题页面、地图链接、离线 KML、日历文件全部由这一份 JSON 生成。
+- **住宿与预算**：按片区给出酒店候选（带日期深链，不编造房价）、人民币预算汇总、按截止日排序的预订清单。
+- **行前简报**：应急号码、气象预警、假日调休、支付分层、离线地图准备等，全部境内数据源。
+- **图片三级策略（素材库优先）**：先用内置素材库选图；素材库没有合适图片且模型自身能生图，才为行程定制绘制；再不行用环境变量里的境内生图 key（阿里云百炼 / 硅基流动）。页面在任何一档下都完整交付。
+- **交付纯度**：自检与修复在后台静默完成；正文不出现内部代号、生硬措辞或能力说明，只有你真正关心的行程内容。
+
+## 工作原理
+
+`SKILL.md` 是智能体照着执行的剧本，分六个阶段：意图收集 → 行前简报 → 路线骨架 → 城际交通 → 每日计划与酒店 → 汇总自检与渲染交付。与你最多交互三次（通常两次）：补问缺失信息、从 2–3 套路线骨架里挑一套、最终交付。
+
+七条硬规则贯穿全程：绝不代订付款；价格与营业时间来自工具而非记忆；先免密钥后浏览器、绝不抓取 OTA 页面；搜索预算显式受限；估算一律标注；超过约 3 个月的营业时间必须二次核实；交付前必过对抗式自检；目的地必须在中国大陆（港澳台包含在停止规则内）。
+
+## 快速开始
+
+### 1. 安装
+
+把本目录放进你所用宿主的 skills 目录（Claude Code 为 `~/.claude/skills/trip-planner-cn`）。运行环境只需 Python 3.9+ 标准库；可选安装 Pillow 用于素材流水线（`pip install pillow`）。
+
+### 2. 三十秒验证
+
+不需要任何密钥，在本目录执行：
 
 ```bash
-python3 themes/render_<theme>.py plan.geo.json -o trip-<theme>.html   # theme2 clay2 noir2 glass2 journal zine splash
-python3 themes/qc.py trip-<theme>.html                                # exit 0 = clean; exit code = FAIL count
+python themes/render_clay2.py examples/china-2026/china.geo.json -o china-clay.html
+python themes/qc.py china-clay.html    # 退出码 0 即通过
 ```
 
-The art contract is [`themes/ART-SCHEMA.md`](themes/ART-SCHEMA.md); every field is
-optional and an empty art file must still render. Pictures resolve `--assets` → art dir →
-plan dir → `themes/assets/`.
+### 3. 规划一趟旅行
 
-**4. Pictures: a three-step ladder, best first (image-and-text only — no video step).**
+在智能体里用自然语言提需求即可，旅行类请求会自动触发本 skill：
 
-1. **Native generation** — if the agent generates images natively, use that: art painted
-   for this trip, no key to configure (same downstream `split_sheet.py` → `cutout.py` →
-   `towebp.py` → trip-manifest steps; contract in ART-SCHEMA.md).
-2. **A domestic key** — otherwise set `DASHSCOPE_API_KEY` (Alibaba DashScope Wanxiang)
-   or `SILICONFLOW_API_KEY` (SiliconFlow Kolors) in the environment; `themes/gen.py
-   --provider auto` detects it. Both are mainland-direct with domestic billing.
+```
+云南 8 天，10 月出发，中等预算，自然风光和古城，日期前后可挪 2 天
+```
 
-   ```bash
-   python3 themes/gen.py <trip>/jobs.json --outdir <trip> --manifest <trip>/manifest.<trip>.json   # --dry-run first
-   ```
+智能体会按问法选择四种工作模式之一：
 
-3. **Stock kit** — neither available: pictures come from the bundled kit and the page
-   still ships as a themed page:
-
-   ```bash
-   python3 themes/stock_art.py plan.geo.json --theme illustrated -o plan.art.json
-   python3 themes/render_theme2.py plan.geo.json --art plan.art.json \
-           --assets themes/assets/stock -o trip-illustrated.html   # --assets is REQUIRED here
-   ```
-
-   `stock_art.py` picks covers per destination and one hero per day by keyword scoring;
-   the words (cover title, per-day titles, captions) stay with the agent, and the
-   stock-kit notice is written into the page's fine print. Coverage: **illustrated**
-   complete, **clay** works; the other five themes need generated pictures. Details:
-   [`themes/assets/stock/README.md`](themes/assets/stock/README.md).
-
-Destination-bound art (covers, heroes, title stickers, terrain bands) is always generated
-for the trip; generic props (tape, seals, tickets, clouds) are shared.
-
-## How it works
-
-**Pipeline.** `SKILL.md` is the script the agent follows: Phase 0 intake (ask only what
-is missing, one message) → Phase 1 pre-trip brief (emergency numbers, the national
-weather warning line, holiday/makeup API, weather, money layering) → Phase 2 route
-skeleton → checkpoint → Phase 3 transport (`scripts/flight_scan.py`: flight/rail deep
-links) → Phase 4 per-city day plans (parallel city subagents, fixed search budgets) →
-Phase 5 hotels → Phase 6 assembly, adversarial self-check, delivery. At most three
-interactions, usually two.
-
-**One file, one source of truth.** `plan.geo.json` is written once and read by
-everything: `scripts/route_tools.py` (`geocode` · `check` · `links --write` · `kml` ·
-`sun`) builds the map links and the KML from its `stops`; `scripts/render_plan.py` renders
-the plain HTML; every theme renderer reads the same file plus its `art.json`. Schema
-template: [`assets/plan.example.json`](assets/plan.example.json) — copy it, fill the
-PLACEHOLDERs, render.
-
-**Hard rules** (distilled from [`SKILL.md`](SKILL.md) and `references/`):
-
-1. Never book, pay, hold, or fill in personal data — links and checklists only.
-2. Prices and hours come from tools, never memory; an uncheckable price is written
-   "—, check the link".
-3. Keyless first, browser second; never curl OTAs or airline sites.
-4. Search budgets are explicit, in every subagent's prompt.
-5. Estimates are labelled: transport durations ship as `(est.)` ranges unless verified.
-6. Beyond ~3 months nobody publishes that day's hours — verify the seasonal pattern,
-   stamp "as of {date}", and put a re-check row on the checklist.
-7. The plan passes its self-check before delivery: closure scan, chain arithmetic,
-   last-entry times, walking totals.
-8. **Destinations must be in mainland China**; international itineraries are out of scope.
-
-**Data sources** — mainland-direct and keyless-first; prices are for comparison, the deep
-links in the plan are the source of truth
-([`references/data-sources.md`](references/data-sources.md)):
-
-| Source | Used for | Notes |
+| 模式 | 触发示例 | 执行内容 |
 |---|---|---|
-| Amap restapi (`AMAP_KEY`) | venue coordinates (geocode, first pick) | GCJ02 auto-converted to WGS84; free key |
-| Baidu geocoding v3 (`BAIDU_MAP_AK`) | geocode fallback | same conversion, automatic |
-| Amap/Baidu web deep links | per-hop navigation | amap default, H5 opens the app |
-| 12306 / Ctrip / Qunar / Trip.com | flight & rail deep links | `flight_scan.py`; fares checked by opening the link |
-| timor.tech + State Council calendar | public holidays & makeup workdays | community API — verify against official notices |
-| Open-Meteo | date-matched weather & climate normals | first call may take ~10 s |
-| NMC nmc.cn / 12379 | warnings & hazard seasons | orange/red warning = stop-the-pipeline line |
-| Local NOAA solar model | sunrise/sunset/civil dawn | zero network, the only sun path in this edition |
+| 整趟旅行 | 帮我规划云南 8 天 | 全部六个阶段 |
+| 单日规划 | 我们在杭州有一天 | 节假日检查 + 单日计划 + 自检 |
+| 空档填充 | 我在 X 附近有 2 小时空 | 15 分钟半径内 2–3 个选项 |
+| 临场重排 | 高铁没赶上 / 下暴雨了 | 只重建受影响的那一天 |
 
-## Compatibility
+### 4. 渲染成品页
 
-- **A format, not a product integration.** An Agent Skill — one `SKILL.md` script plus
-  `references/`, `scripts/` and `themes/`. Any host that loads Agent Skills can run it;
-  the scripts are Python 3.9+ standard library.
-- **What a host needs.** A shell with Python 3.9+, plus web search/fetch tools (the
-  brief, day-plan and hotel phases verify online). Nice to have: subagents (Phase 4),
-  browser tooling, native image generation (else a domestic key, else the bundled stock
-  kit — the page is themed either way).
-- **Any model.** The skill is instructions plus scripts; the model in your host does the
-  executing.
+计划定稿后，用 Phase 0 选定的主题渲染（默认插画版）：
 
-## Repository layout
+```bash
+python themes/render_theme2.py plan.geo.json --art plan.art.json -o trip-illustrated.html
+python themes/qc.py trip-illustrated.html
+```
+
+七种主题任选：`theme2`（插画）、`clay2`（黏土）、`noir2`（黑白）、`glass2`（玻璃）、`journal`（手记）、`zine`（杂志）、`splash`（闪屏）。`themes/render_picker.py` 可生成一页风格选择页，链接某趟行程的全部已渲染版本。
+
+## 配置说明
+
+所有密钥均为可选；不配置任何密钥也能完成规划与渲染，只是相应能力降级。
+
+| 环境变量 | 作用 | 缺失时的行为 |
+|---|---|---|
+| `AMAP_KEY` | 高德 Web 服务 key：坐标解析（`geocode`）、实时时距（`check --live`）、周边 POI（`poi`）、每日静态路线图 | 静态地图在页面中隐藏，坐标手工填写，时距用估算值；`geocode`/`poi` 不可用 |
+| `BAIDU_MAP_AK` | 百度地理编码回退 | 跳过回退 |
+| `DASHSCOPE_API_KEY` / `SILICONFLOW_API_KEY` | 境内生图（阿里云百炼通义万相 / 硅基流动 Kolors），`themes/gen.py --provider auto` 自动检测 | 图片走原生能力或素材库 |
+| `TRIP_MAP_PROVIDER` | 深链服务商，`amap`（默认）或 `baidu`，均为免密钥 | 用默认高德 |
+
+**申请高德 key**：在高德开放平台（lbs.amap.com）注册并实名认证后创建应用，key 类型选「Web 服务」，个人开发者免费额度充足。拿到 key 后任选其一：
+
+- 在 skill 根目录建一个 `.env` 文件（可参照 `.env.example`）写入 `AMAP_KEY=你的key`，脚本会自动读取；
+- 或写入系统环境变量。`.env` 已被 `.gitignore` 排除，不会进入版本库。
+
+## 命令行工具
+
+`scripts/route_tools.py` 统一处理计划文件（用法均为 `python scripts/route_tools.py <子命令> <plan.json> [参数]`）：
+
+| 子命令 | 功能 |
+|---|---|
+| `geocode` | 高德/百度解析 stop 坐标并写回（缓存于 `geocache.json`） |
+| `check` | 逐跳直线距离与时长核对；`--live` 用高德驾车/公交实时时距替换估算值 |
+| `links --write` | 为每一跳生成并回写高德/百度深链，拒绝可疑行并输出汇总 |
+| `kml` | 导出 Organic Maps 可用的离线 KML |
+| `sun` | 本地 NOAA 天文模型计算每日日出日落与民用晨光（零网络） |
+| `ics` | 从预订清单生成带提醒的日历文件 |
+| `poi` | 高德周边 POI 搜索（关键词、半径、条数可调），结果坐标可直接贴回计划 |
+
+其他脚本：
+
+```bash
+python scripts/flight_scan.py --from 杭州 --to 青岛 --depart 2026-10-26 --nights 4   # 城际交通深链网格
+python scripts/plan_lint.py plan.geo.json --strict    # 渲染前内容门禁，退出码即 FAIL 条数
+python themes/qc.py trip-illustrated.html             # 页面静态质检：离线契约、无 JS 降级、链接卫生
+```
+
+## 仓库结构
 
 ```
-README.md  README.zh-CN.md    this page, English and Chinese
-THIRD-PARTY-NOTICES.md        full licences for the bundled font & icons (Caveat OFL, Lucide ISC)
-SKILL.md                      the script: phases, hard rules, quick modes (domestic gate at Phase 0)
-ADAPTATION.md                 adaptation record: restricted-resource list, replacements, the domestic-only conversion log
-references/
-  data-sources.md             domestic data sources + URL recipes, with fallback chains
-  scheduling.md               dwell times, buffers, day types, traps, verification checklist
-  navigation.md               Amap/Baidu links, hop-row format, verify-vs-estimate policy
-  output-template.md          city-block hand-off format + final deliverable structure
-  phase-0-intake.md           Phase 0: core/optional facts, destination gate, intake message, prefs, picture-capability check
-  phase-1-brief.md            Phase 1: emergency card, warning line, health line, holidays, hazard seasons, exit criteria
-  phase-3-legs.md             Phase 3: flight/rail/self-drive sources and fields, exit criteria
-  phase-4-days.md             Phase 4: city-agent contract, six steps per city, route_tools order, exit criteria
-  phase-6-assemble.md         Phase 6: assembly, adversarial self-check, delivery, themed-render flow, exit criteria
-  cover-titles.md             bilingual poetic cover-title library + cliché blacklist
-  themes.md                   the theme manual: seven themes, adding one, defect checklist
+SKILL.md                      剧本：六个阶段、硬规则、四种模式（境内门禁在 Phase 0）
+ADAPTATION.md                 境内适配记录：受限资源清单、替换对照、改造日志
+references/                   十一份阶段细则（数据源、排程、导航、输出模板、各阶段判据等）
 scripts/
-  flight_scan.py              flight/rail deep-link generator (keyless, zero-network; Ctrip/Trip.com/Qunar + Ctrip rail)
-  route_tools.py              geocode → distance check → Amap/Baidu links → KML → gates .ics → sun (local model)
-  plan_lint.py                content gate before rendering (--strict exit code = FAIL count)
-  render_plan.py              plan JSON → self-contained printable HTML
+  flight_scan.py              机票/火车票深链生成器（免密钥、零网络）
+  route_tools.py              geocode · check · links · kml · sun · ics · poi
+  plan_lint.py                渲染前内容门禁
+  render_plan.py              朴素可打印 HTML（备用，非默认交付物）
 themes/
-  README.md                   what is here, three commands, where pictures come from
-  render_theme2.py …          seven renderers: theme2(illustrated)· clay2 · noir2 · glass2 · journal · zine · splash
-  render_picker.py            the style-chooser page (links <prefix>-<theme>.html)
-  theme_common.py             shared helpers, i18n, offline share-image engine
-  qc.py  xprobe.sh  xt.sh     static QC · headless export probes
-  gen.py                      domestic image fallback (DashScope Wanxiang / SiliconFlow Kolors)
-  stock_art.py                no generator, no key: assemble art.json's picture side from the stock kit
-  towebp.py cutout.py split_sheet.py build_manifest.py
-                              asset pipeline (png→webp, cut-outs, sheet splitting, manifest)
-  ART-SCHEMA.md               the art.json contract (the only copy)
-  assets/                     the picture library: webp assets, Caveat font, manifest.json
-    stock/                    the stock kit: region covers + generic/landmark cut-outs, index.json, README.md
-assets/plan.example.json      schema template (domestic sample data) — copy, fill PLACEHOLDERs, render
-examples/
-  README.md                   the china-2026 example: two themes, render commands, KML/ICS
-  china-2026/                 <plan>.geo.json + <plan>.art.json + two themed pages + gates.ics + trip.kml
+  render_theme2.py 等         七个主题渲染器 + 风格选择页
+  theme_common.py             共享工具、多语言、离线分享图引擎、高德静态地图
+  qc.py                       页面静态质检
+  gen.py                      境内生图（百炼 / 硅基流动）
+  stock_art.py                素材库选图，拼装 art.json
+  towebp.py cutout.py 等      素材流水线
+  ART-SCHEMA.md               art.json 契约
+  assets/                     图库与素材库（stock kit）
+assets/plan.example.json      计划文件 schema 模板
+examples/china-2026/          沪京西 8 天多城示例（两种主题成品页 + KML/ICS）
+trips/hangzhou-qingdao-2026/  杭州 → 青岛 5 天实战交付（成品页、插画、KML、ICS）
+docs/screenshots/             README 配图
+.env.example                  环境变量模板（.env 本体不入库）
 ```
 
-## Verification
+## 数据来源
 
-- **Static QC** — `themes/qc.py page.html` checks the offline contract (no network, no
-  external requests), no-JS survival, print, focus order and link hygiene; exit code =
-  FAIL count.
-- **Byte-identical regression** — the example pages re-render byte for byte with the
-  commands in [`examples/README.md`](examples/README.md).
-- **Export probes** — `themes/xprobe.sh` / `xt.sh` drive headless Chrome to click the
-  page's real share button and rasterise the output, so export defects are seen, not
-  assumed.
-- **Content gate** — `scripts/plan_lint.py --strict`: brief cards present and ordered, no
-  placeholder text, the self-check line, a stop and a `sun --write` string on every day;
-  exit code = FAIL count.
+境内直连、免密钥优先；页面中的深链是价格与票务的真源，脚本输出用于交叉核对。明细与回落链见 [references/data-sources.md](references/data-sources.md)。
 
-## Status & limitations
+| 数据源 | 用途 |
+|---|---|
+| 高德 restapi（`AMAP_KEY`，免费） | 坐标解析、实时时距、周边 POI、静态路线图 |
+| 百度地理编码（`BAIDU_MAP_AK`） | 坐标解析回退 |
+| 高德/百度网页深链 | 每一跳导航（免密钥） |
+| 12306 / 携程 / 去哪儿 / Trip.com | 机票与火车票深链 |
+| timor.tech + 国务院放假安排 | 法定节假日与调休 |
+| Open-Meteo | 对应日期天气 |
+| 中央气象台 nmc.cn / 12379 | 气象预警（橙红色预警为行程停止线） |
+| 本地 NOAA 天文模型 | 日出日落（零网络） |
 
-**Requirements.** Python 3.9+; standard library only, plus optional Pillow (asset
-pipeline). Rendering any theme with the bundled library or stock kit needs no keys.
+## 限制与非目标
 
-**Limitations & non-goals.**
+- 仅支持境内行程，目的地门禁在 Phase 0；境外数据源与入口已整体移除。
+- 仅图文交付，不含任何视频能力。
+- 不追踪延误、不改签；价格会变，每个数字都带核对日期。
+- 不代订、不付款、不填写个人信息。
 
-- **Domestic itineraries only.** The destination gate sits at Phase 0 (Hong Kong / Macao /
-  Taiwan included in the stop rule); international sources and entry points were removed
-  outright.
-- **Image-and-text deliverables only.** No video generation, embedding or display of any
-  kind.
-- **Not real-time.** It plans; it does not track delays or rebook.
-- **Prices move.** Every number carries an as-of date — that is the point.
+## 致谢
 
-## Credits
+- [Caveat](https://fonts.google.com/specimen/Caveat)（SIL OFL 1.1）与 [Lucide](https://lucide.dev/)（ISC），许可证全文见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
+- 高德开放平台、百度地图开放平台、Open-Meteo、timor.tech。
+- 图片生成：阿里云百炼通义万相、硅基流动 Kolors。
 
-- [Caveat](https://fonts.google.com/specimen/Caveat) (SIL Open Font License 1.1) — the
-  handwriting webfont embedded in the journal theme (`themes/assets/caveat-vf.woff2`).
-- [Lucide](https://lucide.dev/) (ISC) — the icon sprite in `themes/lucide-icons.json`.
-  Full licences: [`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md).
-- Amap Open Platform / Baidu Maps Open Platform — geocoding and navigation deep links
-  (user-supplied free keys).
-- Open-Meteo, timor.tech — weather and holiday data.
-- Image generation: Alibaba DashScope Wanxiang / SiliconFlow Kolors (mainland-direct).
+## 许可证
 
-## Licence
-
-MIT — see [LICENSE](LICENSE).
+MIT，见 [LICENSE](LICENSE)。
