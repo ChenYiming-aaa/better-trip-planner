@@ -97,7 +97,9 @@ contract; this is the field guide.
 
 ### glass 玻璃 — `render_glass2.py`
 - Paradigm: **Liquid Glass** — frosted glass panes floating over a fixed world of
-  photographs that cross-fade by zone (IntersectionObserver zone spy).
+  photographs that cross-fade by zone (one deterministic scroll-position painter
+  drives both the zone fade and the rail scrollspy; rail clicks lock the target until
+  a real user scroll — see §5 items 12-13).
 - Voice/shape: capsules (it is an app), the focus ring is itself a pane of glass;
   glass rail → floating dock on mobile. Recipe: low blur (8–10px) high saturate,
   directional inset specular stack, `feImage` displacement lens (Chromium only,
@@ -181,11 +183,22 @@ add every new theme to its `THEMES` list or the chooser silently falls behind.
    word used ONLY for `<title>` and export filenames on a zh page; `kick_en` takes
    that job on an en page), `home`, `end`, and for every day `theme` (4
    chars) / `en` / `mark`. Titles are per theme in practice — put `zh/en/sub/credit`
-   under `themes.<theme>.cover`.
+   under `themes.<theme>.cover` **for every theme you render**: a theme whose
+   `cover.zh` is empty falls back to the theme's own name（glass 一度把「玻璃」两个字
+   当封面大字印出来，2026-10-02）——theme words are shell vocabulary, never trip copy.
 2. Per theme, pick pictures — **reuse first**: `themes/assets/` 通用件（tape、
    seal、ticket、flora、通用交通/场景件）lists what any trip may use.
    Place-bound assets never cross trips（各行程资产以行程名前缀隔离）。Note the index's merged rows
    (`name-a/b/c`, `name-*(N)`) — expand before deciding something is missing.
+   Each theme reads its **own art vocabulary**（illustrated/clay 的 days，journal/zine
+   的 photo/poster，noir/glass 的 plates，splash 的 palette/fx）——fill from that
+   theme's block in ART-SCHEMA.md, never assume the illustrated schema mirrors; when
+   one trip is rendered in several themes, derive every theme's block from one stem
+   set in a small build script instead of hand-copying JSON
+   （`examples/hangzhou-qingdao-2026/build_theme_art.py` is the working pattern）.
+   **One image per slot**: two visible slots showing the same picture reads as a
+   defect（journal 的笔记栏海报曾直接复用当日拍立得，2026-10-02）——poster/photo/plate
+   各取不同素材，素材库不够就换一张，交付前可对成品里的内嵌 data URI 做哈希去重验证。
 3. Generate only what is missing — with the agent's **own native image generation if
    it has one (no key; same specs/prompts, then the same split/cutout/webp/manifest
    steps — ART-SCHEMA.md §Generator choice)**, otherwise `python3 themes/gen.py <trip>/jobs.json --outdir
@@ -251,11 +264,13 @@ python3 themes/stock_art.py plan.geo.json --theme illustrated -o plan.art.json
   `cover.credit`.
 - **Coverage today**: **illustrated** (the default) is complete; **clay** works — its
   terrain bands come from the built-in neutral SVG kit (`ridge|plain|coast|forest|lake|
-  desert`) plus generic clay props. The other five themes (noir, glass, journal, zine,
-  splash) need generated pictures for their plates / photos / islands —
-  if the user asks for one of them in stock mode, say so and offer illustrated instead;
-  rendering them anyway gives a page with empty picture slots. Stock packs for the
-  remaining styles are future work.
+  desert`) plus generic clay props. **journal / zine** also render from the stock kit
+  now（photo/poster/kodak 印刷槽位——hangzhou-qingdao journal 的五天海报与 shanghai-2026
+  zine 整页都是纯素材库页，2026-10-02）. **splash** is partial（天空色板链可用，浮岛
+  贴纸缺失时封面中央留空——接受或补生成）. **noir / glass** still need trip-generated
+  pictures for their plates — if the user asks for one of those two in stock mode, say
+  so and offer illustrated instead; rendering them anyway gives a page with empty
+  picture slots. Stock packs for the remaining gaps are future work.
 - Everything else is unchanged: render, `qc.py` exit 0, probe and **look** at the PNG
   (§6). A stock page is a real themed page and gets the same verification.
 
@@ -270,7 +285,12 @@ python3 themes/stock_art.py plan.geo.json --theme illustrated -o plan.art.json
    theme can make (clay's mini-road, noir's hop-band dissolve).
 2. Owner's bar for every theme: modules blend into one another (no "box next to
    box"), the main picture is the page's background rather than a framed painting,
-   and the theme carries pictures — pure-text designs are retired.
+   and the theme carries pictures — pure-text designs are retired. One **interaction
+   language per theme**: every expandable/clickable element（贴士胶囊、地图折叠、
+   附录折叠、分享按钮……）shares the same affordances — caret that flips with state,
+   hover lift, press squeeze, open animation, `:focus-visible` ring — audited as one
+   list, not per widget（clay 的一次审查意见正是"所有点击展开的交互做得不好"，散件各写
+   各的所致，2026-10-02）.
 3. Start from the shortest live renderer; `from theme_common import …` gives you
    `esc/et/ic/sprite`, `data_uri`, `day_embed_url`, `dist_km`, `load_plan`,
    `short_dates`, `Art/load_art/add_art_arg`, `export_prefix`, `export_js`, and the
@@ -329,6 +349,13 @@ python3 themes/stock_art.py plan.geo.json --theme illustrated -o plan.art.json
      is a `STRINGS` key.
   Content is never translated: plan text, art copy and `sun` are printed as written
   (`sun` parsers accept 天亮 and dawn — `route_tools.py sun --write --lang en`).
+- **Adding a UI string = touching every renderer, in the same change.** A new `T()`
+  key goes into `STRINGS`; a new `t()` key goes into **all seven** renderers' `L`
+  tables. Grep the key across `themes/*.py` before closing the change and render all
+  seven themes once — the map-fold string `route_map` was added to five themes only
+  and `render_zine`/`render_splash` died with `KeyError: 'route_map'` on their next
+  run (2026-10-02). A key that only some themes use is fine, but then it is that
+  theme's local `L` key, not a shared one.
 - **Adding a language `xx`**: add `STRINGS["xx"]` (every key of `zh`, including
   `week` and `html_lang`), `THEME_NAMES["xx"]`, a `BRIEF_TITLES_XX` and its branch in
   `brief_titles()`, `SUN_DAWN["xx"]` in `route_tools.py`, then an `"xx"` column in each
@@ -415,6 +442,29 @@ images never `loading=lazy`; itinerary grids never `grid-auto-flow:dense`.
     `brief_titles` override). Add
     the key to both dicts (canonical order: output-template.md §Brief templates) before
     any plan uses it.
+12. **Scrollspy by IntersectionObserver band misses short sections** — a
+    `rootMargin: '-35% 0px -55% 0px'` watch only fires for sections tall enough to
+    reach the band; the appendix sections（航段/住宿/预算）are shorter, so after an
+    anchor jump the active pill (and zone backdrop) stayed on the last tall section —
+    users read it as "clicked 住宿 and it slid back to 航段" while the page never moved
+    (glass, 2026-10-02). Use the deterministic painter instead: active = the last
+    target whose top passed the 40 % line (bottom-of-page forces the last target), and
+    a rail click **locks** its target until a real user scroll（wheel/touchmove/
+    keydown）unlocks — programmatic smooth scrolling must not unlock it. Same painter
+    drives `setZone`, replacing the zone observer (fixed `.bd` layers are always
+    intersecting and made every IO batch re-enter the zone race).
+13. **Never put the reveal transform on an anchor target.** Chrome computes an anchor
+    destination from the element's *transformed* rect at click time; a
+    `.reveal{transform:translateY(28px)}` on the section itself makes every long jump
+    land 28 px past the target once the reveal zeroes the translate mid-flight
+    (glass, 2026-10-02). Reveal the children（`.reveal > *`）and keep the section rect
+    layout-true; keep `scroll-margin-top` on `section[id]`; the export `extra_css` and
+    print reset must force `.reveal > *` too, not just `.reveal`.
+14. **Dead attributes from a replaced embed strategy** — journal kept a `data-src`
+    copy of every map image next to the inline `<img>` after the iframe-lazy era
+    ended, silently doubling each map's weight. When an embed/loads strategy changes,
+    grep the renderer for the old attributes (`data-src`, `data-on`) and delete them
+    with the old code path.
 
 ## 6. Verification discipline
 
@@ -472,6 +522,16 @@ images never `loading=lazy`; itinerary grids never `grid-auto-flow:dense`.
   same live first screen, so check the tail there with a module probe on the last
   block (noir `module '.appx'`, glass `module '#checklist'` / `'#brief'` — the
   selectors are the page's own `data-x-for` values).
+- **Anchor-nav changes get a jump matrix, not a spot check.** One manual click proves
+  nothing: the glass scrollspy bug reproduced only in some viewport/direction
+  combinations（同一处点击，530px 视口全对、900px 视口高亮漂到下一节）. For any change
+  to a rail/TOC/scrollspy/backdrop-zone: drive the real page headless
+  (Playwright) — every viewport you ship × every origin × every target — click the
+  rail link, wait out the smooth scroll, then assert **two** things: the target's
+  `rect.top` ≈ its `scroll-margin`, and the active rail link is the target; finish
+  with one wheel-after-click check that the lock releases and manual scrolling
+  follows position again. 34 combinations caught everything a single click missed
+  (2026-10-02).
 - **Headless viewport floor**: macOS headless Chrome will not shrink `innerWidth`
   below ≈500 no matter what `--window-size` says — `--window-size=390,844`
   lays the page out at 500 px and screenshots its left 390 px, which looks exactly
