@@ -1,0 +1,71 @@
+{
+ "schema": 1,
+ "_note": "示例行程美术配置（示例数据，坐标/票价以现场为准）",
+ "cover": {
+  "kick": "山城行",
+  "kick_en": "",
+  "credit": "「轻舟已过万重山」——李白"
+ },
+ "end": {
+  "line": "重庆，江湖路远，后会有期。"
+ },
+ "days": {
+  "2026-11-05": {
+   "theme": "夜色初见",
+   "mark": "洪崖洞亮灯"
+  },
+  "2026-11-06": {
+   "theme": "魔幻交通",
+   "mark": "穿楼与过江"
+  },
+  "2026-11-07": {
+   "theme": "古镇茶事",
+   "mark": "南山夜全景"
+  },
+  "2026-11-08": {
+   "theme": "都市收尾",
+   "mark": "观音桥补货"
+  }
+ },
+ "brief_titles": {},
+ "themes": {
+  "splash": {
+   "cover": {
+    "zh": "山城霓虹",
+    "sub": "洪崖洞 · 轻轨穿楼 · 长江索道 · 磁器口 · 南山夜景"
+   },
+   "hero": {
+    "palette": "neon",
+    "sides": [
+     "balloon",
+     "star"
+    ]
+   },
+   "appendix": {
+    "palette": "homebound"
+   },
+   "days": {
+    "2026-11-05": {
+     "palette": "neon"
+    },
+    "2026-11-06": {
+     "palette": "dusk",
+     "fx": "sun"
+    },
+    "2026-11-07": {
+     "palette": "alpine",
+     "fx": "halo-teal"
+    },
+    "2026-11-08": {
+     "palette": "sunrise",
+     "fx": "sunrise"
+    }
+   }
+  }
+ },
+ "_stock": {
+  "generated": "2026-10-02",
+  "theme": "splash",
+  "assets": "themes/assets/stock"
+ }
+}

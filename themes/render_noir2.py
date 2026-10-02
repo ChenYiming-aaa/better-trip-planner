@@ -732,7 +732,11 @@ def main():
         if (cr.bottom < 0 || cr.top > vh) return;
         var th = o.t.offsetHeight || 1;
         var textTop = o.m.getBoundingClientRect().top + o.pad;
-        var p = ss((t30 + th - textTop) / th);
+        // glide over ~1.9 title-heights of scroll (one height felt like a
+        // snap), double-smoothstepped so both the departure and the parking
+        // land with near-zero velocity — the move reads as one fluid dolly
+        var p = ss((t30 + th * 1.9 - textTop) / (th * 1.9));
+        p = p * p * (3 - 2 * p);
         var sc = 1 - 0.45 * p;
         var dx = Math.max(0, innerWidth - o.t.offsetWidth * sc) * p;
         o.t.style.transform = 'translate3d(' + dx.toFixed(1) + 'px,0,0) scale(' + sc.toFixed(4) + ')';
@@ -742,7 +746,9 @@ def main():
 
   function tick() {{
     target = scrollY;
-    smooth += (target - smooth) * (reduce ? 1 : 0.16);
+    // gentler chase factor: the frame-to-frame glide (backgrounds AND title)
+    // settles like a damped camera crane instead of a tightened follow focus
+    smooth += (target - smooth) * (reduce ? 1 : 0.11);
     if (Math.abs(target - smooth) < 0.4) smooth = target;
     paint();
     raf = Math.abs(target - smooth) > 0.4 ? requestAnimationFrame(tick) : 0;

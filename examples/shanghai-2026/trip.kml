@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+<name>上海周末 3 天 · 梧桐区漫步志</name>
+<Folder><name>Day 1 2026-11-13 — 移动日 · 外滩亮灯时</name>
+<Placemark><name>1. 虹桥火车站</name><Point><coordinates>121.315570,31.195930,0</coordinates></Point></Placemark>
+<Placemark><name>2. 酒店·静安寺</name><Point><coordinates>121.440710,31.225380,0</coordinates></Point></Placemark>
+<Placemark><name>3. 愚园路</name><Point><coordinates>121.430910,31.222560,0</coordinates></Point></Placemark>
+<Placemark><name>4. 上海博物馆</name><Point><coordinates>121.470950,31.230170,0</coordinates></Point></Placemark>
+<Placemark><name>5. 南京路步行街</name><Point><coordinates>121.474970,31.237930,0</coordinates></Point></Placemark>
+<Placemark><name>6. 外滩</name><Point><coordinates>121.487650,31.235500,0</coordinates></Point></Placemark>
+<Placemark><name>Day 1 route</name><Style><LineStyle><color>ff0000ff</color><width>3</width></LineStyle></Style><LineString><coordinates>121.315570,31.195930,0 121.440710,31.225380,0 121.430910,31.222560,0 121.470950,31.230170,0 121.474970,31.237930,0 121.487650,31.235500,0</coordinates></LineString></Placemark>
+</Folder>
+<Folder><name>Day 2 2026-11-14 — 梧桐区 City Walk</name>
+<Placemark><name>1. 酒店·静安寺</name><Point><coordinates>121.440710,31.225380,0</coordinates></Point></Placemark>
+<Placemark><name>2. 武康路</name><Point><coordinates>121.436010,31.211120,0</coordinates></Point></Placemark>
+<Placemark><name>3. 安福路</name><Point><coordinates>121.439500,31.215990,0</coordinates></Point></Placemark>
+<Placemark><name>4. 永康路</name><Point><coordinates>121.452040,31.212290,0</coordinates></Point></Placemark>
+<Placemark><name>5. 思南公馆</name><Point><coordinates>121.464410,31.216430,0</coordinates></Point></Placemark>
+<Placemark><name>6. 田子坊</name><Point><coordinates>121.464110,31.210120,0</coordinates></Point></Placemark>
+<Placemark><name>Day 2 route</name><Style><LineStyle><color>ffff0000</color><width>3</width></LineStyle></Style><LineString><coordinates>121.440710,31.225380,0 121.436010,31.211120,0 121.439500,31.215990,0 121.452040,31.212290,0 121.464410,31.216430,0 121.464110,31.210120,0</coordinates></LineString></Placemark>
+</Folder>
+<Folder><name>Day 3 2026-11-15 — 移动日 · 园林与河岸</name>
+<Placemark><name>1. 酒店·静安寺</name><Point><coordinates>121.440710,31.225380,0</coordinates></Point></Placemark>
+<Placemark><name>2. 豫园</name><Point><coordinates>121.488020,31.229700,0</coordinates></Point></Placemark>
+<Placemark><name>3. 苏州河</name><Point><coordinates>121.484330,31.245680,0</coordinates></Point></Placemark>
+<Placemark><name>4. 1933老场坊</name><Point><coordinates>121.487410,31.256530,0</coordinates></Point></Placemark>
+<Placemark><name>5. 虹桥火车站</name><Point><coordinates>121.315570,31.195930,0</coordinates></Point></Placemark>
+<Placemark><name>Day 3 route</name><Style><LineStyle><color>ff00aa00</color><width>3</width></LineStyle></Style><LineString><coordinates>121.440710,31.225380,0 121.488020,31.229700,0 121.484330,31.245680,0 121.487410,31.256530,0 121.315570,31.195930,0</coordinates></LineString></Placemark>
+</Folder>
+</Document></kml>

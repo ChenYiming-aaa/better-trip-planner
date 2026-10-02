@@ -992,7 +992,7 @@ def render_pocket(day, i):
     embed = day_embed_url(day)
     if not (links or embed):
         return ""
-    emb = (f'<div class="m-embed" data-src="{esc(embed)}" data-on="1">'
+    emb = (f'<div class="m-embed" data-on="1">'
            f'<img class="map-img" src="{esc(embed)}" alt="{esc(t("map_title"))}"></div>'
            if embed else "")
     stubs = f'<div class="stubs">{"".join(links)}</div>' if links else ""

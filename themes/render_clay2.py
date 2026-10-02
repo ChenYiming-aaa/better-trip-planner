@@ -724,8 +724,14 @@ def main():
   html {{ scroll-behavior:smooth; }}
   html {{ background:#6fbdbd; }}
   body {{ color:var(--ink);
-    font-family:"PingFang SC","Hiragino Sans GB","Arial Rounded MT Bold",system-ui,sans-serif;
+    font-family:"Varela Round","Quicksand","YouYuan","幼圆","Yuanti SC","STYuanti",
+      "MiSans","HarmonyOS Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
     background:transparent; overflow-x:clip; }}
+  h1, h2, h3, .sky .title, .rn-num, .npill summary, .npill.solo,
+  .mapfold summary, details.sub summary, .total {{
+    font-family:"Varela Round","Quicksand","YouYuan","幼圆","Yuanti SC","STYuanti",
+      "MiSans","HarmonyOS Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+  }}
   /* every chapter paints its own slice; --from/--to are chained so the seams
      between chapters are the same colour — the page reads as one landscape */
   .chap {{ position:relative; z-index:1; padding:0 0 40px;
@@ -853,19 +859,49 @@ def main():
 
   .pills {{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }}
   .npill {{ font-size:11.5px; font-weight:700; }}
+  /* every expandable shares one tactile language: hover lifts the pill off the
+     clay, pressing squeezes it in, and a little caret flips as it opens */
   .npill summary, .npill.solo {{ list-style:none; cursor:pointer; display:inline-flex;
     align-items:center; gap:6px; background:rgba(255,255,255,.85); border-radius:999px;
     padding:6px 14px; box-shadow:inset 0 1px 3px rgba(255,255,255,.9),
-      0 4px 8px rgba(74,68,88,.1); }}
+      0 4px 8px rgba(74,68,88,.1);
+    transition:translate .18s cubic-bezier(.2,.9,.3,1.3), box-shadow .18s ease,
+      background .18s ease; }}
   .npill summary::-webkit-details-marker {{ display:none; }}
+  .npill summary:hover, .npill.solo:hover, .mapfold summary:hover,
+  details.sub summary:hover {{ translate:0 -2px; background:#fff;
+    box-shadow:inset 0 1px 3px rgba(255,255,255,.9), 0 7px 14px rgba(74,68,88,.16); }}
+  .npill summary:active, .npill.solo:active, .mapfold summary:active,
+  details.sub summary:active {{ translate:0 1px;
+    box-shadow:inset 0 1px 3px rgba(255,255,255,.9), 0 2px 4px rgba(74,68,88,.12); }}
+  .npill summary:focus-visible, .npill.solo:focus-visible,
+  .mapfold summary:focus-visible, details.sub summary:focus-visible {{
+    outline:3px solid var(--hot-ink); outline-offset:2px; }}
   .npill p {{ background:rgba(255,255,255,.85); border-radius:18px; padding:10px 14px;
     margin-top:6px; font-size:12px; font-weight:400; line-height:1.7; }}
   .mapfold {{ flex-basis:100%; font-size:11.5px; font-weight:700; }}
   .mapfold summary {{ list-style:none; cursor:pointer; display:inline-flex; gap:6px;
     align-items:center; background:rgba(255,255,255,.85); border-radius:999px;
-    padding:6px 14px; box-shadow:0 4px 8px rgba(74,68,88,.1); }}
+    padding:6px 14px; box-shadow:0 4px 8px rgba(74,68,88,.1);
+    transition:translate .18s cubic-bezier(.2,.9,.3,1.3), box-shadow .18s ease,
+      background .18s ease; }}
   .mapfold summary::-webkit-details-marker {{ display:none; }}
-  .map-embed {{ margin-top:10px; border-radius:22px; overflow:hidden; }}
+  /* the shared pinch-caret: a tiny pressed notch that flips when open */
+  .npill summary::after, .mapfold summary::after, details.sub summary::after {{
+    content:""; flex:none; width:6px; height:6px; margin-left:1px;
+    border-right:2.2px solid currentColor; border-bottom:2.2px solid currentColor;
+    rotate:45deg; translate:0 -2px; opacity:.5;
+    transition:rotate .22s cubic-bezier(.2,.9,.3,1.4), translate .22s ease, opacity .22s ease; }}
+  .npill[open] > summary::after, .mapfold[open] > summary::after,
+  details.sub[open] > summary::after {{ rotate:225deg; translate:0 1px; opacity:.85; }}
+  /* content pops in with a soft clay squish instead of snapping open */
+  @keyframes claysquish {{ from {{ opacity:0; translate:0 -7px; scale:.985; }}
+    to {{ opacity:1; translate:0 0; scale:1; }} }}
+  .npill[open] > p, .mapfold[open] > .map-embed, .mapfold[open] > .map-ph,
+  details.sub[open] > p, details.sub[open] > ul, details.sub[open] > ol {{
+    animation:claysquish .3s cubic-bezier(.2,.9,.3,1.15) both; }}
+  .map-embed {{ margin-top:10px; border-radius:22px; overflow:hidden;
+    box-shadow:0 6px 14px rgba(74,68,88,.12); }}
   .map-embed iframe {{ display:block; width:100%; height:300px; border:0; }}
   .map-embed .map-img {{ display:block; width:100%; height:auto; border:0; }}
   .map-ph {{ padding:16px; font-size:12px; color:var(--dim); text-align:center;
@@ -941,8 +977,11 @@ def main():
     box-shadow:0 8px 16px rgba(196,61,40,.3); }}
   details.sub {{ margin-top:8px; font-size:13px; }}
   details.sub summary {{ cursor:pointer; font-weight:800; list-style:none;
+    display:inline-flex; align-items:center; gap:6px;
     background:rgba(255,255,255,.75); border-radius:16px; padding:8px 14px;
-    box-shadow:0 3px 8px rgba(74,68,88,.08); }}
+    box-shadow:0 3px 8px rgba(74,68,88,.08);
+    transition:translate .18s cubic-bezier(.2,.9,.3,1.3), box-shadow .18s ease,
+      background .18s ease; }}
   details.sub summary::-webkit-details-marker {{ display:none; }}
   details.sub p, details.sub ul, details.sub ol {{ padding:8px 12px 4px 18px;
     line-height:1.85; }}

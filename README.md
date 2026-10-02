@@ -36,7 +36,7 @@
 
 ![门禁实测](docs/screenshots/gates-terminal.jpg)
 
-[`examples/china-2026/`](examples/) 另收一个上海 → 北京 → 西安 → 北京 → 上海的 8 天多城示例，附黏土与闪屏两种主题的成品页。
+[`examples/china-2026/`](examples/) 与 [`examples/chongqing-2026/`](examples/)、[`examples/shanghai-2026/`](examples/) 另收三个示例：沪京西 8 天多城（黏土/闪屏双主题），以及分别为主题示例定制的重庆 4 天（闪屏版 × 山城霓虹夜景）与上海周末 3 天（杂志版 × 梧桐区漫步）——说明主题与行程气质的搭配思路，详见 [`examples/README.md`](examples/README.md)。
 
 ## 功能特性
 
@@ -160,6 +160,8 @@ assets/plan.example.json      计划文件 schema 模板
 examples/
   README.md                   示例介绍：七种主题版本对照、渲染命令、已知限制
   hangzhou-qingdao-2026/      杭州 → 青岛 5 天实战（七种主题成品页 + 插画 + KML + ICS）
+  chongqing-2026/             重庆 4 天（splash 闪屏版主题示例：山城霓虹）
+  shanghai-2026/              上海周末 3 天（zine 杂志版主题示例：梧桐区漫步）
   china-2026/                 沪京西 8 天多城示例（两种主题成品页）
 docs/screenshots/             README 配图
 .env.example                  环境变量模板（.env 本体不入库）

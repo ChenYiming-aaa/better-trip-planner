@@ -380,6 +380,16 @@ def main():
         f'<a href="#d{i}" data-spy="d{i}"><b>{i:02d}</b>'
         f'<span>{esc(art.day_theme(d.get("date", ""), d.get("city", "")))}</span></a>'
         for i, d in enumerate(days, 1))
+    # the appendix is part of the journey too: flights, hotels, budget,
+    # checklist and brief each get a rail entry with full scrollspy treatment
+    rail += '<div class="raildiv" role="separator"></div>' + "".join(
+        f'<a href="#{sid}" data-spy="{sid}">{ic(ick)}<span>{esc(lab)}</span></a>'
+        for sid, ick, lab in (
+            ("legs", "plane", T("sec.legs")),
+            ("hotels", "hotel", T("sec.hotels")),
+            ("budget", "wallet", T("sec.budget")),
+            ("checklist", "checklist", T("sec.checklist")),
+            ("brief", "book", T("sec.brief"))))
 
     html_out = f"""<!doctype html>
 <html lang="{T("html_lang")}">
@@ -485,6 +495,8 @@ def main():
   .rail a b {{ font-size:10.5px; font-family:ui-monospace,Menlo,monospace; }}
   .rail a.active {{ background:rgba(255,255,255,.82); color:var(--ink); font-weight:600;
     box-shadow:inset 0 1px 1px rgba(255,255,255,.9), 0 3px 10px -4px rgba(21,23,26,.35); }}
+  .rail .raildiv {{ height:1px; margin:10px 12px 8px; flex:none;
+    background:rgba(21,23,26,.12); }}
   .rail .foot {{ margin-top:16px; padding:0 12px; font-size:10.5px; color:var(--dim);
     line-height:2; }}
   .rail .foot a {{ display:inline; padding:0; margin-right:8px; text-decoration:underline; }}
@@ -542,13 +554,30 @@ def main():
     transition:transform .25s var(--spring), background .2s ease; }}
   .pill:hover {{ transform:scale(1.05); background:rgba(255,255,255,.56); }}
   summary.pill:active {{ transform:scale(.95); }}
-  .pillfold summary {{ cursor:pointer; }}
+  .pillfold summary, .mapfold summary {{ cursor:pointer; }}
   .pillfold summary::-webkit-details-marker {{ display:none; }}
   .pillfold p {{ font-size:12.5px; color:var(--dim); line-height:1.85; padding:10px 8px 2px;
     max-width:56em; }}
   .pillfold.wide {{ flex-basis:100%; }}
   .mapfold {{ flex-basis:100%; }}
   .mapfold summary::-webkit-details-marker {{ display:none; }}
+  /* every expandable gets a glass caret that flips open, a hover lift and a
+     soft entrance for its content — no silent snap-opens */
+  .pillfold summary, .mapfold summary {{ position:relative; }}
+  .pillfold summary::after, .mapfold summary::after {{ content:""; flex:none;
+    width:7px; height:7px; margin-left:8px; display:inline-block;
+    border-right:1.75px solid currentColor; border-bottom:1.75px solid currentColor;
+    transform:rotate(45deg) translateY(-2px); opacity:.45;
+    transition:transform .3s var(--spring), opacity .3s ease; }}
+  .pillfold[open] > summary::after, .mapfold[open] > summary::after {{
+    transform:rotate(225deg) translateY(-1px); opacity:.85; }}
+  .pillfold summary:focus-visible, .mapfold summary:focus-visible {{
+    outline:2px solid var(--ink); outline-offset:2px; border-radius:999px; }}
+  @keyframes glassdrop {{ from {{ opacity:0; transform:translateY(-8px); }}
+    to {{ opacity:1; transform:translateY(0); }} }}
+  .pillfold[open] > p, .mapfold[open] > .map-embed, .mapfold[open] > .map-ph {{
+    animation:glassdrop .38s var(--spring) both; }}
+  .rail a .ic {{ width:15px; height:15px; align-self:center; flex:none; opacity:.75; }}
   .map-embed {{ margin-top:12px; border-radius:24px; overflow:hidden;
     border:1px solid rgba(255,255,255,.65);
     box-shadow:inset 0 1px 1px rgba(255,255,255,.6), 0 10px 28px -14px rgba(21,23,26,.4); }}
@@ -615,6 +644,7 @@ def main():
 
   @media (max-width:900px) {{
     .shell {{ grid-template-columns:1fr; gap:0; padding:0 14px 60px; }}
+    .rail .raildiv {{ display:none; }}
     /* the rail becomes a floating glass dock — one capsule, no glass-on-glass */
     .rail {{ position:fixed; left:10px; right:10px; bottom:10px; top:auto; z-index:40;
       max-height:none; display:flex; gap:4px; overflow-x:auto; overflow-y:hidden;

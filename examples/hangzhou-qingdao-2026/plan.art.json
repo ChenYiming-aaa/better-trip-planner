@@ -211,6 +211,10 @@
     "2026-10-28": 3,
     "2026-10-29": 4,
     "2026-10-30": 5
+   },
+   "cover": {
+    "zh": "碧海苍梧",
+    "en": "QINGDAO"
    }
   },
   "journal": {
@@ -225,19 +229,65 @@
    },
    "days": {
     "2026-10-26": {
-     "photo": "day1-cross"
+     "photo": "day1-cross",
+     "poster": {
+      "stem": "stock-luggage",
+      "line": "落地即出发",
+      "alt": "旅行箱插画海报"
+     }
     },
     "2026-10-27": {
-     "photo": "day2-oldtown"
+     "photo": "day2-oldtown",
+     "poster": {
+      "stem": "stock-old-town-square",
+      "line": "红瓦绿树，老城漫步",
+      "alt": "老城广场插画海报"
+     },
+     "photos2": [
+      {
+       "stem": "stock-cafe",
+       "en": "coffee break, old town",
+       "alt": "老城咖啡馆"
+      }
+     ]
     },
     "2026-10-28": {
-     "photo": "day3-laoshan"
+     "photo": "day3-laoshan",
+     "poster": {
+      "stem": "stock-cable-car",
+      "line": "山海之间",
+      "alt": "索道登山插画海报"
+     },
+     "photos2": [
+      {
+       "stem": "stock-mountain-lake",
+       "en": "Laoshan, above the clouds",
+       "alt": "崂山湖光"
+      }
+     ]
     },
     "2026-10-29": {
-     "photo": "day4-beer-sail"
+     "photo": "day4-beer-sail",
+     "poster": {
+      "stem": "stock-ferry",
+      "line": "麦芽与白帆",
+      "alt": "港口渡轮插画海报"
+     },
+     "photos2": [
+      {
+       "stem": "stock-harbour",
+       "en": "sails & malt",
+       "alt": "港口帆船"
+      }
+     ]
     },
     "2026-10-30": {
-     "photo": "day5-morning"
+     "photo": "day5-morning",
+     "poster": {
+      "stem": "stock-lighthouse",
+      "line": "晨光起航",
+      "alt": "清晨灯塔插画海报"
+     }
     }
    }
   },

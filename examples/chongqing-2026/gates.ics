@@ -1,0 +1,141 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//trip-planner//trip-gates//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:重庆 4 天 · 山城霓虹穿越 — booking gates
+BEGIN:VEVENT
+UID:trip-d9202d0d66@trip-planner
+DTSTAMP:20261002T130944Z
+SEQUENCE:0
+DTSTART:20261022T090000
+DTEND:20261022T100000
+SUMMARY:往返机票出票并核对时刻
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前两周（20
+ 26-10-22 前）\nDO: 本页时间线按约 09:15/16:20 起飞预估，出
+ 票后微调\nLINK: https://flights.ctrip.com/online/list/oneway-hgh-ckg?d
+ epdate=2026-11-05
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 往返机票出票并核对时刻
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 往返机票出票并核对时刻
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-d41136255e@trip-planner
+DTSTAMP:20261002T130944Z
+SEQUENCE:0
+DTSTART:20261022T090000
+DTEND:20261022T100000
+SUMMARY:酒店预订（解放碑/较场口，可免费取消档位）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前两周（20
+ 26-10-22 前）\nDO: 在在线平台搜「较场口地铁站」，选 9.0 
+ 分以上中档酒店
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 酒店预订（解放碑/较场口，可免费取消
+ 档位）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 酒店预订（解放碑/较场口，可免费取消档位
+ ）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-0ffeff6ff2@trip-planner
+DTSTAMP:20261002T130944Z
+SEQUENCE:0
+DTSTART:20261029T090000
+DTEND:20261029T100000
+SUMMARY:身份证原件全员确认（值机/景区实名同一证件）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前一周（20
+ 26-10-29 前）\nDO: 长江索道、南山一棵树均实名购票
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 身份证原件全员确认（值机/景区实名同
+ 一证件）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 身份证原件全员确认（值机/景区实名同一证
+ 件）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-ae7322ea6f@trip-planner
+DTSTAMP:20261002T130944Z
+SEQUENCE:0
+DTSTART:20261029T090000
+DTEND:20261029T100000
+SUMMARY:健康自备药确认（肠胃药/感冒药/创可贴/个人处方
+ 药——火锅与坡坎行程按 health 卡）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前一周（20
+ 26-10-29 前）\nDO: 计划不下处方；就近三甲医院见 brief.emer
+ gency
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 健康自备药确认（肠胃药/感冒药/创可贴
+ /个人处方药——火锅与坡坎行程按 health 卡）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 健康自备药确认（肠胃药/感冒药/创可贴/个
+ 人处方药——火锅与坡坎行程按 health 卡）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-4a9dfbdf7e@trip-planner
+DTSTAMP:20261002T130944Z
+SEQUENCE:0
+DTSTART:20261102T090000
+DTEND:20261102T100000
+SUMMARY:长江索道/南山一棵树线上购票
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前 3 天（20
+ 26-11-02 前）\nDO: 周末票量紧，提前锁时段
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 长江索道/南山一棵树线上购票
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 长江索道/南山一棵树线上购票
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-8588e0bab7@trip-planner
+DTSTAMP:20261002T130944Z
+SEQUENCE:0
+DTSTART:20261104T090000
+DTEND:20261104T100000
+SUMMARY:轻装：防滑鞋（山城坡坎多）+ 雨伞（11 月多夜雨
+ ）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前 1 天（20
+ 26-11-04 前）\nDO: 白象居、山城步道地面湿滑
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 轻装：防滑鞋（山城坡坎多）+ 雨伞（11 
+ 月多夜雨）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 轻装：防滑鞋（山城坡坎多）+ 雨伞（11 月
+ 多夜雨）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

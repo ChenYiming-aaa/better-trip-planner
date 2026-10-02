@@ -1,0 +1,527 @@
+{
+ "trip": "上海周末 3 天 · 梧桐区漫步志",
+ "lang": "zh",
+ "tz": "Asia/Shanghai",
+ "prefs": {
+  "theme": "zine",
+  "pictures": "stock",
+  "travel_style": "public",
+  "lodging": "酒店 · 中档可退改（静安寺/愚园路一带，2 晚不换酒店）",
+  "scenery": [
+   "city"
+  ],
+  "pace": 3,
+  "budget": "mid",
+  "notes": "出发地杭州 · 2 成人 · 周五晚高峰前抵达（11-13 周五 → 11-15 周日）"
+ },
+ "meta": {
+  "dates": "2026-11-13 → 2026-11-15",
+  "party": "2 成人（默认，可改）",
+  "route": "杭州 → 上海 → 杭州（往返高铁，单基地静安寺 2 晚）",
+  "budget_total": "≈ ¥1,300-1,800/人（含高铁）",
+  "generated": "2026-10-02"
+ },
+ "decisions": [
+  "往返高铁而非飞机：杭州东—上海虹桥 40 分钟直达市中心，比飞行全程快 1 小时（12306 时刻表，2026-10-02 查证）",
+  "住宿锚定静安寺/愚园路：2/7/14 号线三线交汇，梧桐区步行即达，两个整天各覆盖一条 city walk 主线",
+  "周六梧桐区、周日园林河岸：把「下午茶+洋房」留给氛围最强的周六，周日错峰上午进豫园",
+  "上博与豫园都需线上预约/购票，行程按预约时段倒排"
+ ],
+ "checklist": [
+  {
+   "item": "身份证原件全员确认（12306 刷证进站/上博豫园预约同一证件）",
+   "deadline": "出发前一周（2026-11-06 前）",
+   "note": "12306 与景区预约实名绑定"
+  },
+  {
+   "item": "健康自备药确认（创可贴/常备肠胃药/个人处方药——5 km 步行行程按 health 卡）",
+   "deadline": "出发前一周（2026-11-06 前）",
+   "note": "计划不下处方；就近三甲医院见 brief.emergency"
+  },
+  {
+   "item": "高铁票开售即购（12306 15 天预售）",
+   "deadline": "出发前两周（2026-10-30 前）",
+   "note": "周五早高峰班次紧张",
+   "link": "https://kyfw.12306.cn/otn/leftTicket/init?linkTypeId=2&leftTicketDTO.train_date=2026-11-13&leftTicketDTO.from_station=HGH&leftTicketDTO.to_station=AOH&purpose_codes=ADULT",
+   "link_text": "12306 查票"
+  },
+  {
+   "item": "酒店预订（静安寺/愚园路，可免费取消档位）",
+   "deadline": "出发前两周（2026-10-30 前）",
+   "note": "在在线平台搜「静安寺地铁站」，选 9.0 分以上中档酒店"
+  },
+  {
+   "item": "上博/豫园预约",
+   "deadline": "出发前 3 天（2026-11-10 前）",
+   "note": "上博公众号提前 7 天放号；豫园同时购门票"
+  },
+  {
+   "item": "轻装：舒适步行鞋（两天均 5 km 上下）+ 相机备用电池",
+   "deadline": "出发前 1 天（2026-11-12 前）",
+   "note": "city walk 日拍摄量大"
+  }
+ ],
+ "legs": [
+  {
+   "type": "train",
+   "date": "2026-11-13",
+   "carrier": "G 字头多班可选（12306 购票）",
+   "from": "杭州东站",
+   "to": "上海虹桥站",
+   "dep": "约 08:30 发车（以 12306 为准）",
+   "arr": "约 09:10 抵达（以 12306 为准）",
+   "price": "二等座 ¥73（以 12306 为准）",
+   "bags": "高铁随身行李免托运，充电宝 ≤100 Wh",
+   "link": "https://kyfw.12306.cn/otn/leftTicket/init?linkTypeId=2&leftTicketDTO.train_date=2026-11-13&leftTicketDTO.from_station=HGH&leftTicketDTO.to_station=AOH&purpose_codes=ADULT"
+  },
+  {
+   "type": "train",
+   "date": "2026-11-15",
+   "carrier": "G 字头多班可选（12306 购票）",
+   "from": "上海虹桥站",
+   "to": "杭州东站",
+   "dep": "约 17:30 发车（以 12306 为准）",
+   "arr": "约 18:15 抵达（以 12306 为准）",
+   "price": "二等座 ¥73（以 12306 为准）",
+   "bags": "同去程",
+   "link": "https://kyfw.12306.cn/otn/leftTicket/init?linkTypeId=2&leftTicketDTO.train_date=2026-11-15&leftTicketDTO.from_station=AOH&leftTicketDTO.to_station=HGH&purpose_codes=ADULT"
+  }
+ ],
+ "hotels": [
+  {
+   "base": "上海 2 晚（入住 2026-11-13 → 退房 2026-11-15）",
+   "area": "静安寺/愚园路一带（梧桐区北缘）",
+   "why": "轨道 2/7/14 号线三线交汇 · 愚园路 city walk 出门即达 · 2 号线直连虹桥站与南京路",
+   "options": [
+    {
+     "name": "亚朵/全季等中档连锁（静安寺地铁站一带，以平台实搜为准）",
+     "band": "¥450-650/晚档位（以在线平台实时价为准）"
+    },
+    {
+     "name": "愚园路沿街设计型民宿/精品酒店",
+     "band": "¥550-800/晚档位（以在线平台实时价为准）"
+    }
+   ]
+  }
+ ],
+ "budget": [
+  {
+   "cat": "往返高铁（2 人）",
+   "per_person": "¥146",
+   "note": "二等座 ¥73 × 2 程，票价以 12306 为准"
+  },
+  {
+   "cat": "住宿 2 晚",
+   "per_person": "≈ ¥450-650",
+   "note": "按双人分摊、中档档位估算"
+  },
+  {
+   "cat": "市内轨道+打车",
+   "per_person": "≈ ¥60-90",
+   "note": "地铁为主，梧桐区打车 1-2 次"
+  },
+  {
+   "cat": "门票与预约",
+   "per_person": "≈ ¥40",
+   "note": "豫园 ¥40；上博免费预约"
+  },
+  {
+   "cat": "餐饮",
+   "per_person": "≈ ¥450-600",
+   "note": "本帮菜一顿主力 + 咖啡馆下午茶"
+  }
+ ],
+ "brief": {
+  "emergency": "急救 120 · 报警 110 · 旅游投诉 021-12345；静安区三甲：华山医院（静安寺步行 20 分）",
+  "safety": "安全提示: 未查到上海当前气象/地质预警（中央气象台 nmc.cn，2026-10-02 查证；出发前 3 天复查）· 外滩/豫园等核心景区治安常态（景区公告，2026-10-02 查证）｜ 套路点名：外滩合影搭讪收费 · 『免排队进园』黄牛 · 网红店代购加价——只走官方渠道 ｜ 武康路拍照勿站机动车道",
+  "health": "步行量大，第二天 5 km+——中午安排 90 分钟落座午餐回复体力；创可贴防磨脚",
+  "holidays": "11 月中旬无假日，仅周六武康路/豫园人多，均已排早场错峰",
+  "weather": "11 月中上海 12-18°C，梧桐落叶满街—— layered 穿搭+一件防风外套；雨备已排进每天主线",
+  "money": "地铁全网扫码；豫园/城隍庙小摊备现金；咖啡馆多数不设低消但周末限时就坐",
+  "connectivity": "全城信号无虞；上博馆内部分展厅弱信号，预约码提前截图",
+  "insurance": "常规城市短期旅行险即可，无高风险活动",
+  "lookalikes": "「上海站」与「上海虹桥站」是两站；返程认准虹桥（G 字头主流）；「豫园」地铁站离园门 5 分"
+ },
+ "unverified": [
+  "高铁班次与票价——按 08:30/17:30 前后主流班次预估（第 1/3 天时间线据此排定），购票后按实际班次微调",
+  "上博/豫园预约开放节奏以两馆公众号最新公告为准"
+ ],
+ "days": [
+  {
+   "date": "2026-11-13",
+   "city": "杭州 → 上海",
+   "label": "移动日 · 外滩亮灯时",
+   "travel_day": true,
+   "rain_alt": "上海博物馆（需预约）或上海展览中心，室内走廊优先",
+   "late_cut": "高铁晚点 >1 h → 南京路直接并入外滩一线",
+   "ribbon": "杭州东 →高铁40′→ 虹桥站 →地铁20′→ 酒店·静安寺 →愚园路午间漫步→ 人民广场·上博 →南京路→ 外滩夜景",
+   "walking_km": {
+    "total": "4.0",
+    "how": "愚园路街区 1.5 km + 南京路东扩段 1.2 km + 外滩滨水 1.3 km"
+   },
+   "timeline": [
+    {
+     "t": "07:30-08:10",
+     "what": "杭州东站检票口集合（高铁提前 30 分到站；12306 购票后刷身份证进站）",
+     "kind": "free",
+     "tag": "必做"
+    },
+    {
+     "t": "08:30-09:10",
+     "what": "G 字头 杭州东 → 上海虹桥，约 40 分 二等座 ¥73（时刻票价以 12306 为准）",
+     "kind": "hop",
+     "verify": "est",
+     "map": false
+    },
+    {
+     "t": "09:10-09:50",
+     "what": "轨道 2 号线 虹桥火车站→静安寺 7 站 18 分 ¥4",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.31557,31.19593,%E8%99%B9%E6%A1%A5%E7%81%AB%E8%BD%A6%E7%AB%99&to=121.44071,31.22538,%E9%85%92%E5%BA%97%C2%B7%E9%9D%99%E5%AE%89%E5%AF%BA&mode=bus&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "09:50-11:00",
+     "what": "到店寄存行李（入住 14:00 前；静安寺商圈早餐顺路解决）",
+     "kind": "free"
+    },
+    {
+     "t": "11:00-12:30",
+     "what": "午餐 · 愚园路（富春小笼/今朝饭店一带，热门店 11:30 前落座）",
+     "kind": "meal"
+    },
+    {
+     "t": "12:30-13:30",
+     "what": "愚园路街区漫步（历史名人墙+弄堂洋房，秋日梧桐最上相）",
+     "kind": "anchor",
+     "price": "免费",
+     "tag": "必做"
+    },
+    {
+     "t": "13:30-14:10",
+     "what": "轨道 2 号线 江苏路→人民广场 3 站 8 分 ¥3",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.43091,31.22256,%E6%84%9A%E5%9B%AD%E8%B7%AF&to=121.47095,31.23017,%E4%B8%8A%E6%B5%B7%E5%8D%9A%E7%89%A9%E9%A6%86&mode=bus&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "14:10-16:00",
+     "what": "上海博物馆人民广场馆（免费，公众号提前 7 天预约；青铜馆+书画馆主线）",
+     "kind": "anchor",
+     "price": "免费（预约）",
+     "tag": "必做"
+    },
+    {
+     "t": "16:00-16:20",
+     "what": "步行 人民广场→南京路步行街西端 0.6 km · 8 分",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.47095,31.23017,%E4%B8%8A%E6%B5%B7%E5%8D%9A%E7%89%A9%E9%A6%86&to=121.47497,31.23793,%E5%8D%97%E4%BA%AC%E8%B7%AF%E6%AD%A5%E8%A1%8C%E8%A1%97&mode=walk&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "16:20-17:40",
+     "what": "南京路步行街东扩段（老字号沿途：沈大成/泰康食品当下午茶）",
+     "kind": "anchor",
+     "price": "免费"
+    },
+    {
+     "t": "17:40-18:00",
+     "what": "步行 南京东路→外滩 0.8 km · 12 分",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.47497,31.23793,%E5%8D%97%E4%BA%AC%E8%B7%AF%E6%AD%A5%E8%A1%8C%E8%A1%97&to=121.48765,31.2355,%E5%A4%96%E6%BB%A9&mode=walk&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "18:00-19:30",
+     "what": "外滩夜景 + 万国建筑群（亮灯至 22:00，陈毅广场以南人最少）",
+     "kind": "anchor",
+     "price": "免费",
+     "tag": "必做"
+    },
+    {
+     "t": "19:30-21:00",
+     "what": "晚餐 · 外滩源/汉口路一带（提前订位，周末排队凶）",
+     "kind": "meal"
+    }
+   ],
+   "stops": [
+    {
+     "name": "虹桥火车站",
+     "query": "虹桥火车站, 上海",
+     "lat": 31.19593,
+     "lon": 121.31557
+    },
+    {
+     "name": "酒店·静安寺",
+     "query": "静安寺, 上海",
+     "mode": "transit",
+     "lat": 31.22538,
+     "lon": 121.44071
+    },
+    {
+     "name": "愚园路",
+     "query": "愚园路, 上海",
+     "lat": 31.22256,
+     "lon": 121.43091
+    },
+    {
+     "name": "上海博物馆",
+     "query": "上海博物馆, 上海",
+     "lat": 31.23017,
+     "lon": 121.47095
+    },
+    {
+     "name": "南京路步行街",
+     "query": "南京路步行街, 上海",
+     "lat": 31.23793,
+     "lon": 121.47497
+    },
+    {
+     "name": "外滩",
+     "query": "外滩, 上海",
+     "lat": 31.2355,
+     "lon": 121.48765
+    }
+   ],
+   "sun": "天亮 05:53 · ☀ 06:19 / 🌇 16:56 · 本地天文计算"
+  },
+  {
+   "date": "2026-11-14",
+   "city": "上海",
+   "label": "梧桐区 City Walk",
+   "rain_alt": "多抓鱼书店/上海话剧艺术中心橱窗转室内；永康路咖啡馆全线可躲雨",
+   "late_cut": "武康大楼打卡人满 → 先逛安福路回头再来（午后旅行团撤退）",
+   "ribbon": "酒店 →地铁→ 武康路 →步行→ 安福路 →步行→ 永康路 →打车→ 思南公馆 →步行→ 田子坊",
+   "walking_km": {
+    "total": "5.2",
+    "how": "武康路—安福路—永康路一线约 3.2 km + 思南—田子坊 1 km + 弄堂内 1 km"
+   },
+   "timeline": [
+    {
+     "t": "09:30-10:00",
+     "what": "轨道 10/11 号线 交通大学站下车，步行 5 分进武康路",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.44071,31.22538,%E9%85%92%E5%BA%97%C2%B7%E9%9D%99%E5%AE%89%E5%AF%BA&to=121.43601,31.21112,%E6%AD%A6%E5%BA%B7%E8%B7%AF&mode=bus&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "10:00-11:30",
+     "what": "武康路（武康大楼船头机位 9 点前无人；梧桐落叶 11 月中旬进入佳期）",
+     "kind": "anchor",
+     "price": "免费",
+     "tag": "必做"
+    },
+    {
+     "t": "11:30-12:00",
+     "what": "安福路（话剧艺术中心橱窗+多抓鱼书店；沿街小店早逛少排队）",
+     "kind": "anchor",
+     "price": "免费"
+    },
+    {
+     "t": "12:00-13:30",
+     "what": "午餐 · 安福路/五原路简餐（Bistro 午市套餐性价比高）",
+     "kind": "meal"
+    },
+    {
+     "t": "13:30-14:00",
+     "what": "步行 安福路→永康路 1.0 km · 14 分",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.4395,31.21599,%E5%AE%89%E7%A6%8F%E8%B7%AF&to=121.45204,31.21229,%E6%B0%B8%E5%BA%B7%E8%B7%AF&mode=walk&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "14:00-15:30",
+     "what": "永康路咖啡馆下午（马路咖啡一条街，周末排队以 15 分钟为限选店）",
+     "kind": "anchor",
+     "price": "人均 ¥30-50"
+    },
+    {
+     "t": "15:30-16:00",
+     "what": "打车 永康路→思南公馆 2.5 km · 10 分 约 ¥14",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.45204,31.21229,%E6%B0%B8%E5%BA%B7%E8%B7%AF&to=121.46441,31.21643,%E6%80%9D%E5%8D%97%E5%85%AC%E9%A6%86&mode=car&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "16:00-17:30",
+     "what": "思南公馆 + 思南路洋房群（花园洋房区安静出片，公馆草坪可坐）",
+     "kind": "anchor",
+     "price": "免费",
+     "tag": "必做"
+    },
+    {
+     "t": "17:30-18:00",
+     "what": "步行 思南公馆→田子坊 0.7 km · 10 分",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.46441,31.21643,%E6%80%9D%E5%8D%97%E5%85%AC%E9%A6%86&to=121.46411,31.21012,%E7%94%B0%E5%AD%90%E5%9D%8A&mode=walk&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "18:00-19:30",
+     "what": "田子坊弄堂 + 手作小店（灯亮后的弄堂比白天好看）",
+     "kind": "anchor",
+     "price": "免费"
+    },
+    {
+     "t": "19:30-21:00",
+     "what": "晚餐 · 日月光中心（田子坊正对面，楼层餐厅选择多）",
+     "kind": "meal"
+    }
+   ],
+   "stops": [
+    {
+     "name": "酒店·静安寺",
+     "query": "静安寺, 上海",
+     "mode": "transit",
+     "lat": 31.22538,
+     "lon": 121.44071
+    },
+    {
+     "name": "武康路",
+     "query": "武康路, 上海",
+     "lat": 31.21112,
+     "lon": 121.43601
+    },
+    {
+     "name": "安福路",
+     "query": "安福路, 上海",
+     "lat": 31.21599,
+     "lon": 121.4395
+    },
+    {
+     "name": "永康路",
+     "query": "永康路, 上海",
+     "lat": 31.21229,
+     "lon": 121.45204
+    },
+    {
+     "name": "思南公馆",
+     "query": "思南公馆, 上海",
+     "lat": 31.21643,
+     "lon": 121.46441
+    },
+    {
+     "name": "田子坊",
+     "query": "田子坊, 上海",
+     "lat": 31.21012,
+     "lon": 121.46411
+    }
+   ],
+   "sun": "天亮 05:54 · ☀ 06:20 / 🌇 16:56 · 本地天文计算"
+  },
+  {
+   "date": "2026-11-15",
+   "city": "上海 → 杭州",
+   "label": "移动日 · 园林与河岸",
+   "travel_day": true,
+   "rain_alt": "豫园回廊可避雨；1933 老场坊全室内，雨天主力",
+   "late_cut": "豫园人流爆满 → 只逛城隍庙街区，时间挪给苏州河",
+   "ribbon": "酒店 →地铁→ 豫园 →打车→ 苏州河步道 →步行→ 1933老场坊 →地铁→ 虹桥站 →高铁→ 杭州东",
+   "walking_km": {
+    "total": "3.6",
+    "how": "豫园-城隍庙 1.6 km + 苏州河步道 1 km + 1933 内部 1 km"
+   },
+   "timeline": [
+    {
+     "t": "09:00-09:20",
+     "what": "轨道 14 号线 静安寺→豫园 4 站 12 分 ¥3",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.44071,31.22538,%E9%85%92%E5%BA%97%C2%B7%E9%9D%99%E5%AE%89%E5%AF%BA&to=121.48802,31.2297,%E8%B1%AB%E5%9B%AD&mode=bus&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "09:20-11:30",
+     "what": "豫园 + 城隍庙街区（豫园门票 ¥40 需线上预约；江南园林借景手法看回廊与漏窗）",
+     "kind": "anchor",
+     "price": "¥40（预约）",
+     "tag": "必做"
+    },
+    {
+     "t": "11:30-12:30",
+     "what": "午餐 · 南翔馒头店小笼（排队约 30 分，先取号再逛九曲桥）",
+     "kind": "meal"
+    },
+    {
+     "t": "12:30-13:00",
+     "what": "打车 豫园→苏州河四行仓库段 2.5 km · 10 分 约 ¥14",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.48802,31.2297,%E8%B1%AB%E5%9B%AD&to=121.48433,31.24568,%E8%8B%8F%E5%B7%9E%E6%B2%B3&mode=car&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "13:00-14:00",
+     "what": "苏州河步道 + 四行仓库抗战纪念馆外墙（西墙弹孔面朝晋元路一侧）",
+     "kind": "anchor",
+     "price": "免费"
+    },
+    {
+     "t": "14:00-14:20",
+     "what": "步行 四行仓库→1933 老场坊 0.9 km · 12 分",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.48433,31.24568,%E8%8B%8F%E5%B7%9E%E6%B2%B3&to=121.48741,31.25653,1933%E8%80%81%E5%9C%BA%E5%9D%8A&mode=walk&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "14:20-15:30",
+     "what": "1933 老场坊（宰牲场改造艺术空间，混凝土螺旋廊桥任意拍）",
+     "kind": "anchor",
+     "price": "免费",
+     "tag": "必做"
+    },
+    {
+     "t": "15:30-16:10",
+     "what": "轨道 4 号线 海伦路→虹桥火车站（10 号线直达更省心）约 35 分 ¥5",
+     "kind": "hop",
+     "link": "https://uri.amap.com/navigation?from=121.48741,31.25653,1933%E8%80%81%E5%9C%BA%E5%9D%8A&to=121.31557,31.19593,%E8%99%B9%E6%A1%A5%E7%81%AB%E8%BD%A6%E7%AB%99&mode=bus&src=trip-planner-cn&coordinate=gaode&callnative=0",
+     "verify": "est"
+    },
+    {
+     "t": "16:10-17:30",
+     "what": "虹桥火车站候车 + 晚餐打包（站内 Gala 面馆/沈大成均可）",
+     "kind": "free"
+    },
+    {
+     "t": "17:30-18:15",
+     "what": "G 字头 上海虹桥 → 杭州东，约 45 分（时刻以 12306 为准）",
+     "kind": "hop",
+     "verify": "est",
+     "map": false
+    }
+   ],
+   "stops": [
+    {
+     "name": "酒店·静安寺",
+     "query": "静安寺, 上海",
+     "mode": "transit",
+     "lat": 31.22538,
+     "lon": 121.44071
+    },
+    {
+     "name": "豫园",
+     "query": "豫园, 上海",
+     "lat": 31.2297,
+     "lon": 121.48802
+    },
+    {
+     "name": "苏州河",
+     "query": "苏州河, 上海",
+     "lat": 31.24568,
+     "lon": 121.48433
+    },
+    {
+     "name": "1933老场坊",
+     "query": "1933老场坊, 上海",
+     "lat": 31.25653,
+     "lon": 121.48741
+    },
+    {
+     "name": "虹桥火车站",
+     "query": "虹桥火车站, 上海",
+     "lat": 31.19593,
+     "lon": 121.31557
+    }
+   ],
+   "sun": "天亮 05:56 · ☀ 06:21 / 🌇 16:56 · 本地天文计算"
+  }
+ ]
+}
