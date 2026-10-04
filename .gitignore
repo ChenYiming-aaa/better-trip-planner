@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Personal trip working data — anything you plan under trips/ is yours and
+# never committed. Showcase trips live under examples/ instead.
+trips/
+/geocache.json
+**/geocache.json
+**/suncache.json
+
+# Large generated originals (ImageGen PNG sources); the shipped assets
+# are the compressed webp variants, so gen/ stays out everywhere.
+**/gen/
+
+# Secrets — AMAP_KEY etc. (.env.example is the tracked placeholder, .env is not)
+.env
+**/.env
+!**/.env.example
+secrets/
+*.key
+
+# Route cache (check --live, personal generated data like geocache.json)
+**/routecache.json
+
+# macOS
+.DS_Store
+
+# themes/ — the theme system ships (code + webp/woff2/mp4 assets); keep out
+# the OpenRouter credentials gen.py reads from there and the PNG originals.
+themes/.or_key
+themes/.auth_header
+themes/.payload.json
+themes/**/*.png
+
+# Built demo site (scripts/build_site.py) — GitHub Actions builds it on push
+_site/
+
+# US portal reference chain (19 mp4, ~35 MB) is a release asset, not tracked:
+# https://github.com/skywain/trip-planner-skill/releases/tag/demo-assets-v1
+themes/assets/portal/*.mp4

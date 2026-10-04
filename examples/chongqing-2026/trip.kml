@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+<name>重庆 4 天 · 山城霓虹穿越</name>
+<Folder><name>Day 1 2026-11-05 — 移动日 · 夜色初见洪崖洞</name>
+<Placemark><name>1. 重庆江北国际机场</name><Point><coordinates>106.653860,29.725360,0</coordinates></Point></Placemark>
+<Placemark><name>2. 酒店·解放碑</name><Point><coordinates>106.571640,29.560130,0</coordinates></Point></Placemark>
+<Placemark><name>3. 罗汉寺</name><Point><coordinates>106.577930,29.562640,0</coordinates></Point></Placemark>
+<Placemark><name>4. 解放碑</name><Point><coordinates>106.571640,29.560130,0</coordinates></Point></Placemark>
+<Placemark><name>5. 洪崖洞</name><Point><coordinates>106.575340,29.565090,0</coordinates></Point></Placemark>
+<Placemark><name>6. 千厮门大桥</name><Point><coordinates>106.573100,29.572140,0</coordinates></Point></Placemark>
+<Placemark><name>Day 1 route</name><Style><LineStyle><color>ff0000ff</color><width>3</width></LineStyle></Style><LineString><coordinates>106.653860,29.725360,0 106.571640,29.560130,0 106.577930,29.562640,0 106.571640,29.560130,0 106.575340,29.565090,0 106.573100,29.572140,0</coordinates></LineString></Placemark>
+</Folder>
+<Folder><name>Day 2 2026-11-06 — 魔幻交通日 · 8D 山城机位</name>
+<Placemark><name>1. 酒店·解放碑</name><Point><coordinates>106.571640,29.560130,0</coordinates></Point></Placemark>
+<Placemark><name>2. 皇冠大扶梯</name><Point><coordinates>106.545480,29.555120,0</coordinates></Point></Placemark>
+<Placemark><name>3. 李子坝轻轨站</name><Point><coordinates>106.533910,29.555700,0</coordinates></Point></Placemark>
+<Placemark><name>4. 鹅岭二厂</name><Point><coordinates>106.536430,29.553920,0</coordinates></Point></Placemark>
+<Placemark><name>5. 白象居</name><Point><coordinates>106.581510,29.558990,0</coordinates></Point></Placemark>
+<Placemark><name>6. 长江索道</name><Point><coordinates>106.579050,29.561150,0</coordinates></Point></Placemark>
+<Placemark><name>7. 朝天门广场</name><Point><coordinates>106.584180,29.569770,0</coordinates></Point></Placemark>
+<Placemark><name>Day 2 route</name><Style><LineStyle><color>ffff0000</color><width>3</width></LineStyle></Style><LineString><coordinates>106.571640,29.560130,0 106.545480,29.555120,0 106.533910,29.555700,0 106.536430,29.553920,0 106.581510,29.558990,0 106.579050,29.561150,0 106.584180,29.569770,0</coordinates></LineString></Placemark>
+</Folder>
+<Folder><name>Day 3 2026-11-07 — 古镇慢早茶 · 南山夜全景</name>
+<Placemark><name>1. 酒店·解放碑</name><Point><coordinates>106.571640,29.560130,0</coordinates></Point></Placemark>
+<Placemark><name>2. 磁器口古镇</name><Point><coordinates>106.445710,29.583750,0</coordinates></Point></Placemark>
+<Placemark><name>3. 交通茶馆</name><Point><coordinates>106.538990,29.491490,0</coordinates></Point></Placemark>
+<Placemark><name>4. 黄桷垭老街</name><Point><coordinates>106.590310,29.549240,0</coordinates></Point></Placemark>
+<Placemark><name>5. 南山一棵树观景台</name><Point><coordinates>106.598820,29.548220,0</coordinates></Point></Placemark>
+<Placemark><name>Day 3 route</name><Style><LineStyle><color>ff00aa00</color><width>3</width></LineStyle></Style><LineString><coordinates>106.571640,29.560130,0 106.445710,29.583750,0 106.538990,29.491490,0 106.590310,29.549240,0 106.598820,29.548220,0</coordinates></LineString></Placemark>
+</Folder>
+<Folder><name>Day 4 2026-11-08 — 移动日 · 观音桥收尾</name>
+<Placemark><name>1. 酒店·解放碑</name><Point><coordinates>106.571640,29.560130,0</coordinates></Point></Placemark>
+<Placemark><name>2. 观音桥</name><Point><coordinates>106.530150,29.578900,0</coordinates></Point></Placemark>
+<Placemark><name>3. 重庆江北国际机场</name><Point><coordinates>106.653860,29.725360,0</coordinates></Point></Placemark>
+<Placemark><name>Day 4 route</name><Style><LineStyle><color>ff00aaff</color><width>3</width></LineStyle></Style><LineString><coordinates>106.571640,29.560130,0 106.530150,29.578900,0 106.653860,29.725360,0</coordinates></LineString></Placemark>
+</Folder>
+</Document></kml>

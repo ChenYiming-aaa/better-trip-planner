@@ -1,0 +1,119 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//trip-planner//china-2026-beijing-xi-an-gates//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:China 2026 — Beijing & Xi'an — booking gates
+BEGIN:VEVENT
+UID:china-2026-beijing-xi-an-3305914b64@trip-planner
+DTSTAMP:20261001T123309Z
+SEQUENCE:0
+DTSTART:20261104T090000
+DTEND:20261104T100000
+SUMMARY:T-14: re-confirm every opening hour\, last-entry time and fee
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 2 weeks before trave
+ l (≈2026-11-04)\nDO: These dates are 3 months out: what ships is the sea
+ sonal pattern\; re-check official channels
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: T-14: re-confirm every opening hour\, last-entry time
+  and fee
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: T-14: re-confirm every opening hour\, last-entry time and 
+ fee
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:china-2026-beijing-xi-an-2a43ad86db@trip-planner
+DTSTAMP:20261001T123309Z
+SEQUENCE:0
+DTSTART:20261110T090000
+DTEND:20261110T100000
+SUMMARY:Forbidden City (Palace Museum) timed ticket for 2026-11-17
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 2026-11-10\, 20:00 B
+ eijing time — 7 days ahead\, to the minute\nDO: official WeChat mini-pro
+ gram 『故宫博物院』\; sells out in minutes in peak season\nPRICE: 
+ ¥60 (off-season)
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: Forbidden City (Palace Museum) timed ticket for 2026-
+ 11-17
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: Forbidden City (Palace Museum) timed ticket for 2026-11-17
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:china-2026-beijing-xi-an-4409741f4d@trip-planner
+DTSTAMP:20261001T123309Z
+SEQUENCE:0
+DTSTART:20261110T090000
+DTEND:20261110T100000
+SUMMARY:T-7: re-check weather forecast vs the outdoor days (Great Wall day 
+ swaps with a museum day if rain/snow)
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: T-7 · 2026-11-10
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: T-7: re-check weather forecast vs the outdoor days (G
+ reat Wall day swaps with a museum day if rain/snow)
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: T-7: re-check weather forecast vs the outdoor days (Great 
+ Wall day swaps with a museum day if rain/snow)
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:china-2026-beijing-xi-an-a41080d5b7@trip-planner
+DTSTAMP:20261001T123309Z
+SEQUENCE:0
+DTSTART:20261117T090000
+DTEND:20261117T100000
+SUMMARY:T-3: 确认全部预约码/门票截图已存手机\,12306 候补
+ 状态正常
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: T-3 · 2026-11-17
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: T-3: 确认全部预约码/门票截图已存手机\,
+ 12306 候补状态正常
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: T-3: 确认全部预约码/门票截图已存手机\,12306
+  候补状态正常
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:china-2026-beijing-xi-an-164e508143@trip-planner
+DTSTAMP:20261001T123309Z
+SEQUENCE:0
+DTSTART:20261119T090000
+DTEND:20261119T100000
+SUMMARY:T-1: 出发日航班值机开放即选座\,充电宝/身份证/预
+ 约截图装随身包
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: T-1 · 2026-11-19
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: T-1: 出发日航班值机开放即选座\,充电宝/
+ 身份证/预约截图装随身包
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: T-1: 出发日航班值机开放即选座\,充电宝/身
+ 份证/预约截图装随身包
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

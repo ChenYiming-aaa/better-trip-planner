@@ -1,0 +1,87 @@
+{
+ "schema": 1,
+ "_note": "示例行程美术配置（示例数据，坐标/票价以现场为准）",
+ "cover": {
+  "kick": "沪上行",
+  "kick_en": "",
+  "credit": "「你站在桥上看风景，看风景的人在楼上看你」——卞之琳"
+ },
+ "end": {
+  "line": "上海，弄堂口再见。"
+ },
+ "days": {
+  "2026-11-13": {
+   "theme": "外滩夜航",
+   "mark": "万国建筑亮灯"
+  },
+  "2026-11-14": {
+   "theme": "梧桐漫步",
+   "mark": "洋房与咖啡"
+  },
+  "2026-11-15": {
+   "theme": "园林与河",
+   "mark": "豫园与苏州河"
+  }
+ },
+ "brief_titles": {},
+ "themes": {
+  "zine": {
+   "cover": {
+    "zh": "沪上",
+    "en": "SHANGHAI WEEKEND",
+    "photo": {
+     "stem": "stock-cover-modern-skyline",
+     "caption": "THE BUND · SHANGHAI",
+     "alt": "陆家嘴天际线海报画"
+    }
+   },
+   "days": {
+    "2026-11-13": {
+     "poster": {
+      "stem": "stock-cover-modern-skyline",
+      "caption": "THE BUND NIGHT · SHANGHAI"
+     },
+     "photo": {
+      "stem": "stock-night-skyline",
+      "caption": "CITY LIGHTS · PUDONG",
+      "alt": "陆家嘴夜景",
+      "treat": "mono",
+      "rot": 1.6
+     },
+     "lineart": "skyline"
+    },
+    "2026-11-14": {
+     "poster": {
+      "stem": "stock-cover-european-old-town",
+      "caption": "WUTONG STREETS · FORMER FRENCH CONCESSION"
+     },
+     "photo": {
+      "stem": "stock-cafe",
+      "caption": "COFFEE O'CLOCK · YONGKANG RD",
+      "alt": "街角咖啡馆",
+      "rot": -2.0
+     },
+     "lineart": "flats"
+    },
+    "2026-11-15": {
+     "poster": {
+      "stem": "stock-cover-east-asian-temple",
+      "caption": "YUYUAN GARDEN · OLD TOWN"
+     },
+     "photo": {
+      "stem": "stock-garden",
+      "caption": "Suzhou Creek Walk",
+      "alt": "苏州河步道绿意",
+      "rot": 2.2
+     },
+     "lineart": "bridge"
+    }
+   }
+  }
+ },
+ "_stock": {
+  "generated": "2026-10-02",
+  "theme": "zine",
+  "assets": "themes/assets/stock"
+ }
+}

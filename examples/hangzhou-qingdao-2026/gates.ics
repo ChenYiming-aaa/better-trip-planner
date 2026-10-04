@@ -1,0 +1,282 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//trip-planner//trip-gates//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:杭州 → 青岛 5 天 · 山海红瓦之秋 — booking gate
+ s
+BEGIN:VEVENT
+UID:trip-7c9feae232@trip-planner
+DTSTAMP:20261001T180209Z
+SEQUENCE:0
+DTSTART:20261009T090000
+DTEND:20261009T100000
+SUMMARY:往返机票比价并锁定（2 人）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 尽早（2026-10-09 
+ 前）\nDO: 携程+去哪儿/航司官网 ≥2 源核对；廉航加购行
+ 李后再比价\nLINK: https://flights.ctrip.com/online/list/roundtrip-hgh
+ -tao?depdate=2026-10-26&retdate=2026-10-30\nPRICE: 点链接核对实时
+ 价
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 往返机票比价并锁定（2 人）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 往返机票比价并锁定（2 人）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-07a2d389da@trip-planner
+DTSTAMP:20261001T180209Z
+SEQUENCE:0
+DTSTART:20261012T090000
+DTEND:20261012T100000
+SUMMARY:酒店预订（可退改档，青岛站/栈桥一带 4 晚 10-26→
+ 10-30）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前两周（20
+ 26-10-12 前）\nDO: 先订可退改，出发前 2-3 周再比价一次\nL
+ INK: https://hotels.ctrip.com/hotels/list?city=292&checkin=2026-10-26&chec
+ kout=2026-10-30\nPRICE: ¥300-500/晚档位（未核实）
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 酒店预订（可退改档，青岛站/栈桥一带 
+ 4 晚 10-26→10-30）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 酒店预订（可退改档，青岛站/栈桥一带 4 晚
+  10-26→10-30）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-e3308a645c@trip-planner
+DTSTAMP:20261001T180209Z
+SEQUENCE:0
+DTSTART:20261012T090000
+DTEND:20261012T100000
+SUMMARY:出发前两周复查：崂山联票、啤酒博物馆、总督楼
+ 、信号山的开放时间与票价 · 预约是否分时段实名 · 若
+ 改高铁查 12306 起售日
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前两周（20
+ 26-10-12 前）\nDO: 涉及：崂山太清宫/仰口、啤酒博物馆、
+ 总督楼、信号山、小鱼山、天主教堂，以及各段交通票
+ 价
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 出发前两周复查：崂山联票、啤酒博物
+ 馆、总督楼、信号山的开放时间与票价 · 预约是否分时
+ 段实名 · 若改高铁查 12306 起售日
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 出发前两周复查：崂山联票、啤酒博物馆、
+ 总督楼、信号山的开放时间与票价 · 预约是否分时段实
+ 名 · 若改高铁查 12306 起售日
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-bf6cad1d60@trip-planner
+DTSTAMP:20261001T180209Z
+SEQUENCE:0
+DTSTART:20261019T090000
+DTEND:20261019T100000
+SUMMARY:身份证原件全员确认（门票/值机/景区实名同一证
+ 件）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前一周（20
+ 26-10-19 前）\nDO: 崂山/啤酒博物馆均实名入园；12306 需要
+ 时可用临时乘车证明
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 身份证原件全员确认（门票/值机/景区实
+ 名同一证件）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 身份证原件全员确认（门票/值机/景区实名
+ 同一证件）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-9c623ed5bf@trip-planner
+DTSTAMP:20261001T180209Z
+SEQUENCE:0
+DTSTART:20261019T090000
+DTEND:20261019T100000
+SUMMARY:健康自备药清单确认（肠胃药/感冒药/创可贴/个人
+ 处方药——海鲜与登山行程按 health 卡）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前一周（20
+ 26-10-19 前）\nDO: 计划不下处方；就近三甲医院见 brief.emer
+ gency
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 健康自备药清单确认（肠胃药/感冒药/创
+ 可贴/个人处方药——海鲜与登山行程按 health 卡）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 健康自备药清单确认（肠胃药/感冒药/创可
+ 贴/个人处方药——海鲜与登山行程按 health 卡）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-987bd79009@trip-planner
+DTSTAMP:20261001T180209Z
+SEQUENCE:0
+DTSTART:20261019T090000
+DTEND:20261019T100000
+SUMMARY:出发前一周复查：青岛/杭州天气预报（中央气象台
+  nmc.cn），大风(阵风≥50 km/h)→海下游船/摩天轮改期；气
+ 温 ≤5℃ → 按加衣规则加衣
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前一周（20
+ 26-10-19 前）\nDO: 涉及范围：青岛全域 + 崂山山区（山里
+ 比市区低 3-5℃）
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 出发前一周复查：青岛/杭州天气预报（
+ 中央气象台 nmc.cn），大风(阵风≥50 km/h)→海下游船/摩天
+ 轮改期；气温 ≤5℃ → 按加衣规则加衣
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 出发前一周复查：青岛/杭州天气预报（中央
+ 气象台 nmc.cn），大风(阵风≥50 km/h)→海下游船/摩天轮改
+ 期；气温 ≤5℃ → 按加衣规则加衣
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-d1b0a00efe@trip-planner
+DTSTAMP:20261001T180209Z
+SEQUENCE:0
+DTSTART:20261023T090000
+DTEND:20261023T100000
+SUMMARY:崂山联票（太清+仰口+华严，含观光车）线上预约
+ 锁定时段
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前 3 天（20
+ 26-10-23 前）\nDO: 官方渠道 =「崂山风景区」公众号/小程
+ 序；进太清宫另购 ¥27；黄牛票勿买\nLINK: https://m.ctrip.com
+ /webapp/you/gspoi/sight/5/0.html?poiId=85745\nPRICE: ¥130/人（旺季 4.
+ 1-12.31，两日有效；在线平台+公众号 2026-10-01 核实）
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 崂山联票（太清+仰口+华严，含观光车）
+ 线上预约锁定时段
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 崂山联票（太清+仰口+华严，含观光车）线
+ 上预约锁定时段
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-19ce04846b@trip-planner
+DTSTAMP:20261001T180209Z
+SEQUENCE:0
+DTSTART:20261023T090000
+DTEND:20261023T100000
+SUMMARY:境内旅行险（意外+医疗+延误）购买
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前 3 天（20
+ 26-10-23 前）\nDO: 支付宝保险频道或保险公司官方渠道；
+ 取消保障只保购买后事件，务必出发前买\nPRICE: ¥30-60/人
+ /8 天量级
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 境内旅行险（意外+医疗+延误）购买
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 境内旅行险（意外+医疗+延误）购买
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-a8eda3f0c1@trip-planner
+DTSTAMP:20261001T180209Z
+SEQUENCE:0
+DTSTART:20261023T090000
+DTEND:20261023T100000
+SUMMARY:出发前 3 天复查：航班取消/延误公告 · 崂山/啤酒
+ 博物馆临时闭园公告 · 预约二维码截图进相册
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前 3 天（20
+ 26-10-23 前）\nDO: 第 1/5 天各查一行：航班动态 + 胶东机场
+ 末班地铁 22:30 前落地
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 出发前 3 天复查：航班取消/延误公告 · 
+ 崂山/啤酒博物馆临时闭园公告 · 预约二维码截图进相册
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 出发前 3 天复查：航班取消/延误公告 · 崂
+ 山/啤酒博物馆临时闭园公告 · 预约二维码截图进相册
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-ba47f755c0@trip-planner
+DTSTAMP:20261001T180209Z
+SEQUENCE:0
+DTSTART:20261025T090000
+DTEND:20261025T100000
+SUMMARY:青岛啤酒博物馆门票预约（双馆 A+B）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前 1 天（20
+ 26-10-25 前）\nDO: 8:30-17:30，16:30 停止入场；官网/公众号在
+ 线预约\nLINK: https://www.tsingtaomuseum.com/\nPRICE: ¥60/人（官网
+  2026-10-01 核）
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 青岛啤酒博物馆门票预约（双馆 A+B）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 青岛啤酒博物馆门票预约（双馆 A+B）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-4edbb375a7@trip-planner
+DTSTAMP:20261001T180209Z
+SEQUENCE:0
+DTSTART:20261025T090000
+DTEND:20261025T100000
+SUMMARY:出发前一天 + 出发前 24 小时：离线地图包（高德/
+ 百度·青岛+崂山）· 预约二维码截图 · 身份证/保单副本
+  · 现金 ≈¥300 · 绑卡免密确认 · 充电宝 ≥2万mAh · 值
+ 机确认 · 天气预警复查（橙红信号触发改期）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前 1 天（20
+ 26-10-25 前）\nDO: 崂山山区信号弱——离线包必须提前下
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 出发前一天 + 出发前 24 小时：离线地图
+ 包（高德/百度·青岛+崂山）· 预约二维码截图 · 身份证
+ /保单副本 · 现金 ≈¥300 · 绑卡免密确认 · 充电宝 ≥2
+ 万mAh · 值机确认 · 天气预警复查（橙红信号触发改期）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 出发前一天 + 出发前 24 小时：离线地图包（
+ 高德/百度·青岛+崂山）· 预约二维码截图 · 身份证/保
+ 单副本 · 现金 ≈¥300 · 绑卡免密确认 · 充电宝 ≥2万mAh
+  · 值机确认 · 天气预警复查（橙红信号触发改期）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

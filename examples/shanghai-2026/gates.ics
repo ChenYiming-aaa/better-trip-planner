@@ -1,0 +1,144 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//trip-planner//trip-gates//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:上海周末 3 天 · 梧桐区漫步志 — booking gates
+BEGIN:VEVENT
+UID:trip-152a54fe10@trip-planner
+DTSTAMP:20261002T130947Z
+SEQUENCE:0
+DTSTART:20261030T090000
+DTEND:20261030T100000
+SUMMARY:高铁票开售即购（12306 15 天预售）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前两周（20
+ 26-10-30 前）\nDO: 周五早高峰班次紧张\nLINK: https://kyfw.12306
+ .cn/otn/leftTicket/init?linkTypeId=2&leftTicketDTO.train_date=2026-11-13&l
+ eftTicketDTO.from_station=HGH&leftTicketDTO.to_station=AOH&purpose_codes=A
+ DULT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 高铁票开售即购（12306 15 天预售）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 高铁票开售即购（12306 15 天预售）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-20a429aad4@trip-planner
+DTSTAMP:20261002T130947Z
+SEQUENCE:0
+DTSTART:20261030T090000
+DTEND:20261030T100000
+SUMMARY:酒店预订（静安寺/愚园路，可免费取消档位）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前两周（20
+ 26-10-30 前）\nDO: 在在线平台搜「静安寺地铁站」，选 9.0 
+ 分以上中档酒店
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 酒店预订（静安寺/愚园路，可免费取消
+ 档位）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 酒店预订（静安寺/愚园路，可免费取消档位
+ ）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-64934a4210@trip-planner
+DTSTAMP:20261002T130947Z
+SEQUENCE:0
+DTSTART:20261106T090000
+DTEND:20261106T100000
+SUMMARY:身份证原件全员确认（12306 刷证进站/上博豫园预约
+ 同一证件）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前一周（20
+ 26-11-06 前）\nDO: 12306 与景区预约实名绑定
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 身份证原件全员确认（12306 刷证进站/上
+ 博豫园预约同一证件）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 身份证原件全员确认（12306 刷证进站/上博豫
+ 园预约同一证件）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-2d57b66b65@trip-planner
+DTSTAMP:20261002T130947Z
+SEQUENCE:0
+DTSTART:20261106T090000
+DTEND:20261106T100000
+SUMMARY:健康自备药确认（创可贴/常备肠胃药/个人处方药
+ ——5 km 步行行程按 health 卡）
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前一周（20
+ 26-11-06 前）\nDO: 计划不下处方；就近三甲医院见 brief.emer
+ gency
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 健康自备药确认（创可贴/常备肠胃药/个
+ 人处方药——5 km 步行行程按 health 卡）
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 健康自备药确认（创可贴/常备肠胃药/个人
+ 处方药——5 km 步行行程按 health 卡）
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-229bde3559@trip-planner
+DTSTAMP:20261002T130947Z
+SEQUENCE:0
+DTSTART:20261110T090000
+DTEND:20261110T100000
+SUMMARY:上博/豫园预约
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前 3 天（20
+ 26-11-10 前）\nDO: 上博公众号提前 7 天放号；豫园同时购
+ 门票
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 上博/豫园预约
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 上博/豫园预约
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-91ca7f6e47@trip-planner
+DTSTAMP:20261002T130947Z
+SEQUENCE:0
+DTSTART:20261112T090000
+DTEND:20261112T100000
+SUMMARY:轻装：舒适步行鞋（两天均 5 km 上下）+ 相机备用
+ 电池
+DESCRIPTION:09:00 local\, wherever you are.\nDEADLINE: 出发前 1 天（20
+ 26-11-12 前）\nDO: city walk 日拍摄量大
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: 轻装：舒适步行鞋（两天均 5 km 上下）+ 
+ 相机备用电池
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Now: 轻装：舒适步行鞋（两天均 5 km 上下）+ 相
+ 机备用电池
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

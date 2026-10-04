@@ -1,0 +1,311 @@
+{
+ "_readme": "Generated-image index — check here before generating a new image and reuse what already exists. gen.py registers every successful generation automatically; run build_manifest.py to refresh after manual cleanup. transparent=true means a .cut.webp real-alpha cutout exists. Entries are pruned to files that exist on disk.",
+ "style_anchor": "Flat hand-drawn travel illustration, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, clean rounded shapes, minimal cozy storybook style — 贴纸类加: thick organic silhouette, no text, no border, single isolated subject centered on a solid pure white background, no shadow",
+ "assets": [
+  {
+   "name": "bus",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel illustration of a small vintage tour bus with a roof luggage rack carrying two suitcases, three-quarter front view, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, clean rounded shapes, minimal cozy storybook style, thick organic silhouette, no text, no border, single isolated subject centered on a solid pure white background, no shadow",
+   "params": {
+    "background": "auto",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": null,
+   "generated_at": "2026-08-05/06",
+   "source_job": "batch7.json",
+   "files": {
+    "cut.webp": 147772,
+    "md.webp": 25014,
+    "sm.webp": 7428,
+    "lg.webp": 44098
+   },
+   "transparent": true
+  },
+  {
+   "name": "china-clay-title2",
+   "kind": "asset",
+   "prompt": "A single handmade polymer clay 3D title sticker floating on a plain pure white background with a wide empty white margin all around. Chunky hand-rolled pastel clay capital letters, thick, rounded, soft bevelled edges, subtle fingerprint texture, glossy studio lighting. Exactly two lines of text, both lines centred on the same vertical axis and the SAME letter height, no other objects, no icons, no moon, no decorations: the first line reads MOON OF, the second line reads QIN. Letters alternate coral, mint green, butter yellow and lavender clay. Every letter fully visible and complete, generous spacing between letters, nothing touching the image edges.",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.04185,
+   "generated_at": "2026-08-15",
+   "files": {
+    "cut.webp": 104298,
+    "md.webp": 29594
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026 测试行程(封面/地形带补做,owner 08-15 反馈后)"
+  },
+  {
+   "name": "china-splash-hero",
+   "kind": "asset",
+   "prompt": "A single large floating-island hero vignette centred on a plain pure white background with a wide white margin all around it, painted in Supercell Brawl Stars splash art style: hand-painted stylized 2.5D, soft airbrushed volume shading inside bold clean silhouettes, chunky exaggerated proportions, magenta and cyan rim light. A big floating rock chunk with a green ridge on top, along which a chunky crenellated ancient stone wall snakes up to a square watchtower at the summit; on a lower shelf of the same floating chunk stands a small tiered pagoda beside two chunky terracotta warrior statues; small floating rock bits and a few red paper lanterns drift below the island, with soft mist puffs and three tiny sparkles. No ground plane, no shadows on the white background, no text, no labels",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "1:1",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.05355,
+   "generated_at": "2026-08-15",
+   "files": {
+    "cut.webp": 137942,
+    "md.webp": 57402
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026(纽约出发,英文) 测试行程(Opus 测试员生成)"
+  },
+  {
+   "name": "china-splash-title",
+   "kind": "asset",
+   "prompt": "A single hand-painted game title plate floating on a plain pure white background with a wide white margin all around it, painted in Supercell Brawl Stars splash art style: thick painterly capital letters with heavy dark outlines, glossy bevelled faces, magenta and cyan rim light and a soft golden glow behind them. The plate spells exactly two short lines of English text, centred: the first line reads MOON OF and the second, larger line reads QIN. A slim crescent moon sits at the upper right of the lettering and a thin gold banner ribbon curls under it. No other text, no letters other than the words MOON OF QIN, no watermark, no shadows on the white background",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "3:2",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.041895,
+   "generated_at": "2026-08-15",
+   "files": {
+    "cut.webp": 244010,
+    "md.webp": 58274
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026(纽约出发,英文) 测试行程(Opus 测试员生成)"
+  },
+  {
+   "name": "china-strip-beijing",
+   "kind": "asset",
+   "prompt": "Wide horizontal diorama strip of handmade polymer clay scenery isolated on a solid pure white background: a range of purple and mint clay mountain ridges with a tiny pastel clay Great Wall snaking over the ridgeline with small square watchtowers, and nestled on the right a small vermilion-red and butter-yellow clay Forbidden City gate tower with golden tiled roofs and a tiny hutong courtyard, round clay pine trees on rolling hills at the base, the top half of the image is pure empty white, soft studio lighting, subtle clay texture, pastel palette, no shadow on background, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032965,
+   "generated_at": "2026-08-15",
+   "files": {
+    "cut.webp": 134290
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026 测试行程(封面/地形带补做,owner 08-15 反馈后)"
+  },
+  {
+   "name": "china-strip-xian",
+   "kind": "asset",
+   "prompt": "Wide horizontal diorama strip of handmade polymer clay scenery isolated on a solid pure white background: a warm loess-yellow clay plain band with, from left to right, a small pastel clay Xi'an city wall with a gate tower and crenellations, a tiny clay Bell Tower with a green tiled roof, a row of five small terracotta clay warriors standing in a pit, and a slender clay Big Wild Goose Pagoda on the right, a few round clay trees between them, the top half of the image is pure empty white, soft studio lighting, subtle clay texture, pastel palette, no shadow on background, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032995,
+   "generated_at": "2026-08-15",
+   "files": {
+    "cut.webp": 114366
+   },
+   "transparent": false,
+   "trip": "china",
+   "note": "中国大陆 2026 测试行程(封面/地形带补做,owner 08-15 反馈后)"
+  },
+  {
+   "name": "clay-bus-solo",
+   "kind": "asset",
+   "prompt": "Cute claymorphism 3D render, handmade polymer clay figurine of an orange vintage camper bus in side view driving toward the right, cream roof with tiny clay luggage stack, round happy headlight, two puffs of clay exhaust smoke behind, soft studio lighting, subtle fingerprints and clay texture, pastel palette, single isolated subject centered on a solid pure white background, no shadow, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.053105,
+   "generated_at": "2026-08-07",
+   "source_job": "clayworld.json",
+   "files": {
+    "cut.webp": 58594,
+    "md.webp": 21862
+   },
+   "transparent": true
+  },
+  {
+   "name": "cover-hero",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel poster in gouache, 16:9 wide composition designed as a website cover: the LOWER THIRD shows a tiny layered landscape of an American road trip (winding cream road, small vintage bus, geyser steam, snow-capped dusty-teal mountains, red rocks, ocean bay on the right), and the UPPER TWO THIRDS is a vast calm sky in soft cream-to-pale-teal gradient with two small clouds and a few tiny birds, intentionally empty and quiet to hold a large page title, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, minimal cozy storybook style, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033,
+   "generated_at": "2026-08-05/06",
+   "source_job": "cover.json",
+   "files": {
+    "webp": 103638
+   },
+   "transparent": false
+  },
+  {
+   "name": "hero",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel panorama, wide layered landscape of an American road trip: rolling sand-beige hills, a distant dusty-teal mountain range with snow caps, a winding cream road, small geyser steam on the left and a calm ocean horizon on the right, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, minimal cozy storybook style, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.033,
+   "generated_at": "2026-08-05/06",
+   "source_job": "batch5.json",
+   "files": {
+    "webp": 254576
+   },
+   "transparent": false
+  },
+  {
+   "name": "plane",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel illustration of a vintage twin-engine propeller airliner in flight, low three-quarter view, two small puffy clouds beside it, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream, clean rounded shapes, minimal cozy storybook style, thick organic silhouette, no text, no border, single isolated subject centered on a solid pure white background, no shadow",
+   "params": {
+    "background": "auto",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": null,
+   "generated_at": "2026-08-05/06",
+   "source_job": "batch7.json",
+   "files": {
+    "cut.webp": 81700,
+    "md.webp": 30730,
+    "sm.webp": 9826,
+    "lg.webp": 36438
+   },
+   "transparent": true
+  },
+  {
+   "name": "prismatic",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel illustration of Grand Prismatic Spring in Yellowstone, a round rainbow-ringed hot spring seen from a slight angle with rising steam wisps, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream with a soft rainbow ring, clean rounded shapes, minimal cozy storybook style, thick organic silhouette, no text, no border, single isolated subject centered on a solid pure white background, no shadow",
+   "params": {
+    "background": "auto",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.053,
+   "generated_at": "2026-08-05/06",
+   "source_job": "batch5.json",
+   "files": {
+    "cut.webp": 153482,
+    "md.webp": 28234,
+    "sm.webp": 7788,
+    "lg.webp": 50888
+   },
+   "transparent": true
+  },
+  {
+   "name": "strip-desert",
+   "kind": "asset",
+   "prompt": "Wide horizontal diorama strip of handmade polymer clay scenery isolated on a solid pure white background: a warm orange clay desert band with a red clay rock arch, layered mesa rocks, green clay cacti with tiny pink flowers, small tumbleweed pebbles, the top half of the image is pure empty white, soft studio lighting, subtle clay texture, pastel palette, no shadow on background, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03277,
+   "generated_at": "2026-08-07",
+   "source_job": "clayworld.json",
+   "files": {
+    "cut.webp": 108388
+   },
+   "transparent": true
+  },
+  {
+   "name": "strip-mountains",
+   "kind": "asset",
+   "prompt": "Wide horizontal diorama strip of handmade polymer clay scenery isolated on a solid pure white background: a mountain range of purple and mint clay peaks with white snow caps, and nestled on the right a tiny pastel clay New York skyline with a small mint clay Statue of Liberty, a few round clay trees on rolling hills at the base, the top half of the image is pure empty white, soft studio lighting, subtle clay texture, pastel palette, no shadow on background, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.03284,
+   "generated_at": "2026-08-07",
+   "source_job": "clayworld.json",
+   "files": {
+    "cut.webp": 92828
+   },
+   "transparent": true
+  },
+  {
+   "name": "strip-ocean",
+   "kind": "asset",
+   "prompt": "Wide horizontal diorama strip of handmade polymer clay scenery isolated on a solid pure white background: a turquoise wavy clay ocean band with curling white clay wave crests, a small clay volcano island with brown ridges puffing a white smoke cloud and tiny green palm trees, a glossy butter-yellow clay sun with short ray sticks on the left, the top half of the image is pure empty white, soft studio lighting, subtle clay texture, pastel palette, no shadow on background, no text",
+   "params": {
+    "background": "opaque",
+    "aspect_ratio": "16:9",
+    "resolution": "2K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": 0.032855,
+   "generated_at": "2026-08-07",
+   "source_job": "clayworld.json",
+   "files": {
+    "cut.webp": 102132
+   },
+   "transparent": true
+  },
+  {
+   "name": "tiananmen",
+   "kind": "asset",
+   "prompt": "Flat hand-drawn travel illustration of the Tiananmen gate tower in Beijing with red walls, a golden double-eave roof and five arched gates, gouache paint texture with soft grain, warm muted palette of terracotta, sand beige, dusty teal and cream with soft red accent, clean rounded shapes, minimal cozy storybook style, thick organic silhouette, no text, no border, single isolated subject centered on a solid pure white background, no shadow",
+   "params": {
+    "background": "auto",
+    "aspect_ratio": "1:1",
+    "resolution": "1K",
+    "quality": "medium"
+   },
+   "model": "openai/gpt-image-2 via OpenRouter",
+   "cost_usd": null,
+   "generated_at": "2026-08-05/06",
+   "source_job": "batch7.json",
+   "files": {
+    "cut.webp": 117220,
+    "md.webp": 33414,
+    "sm.webp": 8960
+   },
+   "transparent": true
+  }
+ ]
+}
