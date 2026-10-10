@@ -20,7 +20,6 @@
     "cordis.patch.yml",
     "icon.svg",
     "locale/*.json",
-    "screenshots.json",
     "SKILL.md",
     "references/",
     "scripts/",

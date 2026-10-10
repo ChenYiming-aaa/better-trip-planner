@@ -123,12 +123,14 @@ dsh plugin --profile web add ChenYiming-aaa/better-trip-planner
 dsh plugin --profile web add /path/to/better-trip-planner
 ```
 
-安装后重启 DSH，技能目录里即出现 `trip-planner-cn`。验证：
+安装后 `dsh` 会把本插件同时写入该 profile 的 `dependencies` 与 `dsh.profile.bundles`，重启 DSH 后技能目录里即出现 `trip-planner-cn`（也可在设置里的插件面板直接启用）。验证：
 
 ```bash
-dsh plugin --profile web list        # 应看到 dsh-trip-planner-cn
+dsh plugin --profile web list        # 应看到 dsh-trip-planner-cn@0.1.0（其上也列出已启用的 bundle）
 npm test                             # 外壳自检：清单、补丁、frontmatter、资源路径
 ```
+
+已实测（2026-10-04）：`dsh plugin --profile web add ChenYiming-aaa/better-trip-planner` 从 GitHub 安装成功，随后按包名解析到 `profiles/web/node_modules/dsh-trip-planner-cn`，注册进 `ctx.skills` 后目录中可见 `trip-planner-cn`（`invocation` 为 `{modelInvocable:true, userInvocable:true}`，`resourceBase` 指向安装副本），按名加载返回 22424 字节正文且不含 frontmatter，`references/`、`scripts/`、`themes/` 内的资源在该副本中全部可读。卸载：`dsh plugin --profile web remove dsh-trip-planner-cn`。
 
 `tests/plugin.test.mjs` 不依赖 DSH 或任何第三方包，只校验外壳本身（`dsh.bundle` 是否接好、`SKILL.md` frontmatter 是否解析出注册表要求的字段、正文依赖的资源是否都在），因此可以在没装 DSH 的机器上跑。
 
