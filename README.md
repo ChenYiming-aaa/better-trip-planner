@@ -152,10 +152,21 @@ npm test                             # 外壳自检：清单、补丁、frontmat
 
 不发 npm 也能装（GitHub 路线是一等公民），发布换来的是更快的安装、下载量统计与按版本的更新检查。包名 `dsh-trip-planner-cn`（仓库名与包名不同是生态惯例，`dsh-*` 前缀）。
 
-```bash
-npm login
-npm publish            # prepublishOnly 会先跑 npm test，失败即中止
+**发布走 GitHub Actions，不在本地发布。** 原因是 npm registry 在中国大陆网络下常被重置（`ECONNRESET`）或超时，`npm login` / `npm publish` 在本地跑不通；GitHub 的 runner 能直连 `registry.npmjs.org`。工作流在 [`.github/workflows/publish.yml`](.github/workflows/publish.yml)。
+
+首次配置（一次性）：
+
+1. 建一个 npm token：<https://www.npmjs.com/settings/~/tokens> → Generate New Token → **Granular Access Token**，权限选 **Read and write**，包范围限定 `dsh-trip-planner-cn`（Automation token 亦可）。
+2. 存成仓库 secret：Settings → Secrets and variables → Actions → New repository secret，名字必须是 **`NPM_TOKEN`**。
+
+发版流程：改 `package.json` 的 `version` → 提交并推送 → 在 Actions 里手动触发：
+
+```text
+GitHub UI:  Actions → Publish to npm → Run workflow
+或命令行:    gh workflow run publish.yml
 ```
+
+工作流按顺序做这些事，任一步失败即中止：自检（`npm test`）→ 若该版本已存在于 npm 则报错退出 → 打 tarball 并在 summary 里记录包名/体积/文件数 → `npm publish <tarball> --provenance --access public`。`--provenance` 由 `id-token: write` 签发供应链证明；因为工作流必须在默认分支上才可手动触发，首次推送本文件后即可用。
 
 发布要点：
 
@@ -164,6 +175,7 @@ npm publish            # prepublishOnly 会先跑 npm test，失败即中止
 - `screenshots.json` 同样不进 npm 包：市场是从仓库读截图的，包内不需要副本。
 - 发布前建议核对一次包内容：`npm pack --dry-run`。
 - **peer 依赖的行为**（实测）：pnpm 的 `autoInstallPeers` 在安装时会一并解析 `@deepseek-ai/dsh-skill`。它选到的是范围内最新的 `0.2.0-rc.2`，与 DSH 自带的同版本，因此不会形成多版本核心包；插件运行时只用注入进来的 `ctx.skills` 服务，从不 `import` 这个包，所以即使宿主版本不同也不影响加载。
+- 若你的网络能直连 npm（例如有可用代理），本地发布同样可行：`npm login --auth-type=web --registry=https://registry.npmjs.org` 后 `npm publish`，`prepublishOnly` 会先跑 `npm test`。注意 `npm login` 必须显式指定官方 registry——本机若把 `registry` 指向 npmmirror，登录会失败，因为镜像不提供账号登录。
 
 ## 配置说明
 

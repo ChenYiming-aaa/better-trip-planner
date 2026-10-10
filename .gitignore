@@ -41,3 +41,7 @@ _site/
 # US portal reference chain (19 mp4, ~35 MB) is a release asset, not tracked:
 # https://github.com/skywain/trip-planner-skill/releases/tag/demo-assets-v1
 themes/assets/portal/*.mp4
+
+# npm pack output (the publish workflow builds its own tarball in CI, and a
+# local `npm pack` should never end up in the repository)
+*.tgz

@@ -1,0 +1,122 @@
+# Publish this plugin to npm from GitHub's runners.
+#
+# Why this exists: the npm registry is not reachable from the maintainer's
+# machine (ECONNRESET / timeouts), so `npm login` and `npm publish` cannot run
+# locally. GitHub's runners reach registry.npmjs.org directly, so publishing
+# happens here instead — nothing needs to be published from a local shell.
+#
+# One-time setup
+# --------------
+# 1. Create an npm token with publish rights:
+#    https://www.npmjs.com/settings/~/tokens  →  Generate New Token  →
+#    Granular Access Token, "Read and write", and scope it to this package.
+#    (An Automation token with read+write works too.)
+# 2. Store it as a repository secret named NPM_TOKEN:
+#    Settings → Secrets and variables → Actions → New repository secret
+#    https://github.com/ChenYiming-aaa/better-trip-planner/settings/secrets/actions
+#
+# Publishing a release
+# --------------------
+# Bump `version` in package.json, commit and push it, then run this workflow:
+#
+#   GitHub UI:  Actions → Publish to npm → Run workflow
+#   or:         gh workflow run publish.yml
+#
+# The job refuses to publish a version that already exists, and refuses to
+# publish when the self-check fails.
+name: Publish to npm
+
+on:
+  # Manual only. Publishing is a release decision, so a tag push cannot start
+  # it by accident.
+  workflow_dispatch:
+
+# Least privilege: the default token needs no write scopes, and `id-token:
+# write` is what --provenance uses to sign the attestation.
+permissions:
+  contents: read
+  id-token: write
+
+# Never let two publishes race for the same version.
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Test and publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js and the npm registry
+        uses: actions/setup-node@v4
+        with:
+          # Matches the plugin's engines field.
+          node-version: '24'
+          registry-url: https://registry.npmjs.org
+          # This repository has no lockfile — the plugin ships no dependencies
+          # — and the automatic cache setup fails hard without one.
+          package-manager-cache: false
+
+      - name: Read the version being published
+        id: meta
+        run: |
+          NAME="$(node -p "require('./package.json').name")"
+          VERSION="$(node -p "require('./package.json').version")"
+          echo "package=$NAME" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Publishing $NAME@$VERSION"
+          {
+            echo "### Publishing \`$NAME@$VERSION\`"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Check NPM_TOKEN is configured
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "${NPM_TOKEN}" ]; then
+            echo "::error::Repository secret NPM_TOKEN is missing. Create a granular npm token with publish rights and add it under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+
+      - name: Self-check (no dependencies to install)
+        run: npm test
+
+      - name: Refuse to republish an existing version
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          PACKAGE: ${{ steps.meta.outputs.package }}
+          VERSION: ${{ steps.meta.outputs.version }}
+        run: |
+          if npm view "${PACKAGE}@${VERSION}" version >/dev/null 2>&1; then
+            echo "::error::${PACKAGE}@${VERSION} is already published on npm. Bump the version in package.json before running this workflow."
+            exit 1
+          fi
+          echo "Version ${VERSION} is free to publish."
+
+      - name: Build the tarball and record what ships
+        id: pack
+        run: |
+          npm pack
+          TARBALL="$(ls -1 ./*.tgz | head -n1)"
+          SIZE="$(du -h "${TARBALL}" | cut -f1)"
+          FILES="$(tar -tzf "${TARBALL}" | wc -l)"
+          echo "tarball=${TARBALL}" >> "$GITHUB_OUTPUT"
+          echo "Packed ${TARBALL} — ${SIZE}, ${FILES} files"
+          {
+            echo "| | |"
+            echo "|---|---|"
+            echo "| tarball | \`$(basename "${TARBALL}")\` |"
+            echo "| size | ${SIZE} |"
+            echo "| files | ${FILES} |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish
+        # Pass the captured filename rather than a glob, so the exact artifact
+        # that was inspected above is the one that gets published.
+        run: npm publish "${{ steps.pack.outputs.tarball }}" --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
