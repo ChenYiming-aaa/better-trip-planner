@@ -35,12 +35,5 @@ themes/.auth_header
 themes/.payload.json
 themes/**/*.png
 
-# Built demo site (scripts/build_site.py) — GitHub Actions builds it on push
-_site/
-
-# US portal reference chain (19 mp4, ~35 MB) is a release asset, not tracked:
-# https://github.com/skywain/trip-planner-skill/releases/tag/demo-assets-v1
-themes/assets/portal/*.mp4
-
 # npm pack output — a local `npm pack` artifact should never land in the repo
 *.tgz

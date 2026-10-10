@@ -171,13 +171,11 @@ them. Flow:
    shell (buttons, tags, section names, weekdays, cover fallbacks) follows
    `plan.lang` / `--lang`, art copy renders in whatever language it was written
    (ART-SCHEMA.md §language; English cover titles: references/cover-titles.md).
-3. `python3 themes/qc.py trip-<theme>.html` must exit 0, then
-   `themes/xprobe.sh trip-<theme>.html module '#d5' out.png` and **look at the PNG**
-   — a green probe title is not proof; blank icons and cropped tails only show visually.
-   No headless Chrome in this environment → open the HTML in whatever browser tool
-   you have (a browser pane may refuse `file://` — serve the folder with
-   `python3 -m http.server` and open `http://localhost:8000/trip-<theme>.html`) and
-   look at the cover and one day; if you have none, say so in the summary.
+3. `python3 themes/qc.py trip-<theme>.html` must exit 0, then **look at the page**
+   in whatever browser tool you have (a browser pane may refuse `file://` — serve the
+   folder with `python3 -m http.server` and open `http://localhost:8000/trip-<theme>.html`)
+   and check the cover and one day; blank icons and cropped tails only show visually.
+   If you have no browser at all, say so in the summary.
 Each of the seven themes carries its own share buttons (保存这一天 / 保存附录 /
 生成长图 — Save this day / Save appendix / Save long image in en), offline, no
 dependencies; noir and glass export day modules only.

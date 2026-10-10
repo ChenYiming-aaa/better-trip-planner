@@ -20,7 +20,6 @@ plain page either — it renders a theme from the built-in stock kit (below).
 | `render_picker.py` | the style-chooser page (one card per theme) |
 | `theme_common.py` | shared helpers: `data_uri`, `load_plan`, `Art`/`load_art`/`add_art_arg`, `export_js` (share buttons), icons, i18n (`STRINGS`/`T`/`init_lang`/`weekday`/`theme_name`) |
 | `qc.py` | static QC of a built page — offline contract, no-JS survival, print, focus, link hygiene, inline `url("` |
-| `xprobe.sh` · `xt.sh` | headless export probes (with / without picture) |
 | `towebp.py` · `cutout.py` · `split_sheet.py` · `gen.py` · `build_manifest.py` | asset pipeline: png→webp (+ size variants), alpha cut-out, sheet splitting, generation, manifest refresh. `gen.py` 境内版：`--provider auto|dashscope|siliconflow`（auto 按 env key 检测；两家均国内直连，OpenRouter 原路径已移除） |
 | `ART-SCHEMA.md` · `lucide-icons.json` | the art.json contract · the icon sprite source |
 | `assets/` | the picture library: every embeddable `*.webp`, `caveat-vf.woff2`, `manifest.json` (prompt + cost per generated asset) |
@@ -30,7 +29,6 @@ plain page either — it renders a theme from the built-in stock kit (below).
 ```bash
 python3 themes/render_<x>.py plan.geo.json [--art F|none] [--assets DIR ...] [--lang zh|en] -o out.html
 python3 themes/qc.py out.html                        # exit 0 = clean; exit code = FAIL count
-themes/xprobe.sh out.html module '#d5' out.png       # click the real share button headlessly, look at out.png
 ```
 
 `<x>` ∈ theme2 clay2 noir2 glass2 journal zine splash picker. (`render_picker.py plan.geo.json -o picker.html [--products DIR] [--prefix NAME]` links the rendered pages as `{prefix}-{theme}.html` with the English theme key, e.g. `china-illustrated.html` — pages exported under the old Chinese tag (e.g. `-插画版.html`) still resolve; prefix defaults to `cover.kick_en` with spaces → `-`; products dir defaults to the output dir.) A trip is
@@ -45,9 +43,7 @@ each theme's own voice in its renderer's `L` table; plan/art text prints as writ
 seven, zine included. A plan section of the wrong shape (a dict where `budget` /
 `legs` want a list …) renders empty with a stderr `WARN plan.<key>` pointing at
 `references/output-template.md` — start from `assets/plan.example.json` and read
-stderr. `xprobe.sh … page ''` prints `NO-BTN` on noir/glass (module-only export) but
-still leaves the live first screen in `out.png` — that is the cover shot, not a failure
-(`references/themes.md` §6).
+stderr.
 
 ## art.json in one sentence
 

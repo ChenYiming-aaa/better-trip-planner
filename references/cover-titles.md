@@ -73,13 +73,13 @@ word — and fill the same art fields (settled after an early English-plan test,
     viewport width minus the gutter, and it **wraps** rather than shrinks):
     **≤ 10 characters conservative** — mobile 375 px is the binding case (~9-10
     chars at the 56 px floor); an earlier test shipped "Night Vigil" (11) and it
-    rendered, desktop-probed — verify with `xprobe.sh … module` at both widths
+    rendered on desktop — verify at both widths in a browser
     before shipping longer;
   - 黏土 clay `h1`: with a title sticker the budget belongs to the **image** — the
     sticker is `min(420px, 72vw)` wide, so ~**12 characters** with the last letter
     given room (the "QINC" lesson below); the text fallback (`clamp(40px,8vw,84px)`,
-    weight 900, `.1em`) fits ~12 at 375 px and wraps beyond — "≤12, verify with
-    xprobe" either way;
+    weight 900, `.1em`) fits ~12 at 375 px and wraps beyond — "≤12, verify in
+    a browser" either way;
   - 玻璃 glass `h1`: **≤ 10 characters measured** (an earlier test: "MOON OF QIN" =
     11 wraps over the hero plate; "Ochre Road" = 10 is the safe example) — 闪屏
     splash `h1`: **≤ 12 characters** placeholder until the builders publish a

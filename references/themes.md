@@ -29,9 +29,6 @@ Commands (all relative to the skill root):
 ```
 python3 themes/render_<x>.py plan.geo.json [--art F|none] [--assets DIR ...] -o out.html
 python3 themes/qc.py out.html                       # exit code = number of FAILs
-themes/xprobe.sh out.html module '#d5' out.png      # click the real export button, rasterise it
-themes/xprobe.sh out.html page   ''    out.png      # whole-page export (ANCHOR=bottom → last 2600px)
-themes/xt.sh    out.html module '#d5'               # title-only probe, ~25 s, no picture
 python3 themes/render_picker.py plan.geo.json -o picker.html [--products DIR] [--prefix NAME]
     # the style-chooser page; expects the seven pages as {prefix}-{theme}.html
     # with the English theme key (china-illustrated.html; pages exported under
@@ -220,8 +217,8 @@ add every new theme to its `THEMES` list or the chooser silently falls behind.
    the library is the main agent's job after the batch (ART-SCHEMA §Test-trip asset recycling).
 4. Write the words: captions, annotations, doodle notes, the closing line. Voice
    rules live in each renderer's docstring.
-5. Render → `qc.py` exit 0 → `xprobe.sh` one module and, for whole-page themes, one
-   page export → **look at both PNGs** (§6). Deliver the HTML beside the trip folder.
+5. Render → `qc.py` exit 0 → open the page in a browser and **look at it** (§6).
+   Deliver the HTML beside the trip folder.
 
 Steps 2-3 above assume the session **can** make pictures. Whether it can is decided
 once, at Phase 0, and recorded in `prefs.pictures` — §3b is the branch for when it
@@ -479,49 +476,18 @@ images never `loading=lazy`; itinerary grids never `grid-auto-flow:dense`.
   10%–90% in nine steps per chapter and require every one to pass.
 - **Read authoritative fields, never sniff prose** — transport mode comes from
   `legs`, not hop text (a precedence slip once made 8/11 days "fly").
-- **Export probes**: `xprobe.sh` reports `OK <w>x<h> blob=<bytes> errs=<n>` and
-  writes the export as PNG. Green is necessary, not sufficient — **open the image**:
-  icons and particles present? no stray colour band at the top? last decoration
-  at the bottom intact? `ANCHOR=bottom … page ''` shows the tail. The tail bar is
+- **Visual check beats green checks.** `qc.py` exit 0 is necessary, not sufficient —
+  **open the page in a browser and look**: icons and particles present? no stray
+  colour band at the top? last decoration at the bottom intact? The tail bar is
   **the page's last element, named**: the colophon / end card / credit line must be
-  readable in the image. "The bottom looks like plausible content" proves nothing —
-  a clipped export also ends in plausible prose, which is exactly how the
-  zine/splash tail clip hid from every bottom-anchored probe until 2026-09-01. Both `xprobe.sh`
-  and `xt.sh` start Chrome in the background with a throwaway `--user-data-dir`,
-  poll for output, then kill that Chrome by profile — do not wait on it in the
-  foreground (Chrome 151 headless never exits on this machine) and do not run
-  headless Chrome unless the task calls for it (memory). A `Killed: 9` job line
-  from an older copy of either script is that self-kill, not a failure (the
-  current scripts swallow it); the title/png line is the result.
-- **Cover check — which themes have a whole-page button, and what `page ''` gives you.**
-  Whole-page (`data-x-page`) buttons exist in illustrated, clay, journal, zine and
-  splash. **noir and glass are module-only** (sticky/fixed stage, `page_root=""`).
-  On those, `xprobe.sh out.html page '' cover.png`
-  prints `NO-BTN` — **not a failure**: pass 2 still screenshots the live page at
-  1200×2600, so `cover.png` is the first 2600 px of the real page, i.e. exactly the
-  cover shot you wanted to eyeball. **splash** is the opposite trap: its whole-page
-  export deliberately zeroes the hero's 100svh (`extra_css`, see the renderer
-  docstring), so the export's first screen is DAY 01 and the cover is not in it —
-  shoot the live page instead. Same for any theme whose cover you want at true
-  viewport geometry. Live-page shot, the way xprobe.sh does it (background Chrome,
-  throwaway profile, poll, kill by profile — never wait on Chrome in the foreground):
-
-  ```bash
-  CH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-  mkdir -p "${TMPDIR:-/tmp}/xprobe" qa; UDD=$(mktemp -d "${TMPDIR:-/tmp}/xprobe/udd.XXXXXX"); OUT=$PWD/qa/splash-live-cover.png
-  { "$CH" --headless=new --disable-gpu --no-first-run --user-data-dir="$UDD" --hide-scrollbars \
-      --window-size=1200,2600 --virtual-time-budget=45000 --screenshot="$OUT" "file://$PWD/out.html" 2>/dev/null & } 2>/dev/null
-  last=-1; for i in $(seq 1 120); do [ -s "$OUT" ] && { sz=$(stat -f%z "$OUT"); [ "$sz" = "$last" ] && break; last=$sz; }; sleep 1; done
-  { pkill -9 -f -- "--user-data-dir=$UDD"; wait; } 2>/dev/null; rm -rf "$UDD"
-  ```
-  (If the shell blocks a foreground `sleep`, poll with
-  `python3 -c "import time;time.sleep(1)"` instead — same one-second beat.)
-  (For a `.reveal` theme inject `.reveal{opacity:1!important}` into a copy first —
-  IntersectionObserver never fires headless.) `ANCHOR=bottom xprobe.sh … page ''`
-  shows the export's last 2600 px — the tail check; on a module-only theme it is the
-  same live first screen, so check the tail there with a module probe on the last
-  block (noir `module '.appx'`, glass `module '#checklist'` / `'#brief'` — the
-  selectors are the page's own `data-x-for` values).
+  readable. "The bottom looks like plausible content" proves nothing — a clipped
+  export also ends in plausible prose.
+- **Cover check.** Every theme's cover is the first screen of the page. **splash**
+  is the one trap: its export collapses the hero's 100svh (`extra_css`, see the
+  renderer docstring), so scroll past DAY 01 before judging the hero. A browser pane
+  that refuses `file://` — serve the folder with `python3 -m http.server` and open
+  `http://localhost:8000/out.html`. (For a `.reveal` theme, animated sections need
+  a scroll or click before they show — judge them after triggering the animation.)
 - **Anchor-nav changes get a jump matrix, not a spot check.** One manual click proves
   nothing: the glass scrollspy bug reproduced only in some viewport/direction
   combinations（同一处点击，530px 视口全对、900px 视口高亮漂到下一节）. For any change

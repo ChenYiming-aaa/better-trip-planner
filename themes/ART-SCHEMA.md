@@ -109,7 +109,7 @@ nordic cover.
 zine on the cover, clay and splash use it as the fallback for `cover.sub`). Keep it
 **≤68 characters** — the journal envelope is the tightest: a 76-character English route
 folded to two lines and hit the envelope's bottom edge, 68 sat on one line (Mexico
-2026-08-15). CJK routes were not measured — verify with xprobe. If the plan's route must
+2026-08-15). CJK routes were not measured — verify in a browser. If the plan's route must
 carry branch prose ("哥伦布(球赛·可切C分支)" — "Columbus (match · can switch to branch C)")
 for the plain page, give clay/splash their
 own short `cover.sub`; journal and zine print `meta.route` as it is.
@@ -450,7 +450,7 @@ zones, every seam clean in the export):
                   //   left|right: -8% … -18% (negative = poking past the island's outer edge; larger sticks to the chapter edge / gets clipped)
                   //   bottom: -8% … +4% (or top: -12% … +4% to hang on the island's shoulder)
                   //   width: clamp(76–130px, 8–15vw, 100–175px); --vr: -8deg … 8deg
-                  // the measured envelope of the 30-odd pos values across the US/China/Vietnam finished pages; out-of-range values render without any error — only an xprobe eyeball catches them
+                  // the measured envelope of the 30-odd pos values across the US/China/Vietnam finished pages; out-of-range values render without any error — only a visual check in a browser catches them
       "mascot":  {"kind": "bison", "pos": "right:-9%;bottom:-2%;width:clamp(88px,9.5vw,120px);--vr:3deg"},   // same pos ranges; mascots usually 8–9.5vw
       "strip":   "city",                        // a name pointing into strips
       "sides":   ["balloon"]                    // extra side-field pieces

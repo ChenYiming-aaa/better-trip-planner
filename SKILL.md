@@ -363,7 +363,7 @@ directory is not the skill directory and shell cwd does not persist between call
   `render_theme2.py` = illustrated, `render_clay2.py`, `render_glass2.py`,
   `render_zine.py`, `render_splash.py`, `render_picker.py`; **无视频主题**)
   plus `theme_common.py`（境内版:页内地图嵌入默认关闭）, `qc.py` (static QC, exit
-  code = FAIL count), `xprobe.sh` / `xt.sh` (headless export probes), `towebp.py` /
+  code = FAIL count), `towebp.py` /
   `gen.py` / `split_sheet.py` / `cutout.py` (asset pipeline; `gen.py`:
   `--provider dashscope|siliconflow` 国内直连生图,env key 优先), `ART-SCHEMA.md`
   (the one authoritative art.json contract) and `themes/README.md`.
