@@ -156,8 +156,19 @@ npm test                             # 外壳自检：清单、补丁、frontmat
 
 首次配置（一次性）：
 
-1. 建一个 npm token：<https://www.npmjs.com/settings/~/tokens> → Generate New Token → **Granular Access Token**，权限选 **Read and write**，包范围限定 `dsh-trip-planner-cn`（Automation token 亦可）。
+1. 建一个 token：<https://www.npmjs.com/settings/~/tokens> → Generate New Token → **Granular Access Token**：
+
+   - **Permissions** 选 `Read and write`
+   - **Packages and scopes** 选 All packages 或限定 `dsh-trip-planner-cn`
+   - **必须勾选 `Bypass 2FA`** —— 不勾的话，CI 里发布会返回 `403 Two-factor authentication or granular access token with bypass 2fa enabled is required to publish packages`
+
 2. 存成仓库 secret：Settings → Secrets and variables → Actions → New repository secret，名字必须是 **`NPM_TOKEN`**。
+
+> **为什么必须勾 Bypass 2FA**：如果账号开了 2FA（`tfa.mode = auth-and-writes`，即"认证与写入都需要 2FA"），发布就必须带交互式 2FA 挑战。CI 里没人能输验证码，所以只能用带 bypass 的 granular token。旧的 legacy token（形如 `npm_` 且权限是 `package:write`）已经不再满足这个要求，会直接 403。
+>
+> ⚠️ **这条路的有效期**：npm 正在收紧——按 [2026-07-31 的官方公告](https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/)，bypass 2FA token 已经不能做账号级敏感操作（建 token、改维护者、改 trusted publishing 配置），并且**2027 年 1 月起将失去直接发布权**，届时只剩"暂存发布 + 维护者用 2FA 批准"。官方建议迁移到 [trusted publishing (OIDC)](https://docs.npmjs.com/trusted-publishers) 或 staged publishing。本仓库的 workflow 已按 `--provenance` + `id-token: write` 配好，将来迁到 OIDC 只需把 `NPM_TOKEN` 那一步换成 OIDC 并去掉 secret。
+
+3. **包名归属**：`dsh-trip-planner-cn` 是发布账号 `cccccym` 名下的新包（`dsh-github` 由另一个账号 `kazii` 发布，两者独立）。发布前确认 `npm whoami` 是你想用的那个账号。
 
 发版流程：改 `package.json` 的 `version` → 提交并推送 → 在 Actions 里手动触发：
 
