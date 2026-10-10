@@ -6,7 +6,7 @@
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/ChenYiming-aaa/better-trip-planner)
 
-一个开放格式的 Agent Skill：跑在你正在使用的编码智能体（Claude Code、Codex、Gemini CLI、Cursor、WorkBuddy、CodeBuddy 等能加载 Agent Skills 的宿主）里，针对中国境内旅行场景深度适配了地图、交通、节假日、支付等链路。
+一个开放格式的 Agent Skill：跑在你正在使用的编码智能体（Claude Code、Codex、Gemini CLI、Cursor、WorkBuddy、CodeBuddy、DeepSeek Harness 等能加载 Agent Skills 的宿主）里，针对中国境内旅行场景深度适配了地图、交通、节假日、支付等链路。
 
 解决的都是出行里最常见的几件事：长假想去某地玩几天，得到一份逐小时、能直接照着订的完整行程；周末只有一天，排出一套不赶路的玩法；在陌生城市有 2 小时空档，给出步行可达的去处；临时赶不上车、下暴雨，几分钟重排当天。营业时间、价格、预约政策都用工具核实而不靠猜，每一项预订都递给你链接；不代订、不付款、不填个人信息。
 
@@ -72,11 +72,17 @@
 **DeepSeek Harness** 下不用手工拷贝目录，按插件安装即可（先装好 DSH 与 pnpm）：
 
 ```bash
-dsh plugin --profile web add github:ChenYiming-aaa/better-trip-planner
+dsh plugin --profile web add dsh-trip-planner-cn
 ```
 
 装完重启 DSH，技能目录里会出现 `trip-planner-cn`。卸载：
 `dsh plugin --profile web remove dsh-trip-planner-cn`。
+
+不想走 npm 也可以直接从仓库装：
+
+```bash
+dsh plugin --profile web add github:ChenYiming-aaa/better-trip-planner
+```
 
 ### 2. 三十秒验证
 
