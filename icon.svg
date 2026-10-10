@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Trip Planner CN">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6f1e6"/>
+      <stop offset="1" stop-color="#e6dcc8"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="88" height="88" rx="20" fill="url(#paper)"/>
+  <rect x="4.75" y="4.75" width="86.5" height="86.5" rx="19.25" fill="none" stroke="#c8b89a" stroke-width="1.5"/>
+  <path d="M26 68c6-14 12-22 20-24s14 2 24-10" fill="none" stroke="#2f6f6b" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9"/>
+  <path d="M24 66.5c-5-5-5-12 0-16.5l14-12a8.5 8.5 0 0 1 12 12l-13 13a6 6 0 0 1-9-9l11-10" fill="none" stroke="#1f4f4c" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="66" cy="30" r="9" fill="#d9534f"/>
+  <circle cx="66" cy="30" r="3.4" fill="#f6f1e6"/>
+</svg>

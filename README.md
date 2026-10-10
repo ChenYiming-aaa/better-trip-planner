@@ -22,6 +22,7 @@
   - [2. 三十秒验证](#2-三十秒验证)
   - [3. 规划一趟旅行](#3-规划一趟旅行)
   - [4. 渲染成品页](#4-渲染成品页)
+- [在 DeepSeek Harness 中安装（插件形态）](#在-deepseek-harness-中安装插件形态)
 - [配置说明](#配置说明)
 - [命令行工具](#命令行工具)
 - [仓库结构](#仓库结构)
@@ -109,6 +110,37 @@ python themes/qc.py trip-illustrated.html
 ```
 
 七种主题任选：`theme2`（插画）、`clay2`（黏土）、`noir2`（黑白）、`glass2`（玻璃）、`journal`（手记）、`zine`（杂志）、`splash`（闪屏）。`themes/render_picker.py` 可生成一页风格选择页，链接某趟行程的全部已渲染版本。
+
+## 在 DeepSeek Harness 中安装（插件形态）
+
+本仓库同时是一个 **DeepSeek Harness（DSH）插件**：仓库根目录的 `package.json` 声明了 `dsh.bundle`（补丁文件 `cordis.patch.yml`），`index.js` 把本 skill 注册进 DSH 的技能目录。装完之后，`trip-planner-cn` 会出现在智能体的技能目录里、可按名加载，`SKILL.md` 与 `references/`、`scripts/`、`themes/` 等资源都指向安装副本，无需手工拷贝目录。
+
+```bash
+# 从 GitHub 安装（推荐，无需 npm 发布）
+dsh plugin --profile web add ChenYiming-aaa/better-trip-planner
+
+# 或从本地克隆目录安装
+dsh plugin --profile web add /path/to/better-trip-planner
+```
+
+安装后重启 DSH，技能目录里即出现 `trip-planner-cn`。验证：
+
+```bash
+dsh plugin --profile web list        # 应看到 dsh-trip-planner-cn
+npm test                             # 外壳自检：清单、补丁、frontmatter、资源路径
+```
+
+`tests/plugin.test.mjs` 不依赖 DSH 或任何第三方包，只校验外壳本身（`dsh.bundle` 是否接好、`SKILL.md` frontmatter 是否解析出注册表要求的字段、正文依赖的资源是否都在），因此可以在没装 DSH 的机器上跑。
+
+**实现要点**（便于审阅与二次开发）：
+
+| 文件 | 作用 |
+|---|---|
+| `package.json` | `dsh.bundle.patch` 指向 `cordis.patch.yml`；显示名与图标见 `locale/*.json` 与 `icon.svg` |
+| `cordis.patch.yml` | 插入 `dsh-trip-planner-cn` 一行；需要宿主已挂载 `@deepseek-ai/dsh-skill` 与 `@deepseek-ai/dsh-skill-filesystem`（`@deepseek-ai/dsh-base` 自带） |
+| `index.js` | 用 `ctx.skills.registerProvider()` 注册一个 rank 600 的 bundled provider：`list()` 只读 frontmatter，`get()` 按需读正文，`resourceBase` 指向仓库根，因此 skill 正文里的相对路径（`references/...`、`scripts/...`）在安装副本里同样成立 |
+
+该形状与 DSH 第一方内置技能（如 `diagnose-windows-sandbox-acl`）一致。插件只做注册，不含任何网络请求、不写文件、不读密钥。`@deepseek-ai/dsh-skill` 声明为 `peerDependencies`，由宿主提供。
 
 ## 配置说明
 

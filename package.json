@@ -1,0 +1,62 @@
+{
+  "name": "dsh-trip-planner-cn",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness 插件外壳：把境内旅行规划 Agent Skill（trip-planner-cn）注册进 DSH 技能目录，装完即可按名加载 SKILL.md 及其 references/scripts/themes 资源。 / DeepSeek Harness plugin wrapper that registers the domestic-China trip-planning Agent Skill (trip-planner-cn) in the DSH skill catalog, with its bundled references/scripts/themes resources.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "icon": "./icon.svg",
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "screenshots.json",
+    "SKILL.md",
+    "references/",
+    "scripts/",
+    "themes/",
+    "assets/",
+    "README.md",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "test": "node tests/plugin.test.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill": ">=0.1.0-rc.1 <0.2.0-0 || >=0.2.0-rc.1 <0.3.0-0"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "deepseek-harness",
+    "agent-skill",
+    "skill",
+    "travel",
+    "trip-planner",
+    "itinerary",
+    "china-travel"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ChenYiming-aaa/better-trip-planner",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChenYiming-aaa/better-trip-planner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChenYiming-aaa/better-trip-planner/issues"
+  }
+}

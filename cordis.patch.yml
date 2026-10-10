@@ -1,0 +1,15 @@
+# dsh-trip-planner-cn bundle: mounts the plugin that registers the
+# `trip-planner-cn` Agent Skill on `ctx.skills`.
+#
+# The row needs no config: the plugin reads its own SKILL.md frontmatter at
+# activation and publishes one bundled candidate (rank 600) whose resources
+# resolve against this repository root.
+#
+# Requires a composition that already mounts the skill registry and the
+# filesystem provider (both ship with @deepseek-ai/dsh-base):
+#   - name: '@deepseek-ai/dsh-skill'
+#   - name: '@deepseek-ai/dsh-skill-filesystem'
+- insert:
+    - id: trip-planner-cn
+      name: dsh-trip-planner-cn
+      config: {}
