@@ -22,8 +22,6 @@
   - [2. 三十秒验证](#2-三十秒验证)
   - [3. 规划一趟旅行](#3-规划一趟旅行)
   - [4. 渲染成品页](#4-渲染成品页)
-- [在 DeepSeek Harness 中安装（插件形态）](#在-deepseek-harness-中安装插件形态)
-  - [发布到 npm（可选）](#发布到-npm可选)
 - [配置说明](#配置说明)
 - [命令行工具](#命令行工具)
 - [仓库结构](#仓库结构)
@@ -71,6 +69,15 @@
 
 把本目录放进你所用宿主的 skills 目录：Claude Code 为 `~/.claude/skills/trip-planner-cn`，WorkBuddy 为 `~/.workbuddy/skills/trip-planner-cn`，CodeBuddy 为 `~/.codebuddy/skills/trip-planner-cn`，其余宿主按各自文档放置。运行环境只需 Python 3.9+ 标准库；可选安装 Pillow 用于素材流水线（`pip install pillow`）。
 
+**DeepSeek Harness** 下不用手工拷贝目录，按插件安装即可（先装好 DSH 与 pnpm）：
+
+```bash
+dsh plugin --profile web add github:ChenYiming-aaa/better-trip-planner
+```
+
+装完重启 DSH，技能目录里会出现 `trip-planner-cn`。卸载：
+`dsh plugin --profile web remove dsh-trip-planner-cn`。
+
 ### 2. 三十秒验证
 
 不需要任何密钥，在本目录执行：
@@ -111,82 +118,6 @@ python themes/qc.py trip-illustrated.html
 ```
 
 七种主题任选：`theme2`（插画）、`clay2`（黏土）、`noir2`（黑白）、`glass2`（玻璃）、`journal`（手记）、`zine`（杂志）、`splash`（闪屏）。`themes/render_picker.py` 可生成一页风格选择页，链接某趟行程的全部已渲染版本。
-
-## 在 DeepSeek Harness 中安装（插件形态）
-
-本仓库同时是一个 **DeepSeek Harness（DSH）插件**：仓库根目录的 `package.json` 声明了 `dsh.bundle`（补丁文件 `cordis.patch.yml`），`index.js` 把本 skill 注册进 DSH 的技能目录。装完之后，`trip-planner-cn` 会出现在智能体的技能目录里、可按名加载，`SKILL.md` 与 `references/`、`scripts/`、`themes/` 等资源都指向安装副本，无需手工拷贝目录。
-
-```bash
-# 从 GitHub 安装（无需 npm 发布）
-dsh plugin --profile web add github:ChenYiming-aaa/better-trip-planner
-
-# 或从本地克隆目录安装
-dsh plugin --profile web add /path/to/better-trip-planner
-```
-
-安装后 `dsh` 会把本插件同时写入该 profile 的 `dependencies` 与 `dsh.profile.bundles`，重启 DSH 后技能目录里即出现 `trip-planner-cn`（也可在设置里的插件面板直接启用）。验证：
-
-```bash
-dsh plugin --profile web list        # 应看到 dsh-trip-planner-cn@0.1.1（其上也列出已启用的 bundle）
-npm test                             # 外壳自检：清单、补丁、frontmatter、资源路径
-```
-
-已实测（2026-10-04）：从 GitHub 安装成功，随后按包名解析到 `profiles/web/node_modules/dsh-trip-planner-cn`，注册进 `ctx.skills` 后目录中可见 `trip-planner-cn`（`invocation` 为 `{modelInvocable:true, userInvocable:true}`，`resourceBase` 指向安装副本），按名加载返回 22424 字节正文且不含 frontmatter，`references/`、`scripts/`、`themes/` 内的资源在该副本中全部可读。发布到 npm 后（见下）同样可用 `dsh plugin --profile web add dsh-trip-planner-cn` 安装，无需下载整仓源码。卸载：`dsh plugin --profile web remove dsh-trip-planner-cn`。
-
-两个自检脚本：
-
-- `tests/plugin.test.mjs`（`npm test`）不依赖 DSH 或任何第三方包，只校验外壳本身——`dsh.bundle` 是否接好、`SKILL.md` frontmatter 是否解析出注册表要求的字段、正文依赖的资源是否都在，因此可以在没装 DSH 的机器上跑。
-- `tests/install.check.mjs <profileDir>` 是安装级检查，需要该 profile 已装好 harness：它按包名解析插件、挂载真实的 `@deepseek-ai/dsh-skill` 注册表、读目录、按名加载正文、核对 `resourceBase` 指向安装副本内的资源，并在卸载后确认目录归零。
-
-**实现要点**（便于审阅与二次开发）：
-
-| 文件 | 作用 |
-|---|---|
-| `package.json` | `dsh.bundle.patch` 指向 `cordis.patch.yml`；显示名与图标见 `locale/*.json` 与 `icon.svg`；`prepublishOnly` 在发布前自动跑 `npm test` |
-| `cordis.patch.yml` | 插入 `dsh-trip-planner-cn` 一行；需要宿主已挂载 `@deepseek-ai/dsh-skill` 与 `@deepseek-ai/dsh-skill-filesystem`（`@deepseek-ai/dsh-base` 自带） |
-| `index.js` | 用 `ctx.skills.registerProvider()` 注册一个 rank 600 的 bundled provider：`list()` 只读 frontmatter，`get()` 按需读正文，`resourceBase` 指向仓库根，因此 skill 正文里的相对路径（`references/...`、`scripts/...`）在安装副本里同样成立 |
-
-该形状与 DSH 第一方内置技能（如 `diagnose-windows-sandbox-acl`）一致。插件只做注册，不含任何网络请求、不写文件、不读密钥。`@deepseek-ai/dsh-skill` 声明为 `peerDependencies`，由宿主提供。
-
-### 发布到 npm（可选）
-
-不发 npm 也能装（GitHub 路线是一等公民），发布换来的是更快的安装、下载量统计与按版本的更新检查。包名 `dsh-trip-planner-cn`（仓库名与包名不同是生态惯例，`dsh-*` 前缀）。
-
-**发布走 GitHub Actions，不在本地发布。** 原因是 npm registry 在中国大陆网络下常被重置（`ECONNRESET`）或超时，`npm login` / `npm publish` 在本地跑不通；GitHub 的 runner 能直连 `registry.npmjs.org`。工作流在 [`.github/workflows/publish.yml`](.github/workflows/publish.yml)。
-
-首次配置（一次性）：
-
-1. 建一个 token：<https://www.npmjs.com/settings/~/tokens> → Generate New Token → **Granular Access Token**：
-
-   - **Permissions** 选 `Read and write`
-   - **Packages and scopes** 选 All packages 或限定 `dsh-trip-planner-cn`
-   - **必须勾选 `Bypass 2FA`** —— 不勾的话，CI 里发布会返回 `403 Two-factor authentication or granular access token with bypass 2fa enabled is required to publish packages`
-
-2. 存成仓库 secret：Settings → Secrets and variables → Actions → New repository secret，名字必须是 **`NPM_TOKEN`**。
-
-> **为什么必须勾 Bypass 2FA**：如果账号开了 2FA（`tfa.mode = auth-and-writes`，即"认证与写入都需要 2FA"），发布就必须带交互式 2FA 挑战。CI 里没人能输验证码，所以只能用带 bypass 的 granular token。旧的 legacy token（形如 `npm_` 且权限是 `package:write`）已经不再满足这个要求，会直接 403。
->
-> ⚠️ **这条路的有效期**：npm 正在收紧——按 [2026-07-31 的官方公告](https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/)，bypass 2FA token 已经不能做账号级敏感操作（建 token、改维护者、改 trusted publishing 配置），并且**2027 年 1 月起将失去直接发布权**，届时只剩"暂存发布 + 维护者用 2FA 批准"。官方建议迁移到 [trusted publishing (OIDC)](https://docs.npmjs.com/trusted-publishers) 或 staged publishing。本仓库的 workflow 已按 `--provenance` + `id-token: write` 配好，将来迁到 OIDC 只需把 `NPM_TOKEN` 那一步换成 OIDC 并去掉 secret。
-
-3. **包名归属**：`dsh-trip-planner-cn` 是发布账号 `cccccym` 名下的新包（`dsh-github` 由另一个账号 `kazii` 发布，两者独立）。发布前确认 `npm whoami` 是你想用的那个账号。
-
-发版流程：改 `package.json` 的 `version` → 提交并推送 → 在 Actions 里手动触发：
-
-```text
-GitHub UI:  Actions → Publish to npm → Run workflow
-或命令行:    gh workflow run publish.yml
-```
-
-工作流按顺序做这些事，任一步失败即中止：自检（`npm test`）→ 若该版本已存在于 npm 则报错退出 → 打 tarball 并在 summary 里记录包名/体积/文件数 → `npm publish <tarball> --provenance --access public`。`--provenance` 由 `id-token: write` 签发供应链证明；因为工作流必须在默认分支上才可手动触发，首次推送本文件后即可用。
-
-发布要点：
-
-- `repository` 已指向本仓库——npm 映射是从 registry 自动采集的，市场据此把包和仓库关联起来；两者对不上就不会关联。
-- `files[]` 只收 skill 运行所需的资源：`index.js`、`cordis.patch.yml`、`icon.svg`、`locale/`、`SKILL.md`、`references/`、`scripts/`、`themes/`、`assets/`、`.env.example` 以及许可证与说明。`examples/`（约 10 MB 成品页）与 `docs/` 不进包，运行时也不需要它们——打包后 **9.6 MB / 312 文件**。
-- `screenshots.json` 同样不进 npm 包：市场是从仓库读截图的，包内不需要副本。
-- 发布前建议核对一次包内容：`npm pack --dry-run`。
-- **peer 依赖的行为**（实测）：pnpm 的 `autoInstallPeers` 在安装时会一并解析 `@deepseek-ai/dsh-skill`。它选到的是范围内最新的 `0.2.0-rc.2`，与 DSH 自带的同版本，因此不会形成多版本核心包；插件运行时只用注入进来的 `ctx.skills` 服务，从不 `import` 这个包，所以即使宿主版本不同也不影响加载。
-- 若你的网络能直连 npm（例如有可用代理），本地发布同样可行：`npm login --auth-type=web --registry=https://registry.npmjs.org` 后 `npm publish`，`prepublishOnly` 会先跑 `npm test`。注意 `npm login` 必须显式指定官方 registry——本机若把 `registry` 指向 npmmirror，登录会失败，因为镜像不提供账号登录。
 
 ## 配置说明
 
@@ -257,6 +188,12 @@ examples/
   screenshots/                示例截图：七主题首屏、插画版内页、门禁实测
 docs/screenshots/             主 README 配图（成品封面与路线地图）
 .env.example                  环境变量模板（.env 本体不入库）
+package.json                  DeepSeek Harness 插件清单（dsh.bundle）
+index.js                      插件入口：把本 skill 注册进 DSH 技能目录
+cordis.patch.yml              插件装配补丁
+locale/ icon.svg              插件市场里显示的名称与图标
+screenshots.json              市场详情页截图清单
+tests/                        插件自检脚本
 ```
 
 ## 数据来源

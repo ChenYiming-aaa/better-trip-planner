@@ -42,6 +42,5 @@ _site/
 # https://github.com/skywain/trip-planner-skill/releases/tag/demo-assets-v1
 themes/assets/portal/*.mp4
 
-# npm pack output (the publish workflow builds its own tarball in CI, and a
-# local `npm pack` should never end up in the repository)
+# npm pack output — a local `npm pack` artifact should never land in the repo
 *.tgz
