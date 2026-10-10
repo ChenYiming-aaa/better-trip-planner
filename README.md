@@ -23,6 +23,7 @@
   - [3. 规划一趟旅行](#3-规划一趟旅行)
   - [4. 渲染成品页](#4-渲染成品页)
 - [在 DeepSeek Harness 中安装（插件形态）](#在-deepseek-harness-中安装插件形态)
+  - [发布到 npm（可选）](#发布到-npm可选)
 - [配置说明](#配置说明)
 - [命令行工具](#命令行工具)
 - [仓库结构](#仓库结构)
@@ -116,8 +117,8 @@ python themes/qc.py trip-illustrated.html
 本仓库同时是一个 **DeepSeek Harness（DSH）插件**：仓库根目录的 `package.json` 声明了 `dsh.bundle`（补丁文件 `cordis.patch.yml`），`index.js` 把本 skill 注册进 DSH 的技能目录。装完之后，`trip-planner-cn` 会出现在智能体的技能目录里、可按名加载，`SKILL.md` 与 `references/`、`scripts/`、`themes/` 等资源都指向安装副本，无需手工拷贝目录。
 
 ```bash
-# 从 GitHub 安装（推荐，无需 npm 发布）
-dsh plugin --profile web add ChenYiming-aaa/better-trip-planner
+# 从 GitHub 安装（无需 npm 发布）
+dsh plugin --profile web add github:ChenYiming-aaa/better-trip-planner
 
 # 或从本地克隆目录安装
 dsh plugin --profile web add /path/to/better-trip-planner
@@ -126,23 +127,43 @@ dsh plugin --profile web add /path/to/better-trip-planner
 安装后 `dsh` 会把本插件同时写入该 profile 的 `dependencies` 与 `dsh.profile.bundles`，重启 DSH 后技能目录里即出现 `trip-planner-cn`（也可在设置里的插件面板直接启用）。验证：
 
 ```bash
-dsh plugin --profile web list        # 应看到 dsh-trip-planner-cn@0.1.0（其上也列出已启用的 bundle）
+dsh plugin --profile web list        # 应看到 dsh-trip-planner-cn@0.1.1（其上也列出已启用的 bundle）
 npm test                             # 外壳自检：清单、补丁、frontmatter、资源路径
 ```
 
-已实测（2026-10-04）：`dsh plugin --profile web add ChenYiming-aaa/better-trip-planner` 从 GitHub 安装成功，随后按包名解析到 `profiles/web/node_modules/dsh-trip-planner-cn`，注册进 `ctx.skills` 后目录中可见 `trip-planner-cn`（`invocation` 为 `{modelInvocable:true, userInvocable:true}`，`resourceBase` 指向安装副本），按名加载返回 22424 字节正文且不含 frontmatter，`references/`、`scripts/`、`themes/` 内的资源在该副本中全部可读。卸载：`dsh plugin --profile web remove dsh-trip-planner-cn`。
+已实测（2026-10-04）：从 GitHub 安装成功，随后按包名解析到 `profiles/web/node_modules/dsh-trip-planner-cn`，注册进 `ctx.skills` 后目录中可见 `trip-planner-cn`（`invocation` 为 `{modelInvocable:true, userInvocable:true}`，`resourceBase` 指向安装副本），按名加载返回 22424 字节正文且不含 frontmatter，`references/`、`scripts/`、`themes/` 内的资源在该副本中全部可读。发布到 npm 后（见下）同样可用 `dsh plugin --profile web add dsh-trip-planner-cn` 安装，无需下载整仓源码。卸载：`dsh plugin --profile web remove dsh-trip-planner-cn`。
 
-`tests/plugin.test.mjs` 不依赖 DSH 或任何第三方包，只校验外壳本身（`dsh.bundle` 是否接好、`SKILL.md` frontmatter 是否解析出注册表要求的字段、正文依赖的资源是否都在），因此可以在没装 DSH 的机器上跑。
+两个自检脚本：
+
+- `tests/plugin.test.mjs`（`npm test`）不依赖 DSH 或任何第三方包，只校验外壳本身——`dsh.bundle` 是否接好、`SKILL.md` frontmatter 是否解析出注册表要求的字段、正文依赖的资源是否都在，因此可以在没装 DSH 的机器上跑。
+- `tests/install.check.mjs <profileDir>` 是安装级检查，需要该 profile 已装好 harness：它按包名解析插件、挂载真实的 `@deepseek-ai/dsh-skill` 注册表、读目录、按名加载正文、核对 `resourceBase` 指向安装副本内的资源，并在卸载后确认目录归零。
 
 **实现要点**（便于审阅与二次开发）：
 
 | 文件 | 作用 |
 |---|---|
-| `package.json` | `dsh.bundle.patch` 指向 `cordis.patch.yml`；显示名与图标见 `locale/*.json` 与 `icon.svg` |
+| `package.json` | `dsh.bundle.patch` 指向 `cordis.patch.yml`；显示名与图标见 `locale/*.json` 与 `icon.svg`；`prepublishOnly` 在发布前自动跑 `npm test` |
 | `cordis.patch.yml` | 插入 `dsh-trip-planner-cn` 一行；需要宿主已挂载 `@deepseek-ai/dsh-skill` 与 `@deepseek-ai/dsh-skill-filesystem`（`@deepseek-ai/dsh-base` 自带） |
 | `index.js` | 用 `ctx.skills.registerProvider()` 注册一个 rank 600 的 bundled provider：`list()` 只读 frontmatter，`get()` 按需读正文，`resourceBase` 指向仓库根，因此 skill 正文里的相对路径（`references/...`、`scripts/...`）在安装副本里同样成立 |
 
 该形状与 DSH 第一方内置技能（如 `diagnose-windows-sandbox-acl`）一致。插件只做注册，不含任何网络请求、不写文件、不读密钥。`@deepseek-ai/dsh-skill` 声明为 `peerDependencies`，由宿主提供。
+
+### 发布到 npm（可选）
+
+不发 npm 也能装（GitHub 路线是一等公民），发布换来的是更快的安装、下载量统计与按版本的更新检查。包名 `dsh-trip-planner-cn`（仓库名与包名不同是生态惯例，`dsh-*` 前缀）。
+
+```bash
+npm login
+npm publish            # prepublishOnly 会先跑 npm test，失败即中止
+```
+
+发布要点：
+
+- `repository` 已指向本仓库——npm 映射是从 registry 自动采集的，市场据此把包和仓库关联起来；两者对不上就不会关联。
+- `files[]` 只收 skill 运行所需的资源：`index.js`、`cordis.patch.yml`、`icon.svg`、`locale/`、`SKILL.md`、`references/`、`scripts/`、`themes/`、`assets/`、`.env.example` 以及许可证与说明。`examples/`（约 10 MB 成品页）与 `docs/` 不进包，运行时也不需要它们——打包后 **9.6 MB / 312 文件**。
+- `screenshots.json` 同样不进 npm 包：市场是从仓库读截图的，包内不需要副本。
+- 发布前建议核对一次包内容：`npm pack --dry-run`。
+- **peer 依赖的行为**（实测）：pnpm 的 `autoInstallPeers` 在安装时会一并解析 `@deepseek-ai/dsh-skill`。它选到的是范围内最新的 `0.2.0-rc.2`，与 DSH 自带的同版本，因此不会形成多版本核心包；插件运行时只用注入进来的 `ctx.skills` 服务，从不 `import` 这个包，所以即使宿主版本不同也不影响加载。
 
 ## 配置说明
 
