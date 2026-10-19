@@ -282,6 +282,14 @@ Paths below are relative to the skill root (the directory holding this SKILL.md)
 resolve it once and call the scripts by absolute path, because a subagent's working
 directory is not the skill directory and shell cwd does not persist between calls.
 
+Every script below is **Python 3.9+** (standard library only; Pillow is optional, for
+the asset pipeline). Invoke it with an explicit interpreter: `python3 <abs>/scripts/x.py`
+on macOS/Linux, but `python <abs>\scripts\x.py` (or the `py -3` launcher) on Windows,
+where `python3` is usually not on PATH. Probe the interpreter once before the first
+script call; if no Python exists at all, say so in the summary and use the reference
+files' offline/manual fallbacks where they exist (e.g. scheduling.md §sun hand-fetch) —
+never stall silently or invent a script's output.
+
 - `references/data-sources.md` — read before Phase 1: every API/URL recipe + fallback
   chain (交通、酒店、场馆、天气、假日调休、地理编码) — **plus the booking-judgment
   rules that decide plans**: §Group tours (weekday grids, min-party,
